@@ -3,12 +3,13 @@
  * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
  * @author ericwbailey
  */
+ @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
 
  code[class*="language-"],
  pre[class*="language-"] {
      color: #f8f8f2;
      background: none;
-     font-family: SFMono-Regular;
+     font-family: 'Nanum Gothic Coding', monospace;
      text-align: left;
      white-space: pre;
      word-spacing: normal;
