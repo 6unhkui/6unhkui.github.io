@@ -4,7 +4,7 @@ import React from "react"
 import styled from "styled-components"
 import Image from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
-import Mimoji from '../../static/images/header_mimoji.png';
+import Mimoji from '../../static/images/header_img.png';
 import Github from '../../static/images/github.svg';
 import LinkedIn from '../../static/images/linkedin.svg';
 
@@ -40,7 +40,7 @@ return (
 
     <div className="container">
       <div>
-        <img src={Mimoji} style={{width: '90px'}}/>
+        {/* <img src={Mimoji} style={{width: '90px'}}/> */}
         
         <h1 className="logo">
           <Link to="/">
@@ -52,10 +52,14 @@ return (
 
         <div className="social-wrap">
           <div className="social">
-            <a href={site.social.github} target="_blank" ><img src={Github}/><span>Github</span></a>
+            <a href={site.social.github} target="_blank" ><img src={Github}/>
+              {/* <span>Github</span> */}
+            </a>
           </div>
 
-          <div className="social"><img src={LinkedIn}/><span>LinkedIn</span></div>
+          <div className="social"><img src={LinkedIn}/>
+            {/* <span>LinkedIn</span> */}
+          </div>
         </div> 
       </div>
 

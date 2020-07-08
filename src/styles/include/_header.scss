@@ -2,14 +2,17 @@ header {
   .bg {
     background-color: #ffd157;
     width: 100%;
-    height: 160px;
+    // height: 160px;
+    height: 12px;
     z-index: -1;
     position: absolute;
   }
   
   // Header Area ///////////////////////
   .container {
-    padding-top: 100px;
+    // padding-top: 100px;
+
+    padding-top: 50px;
     @include contentWrap;
 
     .gatsby-image-wrapper {
@@ -33,15 +36,17 @@ header {
       top: -90px;
 
       .social {
-        border: 1px solid lighten($border-color, 5);
+        // border: 1px solid lighten($border-color, 5);
         color : $gray-font-color;
         // border-radius: 20px;
-        padding: .4rem .8rem;
+        // padding: .4rem .8rem;
         font-weight: 500;
         display: inline-block;
         font-size: $font-small;
         // text-transform: uppercase;
-
+        // &:after:not(){
+        //   content: " \00b7 ";
+        // }
         a {
           color : $gray-font-color;
         }
@@ -52,6 +57,7 @@ header {
   
         img {
           width: 16px;
+          width: 30px;
           position: relative;
           top: 2px;
           margin-right: 6px;
@@ -64,6 +70,7 @@ header {
       width : 100%;
       margin-top: 2rem;
       border-bottom: 1px solid $border-color;
+      border-top: 1px solid $border-color;
       display: flex;
 
       .gnb {
@@ -74,7 +81,7 @@ header {
         a {
           text-transform: uppercase;
           display: inline-block;
-          padding: .9rem 0;
+          padding: 1rem 0;
           position: relative;
         }
           

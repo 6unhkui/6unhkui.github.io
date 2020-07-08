@@ -23,20 +23,21 @@ export default function PostTemplate({ data, pageContext, location }) {
         />
 
         <article className="post-view">
-          <div style={{textAlign: 'center'}}>
+          <div>
             <span className="category">{category.toUpperCase()}</span>
             <h1 className="title">{title}</h1>
             <p className="date">{date}</p>
-            ㅡ
+            <div className="skill-wrap">
+            {tags.map((tag, i) => (
+              <span className='skill' key={i}><Link to={`/tags/${kebabCase(tag)}/`}>{'# ' + tag}</Link></span>
+            ))}
+            </div> 
+            {/* ㅡ */}
           </div>
 
           <div className="content" dangerouslySetInnerHTML={{ __html: post.html }} />
 
-          <div className="skill-wrap">
-            {tags.map((tag, i) => (
-              <span className='skill' key={i}><Link to={`/tags/${kebabCase(tag)}/`}>{'# ' + tag}</Link></span>
-            ))}
-          </div> 
+
         
           <hr/>
 
