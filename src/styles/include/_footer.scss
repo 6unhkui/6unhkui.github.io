@@ -1,0 +1,30 @@
+footer {
+    background-color: $gray-bg;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    font-weight: 500;
+    color : $gray-font-color;
+    font-size: $font-small;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    // Responsive //////////////////
+    @include tablet {
+        & {
+            height: 70px;
+            line-height: 70px;
+        }
+      }
+      
+    @include mobile {
+        & {
+            height: 50px;
+            line-height: 50px;
+        }
+    }
+}
+
+  
+  

@@ -1,0 +1,14 @@
+.tags-page-wrap {
+    .all-tags {
+        a {
+            text-decoration: underline;
+            color : $gray-font-color;
+        }
+    }
+
+    .total-count {
+        color : $gray-font-color;
+        font-weight: 500;
+        margin-bottom: 2rem;
+    }
+}

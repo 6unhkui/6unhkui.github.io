@@ -1,0 +1,28 @@
+.bio-wrap {
+    padding-right: 6rem;
+    text-align: center;
+
+    .user-info {
+        text-align: left;
+        display: inline-block;
+        margin-left: 14px;
+        position: absolute;
+        margin-top: 4px;
+
+        .write-by {
+            color : $gray-font-color;
+            font-size: $font-small;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        h3 {
+            margin: 4px 0;
+        }
+
+        .description {
+            margin: 0;
+        }
+    }
+}
+

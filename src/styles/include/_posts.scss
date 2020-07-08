@@ -1,0 +1,129 @@
+article {
+    margin-bottom: 3rem;
+
+    .category {
+        color : $primary-color;
+        font-weight: bold;
+        font-size: $font-small;
+    }
+
+    .title {
+        margin: 6px 0
+    }
+
+    .summary {
+        color: $gray-font-color;
+        line-height: 1.6rem;
+    }
+
+    .skill-wrap {
+        margin-top: .8rem; 
+       
+        .skill {
+            padding: .3rem .5rem;
+            margin-right: .6rem;
+            font-size: $font-small;
+            a {
+                color : darken($gray-font-color, 20);
+            }
+            // border: 1px solid $border-color;
+            background-color: $gray-bg;;
+            // border-radius: 20px;
+        }
+
+        .skill:hover {
+            // border: 1px solid lighten($primary-color, 30);
+            cursor: pointer;
+            // background-color : $primary-color;
+            // color : #fff;
+            background-color: darken($gray-bg, 12);
+            a {
+                color : #fff;
+            }
+        }
+    }
+
+    .empty {
+        text-align: center;
+        margin-top: 100px;
+        color: $gray-font-color;
+    }
+
+
+    &.post-view {
+        hr {
+            margin: 2rem 0;
+        }
+        .title {
+            font-size: $font-x-x-x-large;
+            margin-bottom: 1.2rem;
+        }
+
+        .date {
+            color : $gray-font-color;
+            font-weight: 400;
+        }
+
+        .skill-wrap {
+            text-align: right;
+        }
+        
+        .content {
+            margin: 3rem 0;
+    
+            h1, h2, h3, h4 {
+                margin : 3rem 0 .8rem 0;
+            }
+        
+            h1 {
+                font-size : $font-x-x-large;
+            }
+        
+            h2 {
+                font-size : $font-x-large;
+            }
+        
+            h3 {
+                font-size : $font-large;
+            }
+        
+            h4 {
+                font-size : $font-medium;
+            }
+        
+            ul, li, p {
+              margin: 0;
+              line-height: 2rem;
+            }
+        }
+
+        .navigation-wrap{
+            .navigation {
+                display: inline-block;
+    
+                p {
+                    font-size: $font-small;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    color : $gray-font-color;
+                }
+    
+                &.next {
+                    float: right;
+                    position: relative;
+                }
+            }
+        }
+
+        // Responsive //////////////////
+        @include mobile {
+            .content {
+                img {
+                    width: 90%;
+                }
+            }
+        }
+    }
+
+}
+
