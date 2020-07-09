@@ -26,3 +26,9 @@ main {
     }
 }
 }
+
+@include mobile {
+  main {
+    margin-top: 6.4rem;
+  }
+}

@@ -35,19 +35,24 @@ div.wrapper {
   min-height: 100%;
 }
 
+ul {
+  padding-inline-start: 20px;
+}
+
 
 .scroll {
   background-color: darken($gray-bg, $amount: 10);
   opacity: .8;
-  width: 40px;
-  height: 40px;
+  width: 3rem;
+  height: 3rem;
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 1.5rem;
+  right: 1.5rem;
   border-radius: 5px;
   border: none;
   z-index: 1;
-  
+  padding-top: .4rem;
+
   &:hover {
     background-color: darken($gray-bg, $amount: 20);
   }
@@ -56,9 +61,9 @@ div.wrapper {
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
     border: solid #fff;
-    border-width: 0 3px 3px 0;
+    border-width: 0 .3rem .3rem 0;
     display: inline-block;
-    padding: 3px;
+    padding: .3rem;
   }
 }
 
@@ -77,6 +82,6 @@ div.wrapper {
   }
 
   html {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
