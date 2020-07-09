@@ -1,8 +1,8 @@
 ---
 category : Dev
-title: 테스트 게시물 -1
-date: "2020-07-08"
-tags : ['tag1']
+title: 테스트 게시물 1
+date: "2020-07-12"
+tags : ['tag1', "React"]
 ---
 
 # 제목

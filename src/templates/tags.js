@@ -16,7 +16,7 @@ const Tags = ({ pageContext, data, location }) => {
     <Layout location={location}>
       <div className="tags-page-wrap">
         <PageTitle title={tag} emoji="#️" subtxt={[`${data.allMarkdownRemark.totalCount} posts`]}/>
-        <div className="all-tags"><Link to="/tags">{'All tags >'}</Link></div>
+        {/* <div className="all-tags"><Link to="/tags">{'All tags >'}</Link></div> */}
         <Post posts={data.allMarkdownRemark.edges}/>
       </div>
     </Layout>

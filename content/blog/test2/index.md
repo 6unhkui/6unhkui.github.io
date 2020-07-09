@@ -2,7 +2,7 @@
 category : Dev
 title: 테스트 게시물 -2
 date: "2020-07-10"
-tags : ['tag1']
+tags : ['tag1', "React"]
 ---
 
 # 제목

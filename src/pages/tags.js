@@ -12,17 +12,16 @@ const TagsPage = ({ data, location }) => {
       <div>
         <PageTitle title="Tags" emoji="🏷"/>
         
-        <section>
+        <section className="all-tags-wrap">
           <div className="container">
-          <ul style={{lineHeight : '1.6rem'}}>
             {allTags.map(tag => (
-              <li key={tag.fieldValue}>
+              <div key={tag.fieldValue} className="tag">
                 <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                  {tag.fieldValue} ({tag.totalCount})
+                  {'# ' + tag.fieldValue}
+                  <span className="tag-count">{tag.totalCount}</span>
                 </Link>
-              </li>
+              </div>
             ))}
-          </ul>
           </div>
         </section>
       </div>

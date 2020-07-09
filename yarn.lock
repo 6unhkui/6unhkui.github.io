@@ -6580,10 +6580,10 @@ gatsby-remark-code-titles@^1.1.0:
     query-string "~6.0.0"
     unist-util-visit "~1.3.0"
 
-gatsby-remark-custom-blocks@^2.3.9:
-  version "2.3.9"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-custom-blocks/-/gatsby-remark-custom-blocks-2.3.9.tgz#300b76be1c9285557c86d69fb0394ec5bb23ad56"
-  integrity sha512-jAtjAhP17+soQ4EqXgR+ytt9aDtuc19qOUaHPGeSSHwdYeCC10KGsdoagb31hQIlAFuJo4FjMfZkGajbYcI4/Q==
+gatsby-remark-custom-blocks@^2.3.10:
+  version "2.3.10"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-custom-blocks/-/gatsby-remark-custom-blocks-2.3.10.tgz#cd4e03d23e4298cd22cba23608ffd072ebf186aa"
+  integrity sha512-HrLJS2E16e8tEX0mYzBM5xD+NoPBRW95ahqAEDmXWbyNF9MX4L0Yafl3Vim+dS22XmGlGlouLdgTA/2NT7yYXQ==
   dependencies:
     "@babel/runtime" "^7.10.3"
     remark-custom-blocks "^2.5.0"

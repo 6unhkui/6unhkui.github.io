@@ -4,6 +4,7 @@ import { kebabCase } from 'lodash';
 import { Link, graphql } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
+import Image from "gatsby-image";
 
 export default function PostTemplate({ data, pageContext, location }) {
   
@@ -11,7 +12,9 @@ export default function PostTemplate({ data, pageContext, location }) {
   const { previous, next } = pageContext;
   const { author, social, description } = data.site.siteMetadata;
 
-  const {category, title, date, tags} = post.frontmatter;
+  const {category, title, date, tags, featuredImage} = post.frontmatter;
+
+  console.log(featuredImage);
 
   const avatar = data.avatar.childImageSharp.fixed;
 
@@ -25,13 +28,15 @@ export default function PostTemplate({ data, pageContext, location }) {
         <section className="post-view">
           <div className="container">
           <article>
+            {featuredImage && <Image fluid={featuredImage.childImageSharp.fluid} />} 
+
             <div className="post-info-wrap">
               <span className="category">{category.toUpperCase()}</span>
               <h1 className="title">{title}</h1>
               <p className="date">{date}</p>
-          </div>
+            </div>
 
-          <hr/>
+            <hr/>
           
           <div className="content" dangerouslySetInnerHTML={{ __html: post.html }} />
 
@@ -98,6 +103,15 @@ export const pageQuery = graphql`
         date(formatString: "YYYY년 MM월 DD일")
         category
         tags
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              base64
+              src
+              srcSet
+            }
+          }
+        }
       } 
     }
   }

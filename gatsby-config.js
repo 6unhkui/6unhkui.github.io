@@ -18,12 +18,12 @@ module.exports = {
         link:`/dev`
       },
       {
-        name:`TIL`,
-        link:`/til`
-      },
-      {
         name:`Project`,
         link:`/project`
+      },
+      {
+        name:`Tags`,
+        link:`/tags`
       }
     ]
   },

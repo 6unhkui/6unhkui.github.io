@@ -55,6 +55,7 @@ ul {
 
   &:hover {
     background-color: darken($gray-bg, $amount: 20);
+    transition: background-color 1s;
   }
 
   .arrow-up {

@@ -28,6 +28,7 @@ query {
             date(formatString: "MMMM DD, YYYY")
             title
             tags
+            category
           }
         }
       }

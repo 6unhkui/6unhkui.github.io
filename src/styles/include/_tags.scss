@@ -10,3 +10,21 @@
         margin-top:-2.5rem;
     }
 }
+
+.all-tags-wrap {
+    .tag {
+        border-top: 1px solid $border-color;
+        padding: 1rem 0;
+        // font-size: $font-medium;
+        font-weight: bold;
+
+        &:last-child {
+            border-bottom: 1px solid $border-color;
+        }
+
+        .tag-count {
+            float: right;
+            color: $gray-font-color;
+        }
+    }
+}
