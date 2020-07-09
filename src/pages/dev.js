@@ -1,17 +1,13 @@
 import React from 'react';
-import SEO from "../components/seo"
 import Layout from "../components/layout"
-import Post from "../components/posts";
+import Posts from "../components/posts";
 import PageTitle from "../components/pageTitle";
 
 const DevPage = ({data, location}) => {
     return (
         <Layout location={location}>
-            <SEO title="Development" />
-
-            <PageTitle title="Dev" emoji="💻"/>
-
-            <Post posts={data.allMarkdownRemark.edges}/>
+            {/* <PageTitle title="Dev" emoji="💻"/> */}
+            <Posts posts={data.allMarkdownRemark.edges}/>
         </Layout>
     )
 }
@@ -31,6 +27,7 @@ query {
             date(formatString: "MMMM DD, YYYY")
             title
             tags
+            category
           }
         }
       }

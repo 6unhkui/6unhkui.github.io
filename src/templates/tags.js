@@ -15,12 +15,9 @@ const Tags = ({ pageContext, data, location }) => {
   return (
     <Layout location={location}>
       <div className="tags-page-wrap">
-        <PageTitle title={tag} emoji="#️"/>
-        
-        <p className="total-count">{data.allMarkdownRemark.totalCount} posts</p>
-
+        <PageTitle title={tag} emoji="#️" subtxt={[`${data.allMarkdownRemark.totalCount} posts`]}/>
+        <div className="all-tags"><Link to="/tags">{'All tags >'}</Link></div>
         <Post posts={data.allMarkdownRemark.edges}/>
-        <p className="all-tags"><Link to="/tags">{'All tags >'}</Link></p>
       </div>
     </Layout>
   );
@@ -46,6 +43,7 @@ export const pageQuery = graphql`
             title
             date(formatString: "MMMM DD, YYYY")
             tags
+            category
           }
         }
       }

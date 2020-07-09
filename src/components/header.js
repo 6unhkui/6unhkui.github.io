@@ -1,12 +1,13 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-import styled from "styled-components"
-import Image from "gatsby-image"
+// import styled from "styled-components"
+// import Image from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
-import Mimoji from '../../static/images/header_img.png';
+// import Mimoji from '../../static/images/header_img.png';
 import Github from '../../static/images/github.svg';
 import LinkedIn from '../../static/images/linkedin.svg';
+import Logo from '../../static/images/logo.svg';
 
 const Header = ({ location, category}) => {
   console.log(location)
@@ -36,45 +37,38 @@ const path = location.pathname.substr(location.pathname.lastIndexOf('/') + 1).to
 
 return (
   <header>
-    <div className="bg"></div>
-
-    <div className="container">
-      <div>
-        {/* <img src={Mimoji} style={{width: '90px'}}/> */}
-        
-        <h1 className="logo">
+    <div className="header-wrap container">
+      <div className="logo-wrap">
+        {/* <h1 className="logo"> */}
           <Link to="/">
-            {site.title}
+            <img src={Logo} alt={site.title} className="logo"/>
+            {/* {site.title} */}
           </Link>
-        </h1>
-
-        <p className="description">{site.description}</p>
-
-        <div className="social-wrap">
-          <div className="social">
-            <a href={site.social.github} target="_blank" ><img src={Github}/>
-              {/* <span>Github</span> */}
-            </a>
-          </div>
-
-          <div className="social"><img src={LinkedIn}/>
-            {/* <span>LinkedIn</span> */}
-          </div>
-        </div> 
+        {/* </h1> */}
       </div>
 
-      <div className="gnb-wrap">
+      <nav>
+        <div className='gnb-wrap'>
           {site.menuLinks.map(link => (
-            <h3 key={link.name} 
+            <h4 key={link.name} 
                 className={'gnb' + (link.name.toUpperCase() == path
                                     || (location.pathname == '/' && link.name.toUpperCase() == 'HOME') 
                                     || category && link.name.toUpperCase() == category.toUpperCase() ? ' selected' : '')}>
               <Link to={link.link}>
                 {link.name}
               </Link>
-            </h3>
+            </h4>
             ))}
-      </div> 
+        </div>
+
+        <div className="social-wrap">
+          <div className="social">
+            <a href={site.social.github} target="_blank" ><img src={Github} alt="Github"/></a>
+          </div>
+          <div className="social"><img src={LinkedIn} alt="LinkedIn"/>
+          </div>
+        </div> 
+      </nav> 
     </div>
   </header>
   )

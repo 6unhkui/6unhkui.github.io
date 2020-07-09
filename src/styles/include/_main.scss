@@ -1,20 +1,28 @@
 main {
-    @include contentWrap;
-    padding: 3rem 0 10rem 0;
-    min-height: 400px;
+  min-height: 600px;
+  position: relative;
+  margin-top: 3.7rem;
 
-    // Responsive //////////////////
-    @include tablet {
-        & {
-          padding-right: 20px;
-          padding-left: 20px;
-        }
-      }
-      
-    @include mobile {
-        & {
-          padding-right: 14px;
-          padding-left: 14px;
-        }
+  .container {
+    @include contentWrap;
+  }
+
+  .page-title-wrap {
+    margin-bottom: 3.7rem;
+    text-align: center;
+    padding-top: 3.7rem;
+
+    p {
+      color : darken($gray-font-color, 20);
     }
+
+    .page-title {
+      font-size: $font-x-x-large;
+      margin-bottom: 1.2rem;
+      
+      .emoji {
+        margin-right: 14px;
+      }
+    }
+}
 }

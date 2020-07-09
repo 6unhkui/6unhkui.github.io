@@ -10,17 +10,21 @@ const TagsPage = ({ data, location }) => {
   return (
     <Layout location={location}>
       <div>
-          
         <PageTitle title="Tags" emoji="🏷"/>
-        <ul style={{lineHeight : '1.6rem'}}>
-          {allTags.map(tag => (
-            <li key={tag.fieldValue}>
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                {tag.fieldValue} ({tag.totalCount})
-              </Link>
-            </li>
-          ))}
-        </ul>
+        
+        <section>
+          <div className="container">
+          <ul style={{lineHeight : '1.6rem'}}>
+            {allTags.map(tag => (
+              <li key={tag.fieldValue}>
+                <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                  {tag.fieldValue} ({tag.totalCount})
+                </Link>
+              </li>
+            ))}
+          </ul>
+          </div>
+        </section>
       </div>
     </Layout>
   );

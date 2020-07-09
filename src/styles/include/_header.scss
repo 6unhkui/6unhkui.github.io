@@ -1,88 +1,62 @@
 header {
-  .bg {
-    background-color: #ffd157;
-    width: 100%;
-    // height: 160px;
-    height: 12px;
-    z-index: -1;
-    position: absolute;
-  }
-  
-  // Header Area ///////////////////////
-  .container {
-    // padding-top: 100px;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  background-color: #fff;
+  opacity: .9;
+  width: 100%;
+  height: 3.7rem;
+  border-bottom: 1px solid $border-color;
 
-    padding-top: 50px;
-    @include contentWrap;
+  .header-wrap {
+    max-width: 1500px;
+    margin: auto;
 
-    .gatsby-image-wrapper {
-      display: block;
-    }
-
-    .logo {
-      margin: 10px 0;
-      font-size: $font-x-large;
-      // display: inline-block;
-    }
-      
-    .description {
-      color: $gray-font-color;
-      // display: inline-block;
-    }
-
-    .social-wrap {
-      float: right;
-      position: relative;
-      top: -90px;
-
-      .social {
-        // border: 1px solid lighten($border-color, 5);
-        color : $gray-font-color;
-        // border-radius: 20px;
-        // padding: .4rem .8rem;
-        font-weight: 500;
-        display: inline-block;
-        font-size: $font-small;
-        // text-transform: uppercase;
-        // &:after:not(){
-        //   content: " \00b7 ";
-        // }
-        a {
-          color : $gray-font-color;
-        }
-
-        &:not(:last-child) {
-          margin-right: 10px;
-        }
-  
-        img {
-          width: 16px;
-          width: 30px;
-          position: relative;
-          top: 2px;
-          margin-right: 6px;
-        }
+    @include desktop {
+      & {
+        padding : 0 10%;
       }
     }
+  }
 
-    // GNB Area ///////////////////////
+  .logo-wrap {
+    display: inline-block;
+    flex : 1;
+    position: relative;
+    top: .8rem;
+
+    .logo {
+      width: 5.2rem;
+    }
+  }
+
+  // .logo {
+  //   font-family: $font-family-logo;
+  //   font-size: $font-medium;
+  //   margin-top: .4rem;
+  // }
+
+  // Navigation Area ///////////////////////
+  nav {
+    width : 500px;
+    display: flex;
+    float: right;
+
     .gnb-wrap {
-      width : 100%;
-      margin-top: 2rem;
-      border-bottom: 1px solid $border-color;
-      border-top: 1px solid $border-color;
       display: flex;
-
+      flex: 1;
+      margin-right: 30px;
+      
       .gnb {
-        text-align: center;
+        // text-align: center;
         flex: 1;
-          // margin: .9rem 0;
+        display: inherit;
 
         a {
           text-transform: uppercase;
-          display: inline-block;
-          padding: 1rem 0;
+          padding: 1.3rem 0;
           position: relative;
+          margin: 0 auto;
         }
           
         a:after {
@@ -109,26 +83,51 @@ header {
       }
     }
 
+    .social-wrap {
+      text-align: right;
+      margin-top: 1rem;
+      flex: none;
+  
+      .social {
+        color : $gray-font-color;
+        font-weight: 500;
+        display: inline-block;
+        font-size: $font-small;
 
-    // Responsive //////////////////
-    @include tablet {
-      & {
-        padding-right: 20px;
-        padding-left: 20px;
-      }
-    }
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
     
-    @include mobile {
-      & {
-        padding-right: 14px;
-        padding-left: 14px;
-
-        .social-wrap {
-          position: unset;
-          float: none;
+        img {
+          width: 1.5rem;
+          position: relative;
+          top: 2px;
         }
       }
     }
   }
 }
 
+@include mobile {
+  header {
+    height: 6.4rem;
+
+    .header-wrap{
+      height: 100%;
+    }
+
+    .logo-wrap {
+      display: block;
+      text-align: center;
+    }
+
+    nav {
+      display: block;
+      width: 100%;
+
+      .social-wrap {
+        display: none;
+      }
+    }
+  }
+}

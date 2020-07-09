@@ -6,7 +6,7 @@ import PageTitle from "../components/pageTitle";
 const TilPage = ({data, location}) => {
     return (
         <Layout location={location}>
-            <PageTitle title="Today I Learned" emoji="📚"/>
+            {/* <PageTitle title="Today I Learned" emoji="📚"/> */}
 
             <Post posts={data.allMarkdownRemark.edges}/>
         </Layout>

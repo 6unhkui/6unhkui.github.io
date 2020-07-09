@@ -1,29 +1,15 @@
 footer {
-    background-color: $gray-bg;
-    height: 60px;
-    line-height: 60px;
+    background-color: #fff;
+    height: 3.7rem;
+    line-height: 3.7rem;
     text-align: center;
     font-weight: 500;
     color : $gray-font-color;
+    border-top: 1px solid $border-color;
     font-size: $font-small;
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
-
-    // Responsive //////////////////
-    // @include tablet {
-    //     & {
-    //         height: 70px;
-    //         line-height: 70px;
-    //     }
-    //   }
-      
-    @include mobile {
-        & {
-            height: 50px;
-            line-height: 50px;
-        }
-    }
 }
 
   

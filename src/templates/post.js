@@ -22,23 +22,25 @@ export default function PostTemplate({ data, pageContext, location }) {
           description={post.excerpt}
         />
 
-        <article className="post-view">
-          <div>
-            <span className="category">{category.toUpperCase()}</span>
-            <h1 className="title">{title}</h1>
-            <p className="date">{date}</p>
-            <div className="skill-wrap">
-            {tags.map((tag, i) => (
-              <span className='skill' key={i}><Link to={`/tags/${kebabCase(tag)}/`}>{'# ' + tag}</Link></span>
-            ))}
-            </div> 
-            {/* ㅡ */}
+        <section className="post-view">
+          <div className="container">
+          <article>
+            <div className="post-info-wrap">
+              <span className="category">{category.toUpperCase()}</span>
+              <h1 className="title">{title}</h1>
+              <p className="date">{date}</p>
           </div>
 
+          <hr/>
+          
           <div className="content" dangerouslySetInnerHTML={{ __html: post.html }} />
 
+          <div className="tags-wrap">
+              {tags.map((tag, i) => (
+                <span className='tag' key={i}><Link to={`/tags/${kebabCase(tag)}/`}>{'# ' + tag}</Link></span>
+              ))}
+          </div> 
 
-        
           <hr/>
 
           <div className="navigation-wrap">
@@ -62,6 +64,8 @@ export default function PostTemplate({ data, pageContext, location }) {
           </div>
         
       </article>
+      </div>
+      </section>
 
     </Layout>
   )

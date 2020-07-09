@@ -6,7 +6,7 @@ import PageTitle from "../components/pageTitle";
 const ProjectPage = ({data, location}) => {
     return (
         <Layout location={location}>
-            <PageTitle title="Project" emoji="🏢"/>
+            {/* <PageTitle title="Project" emoji="🏢"/> */}
             
             <Post posts={data.allMarkdownRemark.edges}/>
         </Layout>

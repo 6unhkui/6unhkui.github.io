@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Dev.log`,
+    title: `dev.log`,
     description: `기록하는 습관 📝`,
     author: `Inkyung`,
     email : ``,

@@ -13,7 +13,8 @@ const Layout = ({ children, location, category}) => {
       <main>{children}</main>
 
       <footer>
-        © Inkyung. {new Date().getFullYear()}
+        {/* © Inkyung. {new Date().getFullYear()} */}
+        © Inkyung, Built with Gatsby
       </footer>
     </div>
   )

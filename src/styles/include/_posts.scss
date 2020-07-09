@@ -1,78 +1,73 @@
-article {
-    margin-bottom: 3rem;
+section.posts {
+    background-color: $gray-bg;
+    padding-top : 40px;
+    padding-bottom : 40px;
 
-    .category {
-        color : $primary-color;
-        font-weight: bold;
-        font-size: $font-small;
-    }
+    article {
+        box-shadow: 0 6px 16px rgba(36, 37, 38, 0.08);
+        background-color: #fff;
+        padding: 1.6rem;
+        border-radius: 8px;
+        flex: 1;
+        margin-bottom: 1.6rem;
 
-    .title {
-        margin: 6px 0
-    }
-
-    .summary {
-        color: $gray-font-color;
-        line-height: 1.6rem;
-    }
-
-    .skill-wrap {
-        margin-top: .8rem; 
-       
-        .skill {
-            padding: .3rem .5rem;
-            margin-right: .6rem;
-            font-size: $font-small;
-            a {
-                color : darken($gray-font-color, 20);
-            }
-            // border: 1px solid $border-color;
-            background-color: $gray-bg;;
-            // border-radius: 20px;
+        .title {
+            margin: 6px 0;
+            font-size: $font-medium;
+            color: $default-font-color;
         }
 
-        .skill:hover {
-            // border: 1px solid lighten($primary-color, 30);
-            cursor: pointer;
-            // background-color : $primary-color;
-            // color : #fff;
-            background-color: darken($gray-bg, 12);
-            a {
-                color : #fff;
-            }
+        .summary {
+            color: $gray-font-color;
+            line-height: 1.6rem;
         }
+    }
+
+    article:hover{
+        box-shadow: none;
     }
 
     .empty {
         text-align: center;
-        margin-top: 100px;
+        height: 600px;
+        line-height: 600px;
         color: $gray-font-color;
     }
+}
 
+section.post-view {
+    padding-top: 3.7rem;
 
-    &.post-view {
-        hr {
-            margin: 2rem 0;
-        }
-        .title {
-            font-size: $font-x-x-x-large;
-            margin-bottom: 1.2rem;
-        }
-
-        .date {
-            color : $gray-font-color;
-            font-weight: 400;
-        }
-
-        // .skill-wrap {
-        //     text-align: right;
-        // }
+    article {
+        .post-info-wrap{
+            text-align: center;
+            .title {
+                font-size: $font-x-x-x-large;
+                margin: 1rem 0;
+            }
         
+            .date {
+                color : $gray-font-color;
+                font-weight: 400;
+            }
+        }
+
+        hr {
+            height: 2px;
+            background-color: $border-color;
+            margin-top: 3rem;
+        }
+    
         .content {
             margin: 3rem 0;
     
             h1, h2, h3, h4 {
                 margin : 3rem 0 .8rem 0;
+            }
+
+            h1, h2, h3 {
+                border-bottom: 1px solid $border-color;
+                padding-bottom: 10px;
             }
         
             h1 {
@@ -96,8 +91,11 @@ article {
               line-height: 2rem;
             }
         }
-
+    
         .navigation-wrap{
+            height: 100px;
+            padding-top: 20px;
+
             .navigation {
                 display: inline-block;
     
@@ -114,7 +112,7 @@ article {
                 }
             }
         }
-
+    
         // Responsive //////////////////
         @include mobile {
             .content {
@@ -124,6 +122,38 @@ article {
             }
         }
     }
-
 }
 
+article {
+    .category {
+        color : $primary-color;
+        font-weight: bold;
+        font-size: $font-small;
+        letter-spacing: .1rem;
+    }
+
+    .tags-wrap {
+        margin-top: 1rem;
+        margin-bottom: .6rem;
+       
+        .tag {
+            padding: .3rem .5rem;
+            margin-right: .6rem;
+            font-size: $font-small;
+            a {
+                color : darken($gray-font-color, 20);
+            }
+            // border: 1px solid $border-color;
+            background-color: $gray-bg;;
+            border-radius: 2px;
+        }
+
+        .tag:hover {
+            cursor: pointer;
+            background-color: darken($gray-bg, 12);
+            a {
+                color : #fff;
+            }
+        }
+    }
+}

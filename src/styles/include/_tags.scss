@@ -4,11 +4,9 @@
             text-decoration: underline;
             color : $gray-font-color;
         }
-    }
 
-    .total-count {
-        color : $gray-font-color;
-        font-weight: 500;
-        margin-bottom: 2rem;
+        text-align: center;
+        margin-bottom: 40px;
+        margin-top:-40px;
     }
 }
