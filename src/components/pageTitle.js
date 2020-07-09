@@ -10,7 +10,7 @@ export default function PagaTitle (props) {
                 </h1>
 
                 <div className="sub-txt">
-                    {props.subtxt && props.subtxt.map(txt => (<p>{txt}</p>))}
+                    {props.subtxt && props.subtxt.map((txt, i)=> (<p key={i}>{txt}</p>))}
                 </div> 
             </div>
         </section>

@@ -7,10 +7,9 @@ import { useStaticQuery, graphql } from "gatsby"
 // import Mimoji from '../../static/images/header_img.png';
 import Github from '../../static/images/github.svg';
 import LinkedIn from '../../static/images/linkedin.svg';
-import Logo from '../../static/images/logo.svg';
+import Logo from '../../static/images/logo.png';
 
 const Header = ({ location, category}) => {
-  console.log(location)
   const data = useStaticQuery(graphql`
     query HeaderQuery {
       site {
@@ -44,7 +43,7 @@ return (
             <img src={Logo} alt={site.title} className="logo"/>
             {/* {site.title} */}
           </Link>
-        {/* </h1> */}
+        {/* </h1> */}  
       </div>
 
       <nav>

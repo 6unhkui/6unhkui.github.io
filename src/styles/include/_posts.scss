@@ -29,8 +29,8 @@ section.posts {
 
     .empty {
         text-align: center;
-        height: 600px;
-        line-height: 600px;
+        height: 30rem;
+        line-height: 30rem;
         color: $gray-font-color;
     }
 }
@@ -167,6 +167,7 @@ article {
                 margin: 1rem 0;
             }
         }
+
         .content {
             h1 {
                 font-size : $font-x-large;
