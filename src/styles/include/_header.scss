@@ -28,6 +28,11 @@ header {
     .logo {
       width: 5.2rem;
     }
+
+    img[alt]{
+      font-family: $font-family-logo;
+      font-size: $font-medium;
+    }
   }
 
   // .logo {
@@ -111,6 +116,7 @@ header {
 @include mobile {
   header {
     height: 6.4rem;
+    position: relative;
 
     .header-wrap{
       height: 100%;

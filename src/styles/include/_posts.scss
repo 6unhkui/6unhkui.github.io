@@ -157,3 +157,34 @@ article {
         }
     }
 }
+
+@include mobile {
+    section.post-view {
+      article {
+        .post-info-wrap{
+            .title {
+                font-size: $font-x-x-large;
+                margin: 1rem 0;
+            }
+        }
+        .content {
+            h1 {
+                font-size : $font-x-large;
+            }
+        
+            h2 {
+                font-size : $font-large;
+            }
+        
+            h3 {
+                font-size : $font-medium;
+            }
+        
+            h4 {
+                font-size : $font-small;
+            }
+        
+        }
+      }
+    }
+  }
