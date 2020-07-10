@@ -32,6 +32,7 @@ const Posts = (props) => {
 
       {/** Category Switch Area */}
       {props.categories && 
+        <>
         <div className="switcher-wrap">
           <div className={'switcher-option ' + (selectedCategory === 'ALL' && 'selected')} 
                data-category="ALL"
@@ -42,6 +43,16 @@ const Posts = (props) => {
                 data-category={v.fieldValue}
                 onClick={changeCategory}>{v.fieldValue}</div>))}
         </div>
+
+        <div className="select-wrap">
+          <select name="category" onChange={(e) => {setSelectedCategory(e.target.value)}}>
+            <option value="ALL" selected>ALL</option>
+            {props.categories.map((v, i) => 
+            (<option value={v.fieldValue} key={i}>{v.fieldValue}</option>))}
+          </select>
+
+        </div>
+        </>
       }
 
       {/** Post List Area */}   

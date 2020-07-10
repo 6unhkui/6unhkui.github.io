@@ -37,40 +37,40 @@ section.posts {
         }
     }
 
-    // .select-wrap {
-    //     display: none;
-    //     position: relative;
-    //     width: 12rem;
-    //     border: 1px solid darken($border-color, 15);
-    //     border-radius: 4px;
-    //     z-index: 1;
-    //     margin-bottom: 1rem;
+    .select-wrap {
+        display: none;
+        position: relative;
+        width: 12rem;
+        border: 1px solid darken($border-color, 15);
+        border-radius: 4px;
+        z-index: 1;
+        margin-bottom: 1rem;
 
-    //     select {
-    //         text-transform: uppercase;
-    //         padding: 1em .8em;
-    //         border: 0;
-    //         width: 100%;
-    //         filter: alpha(opacity=0);
-    //         -webkit-appearance: none;
-    //         font-size: $font-small;
-    //         color: darken($gray-font-color, 20);
-    //         font-weight: 500;
-    //     }
+        select {
+            text-transform: uppercase;
+            padding: 1em .8em;
+            border: 0;
+            width: 100%;
+            filter: alpha(opacity=0);
+            -webkit-appearance: none;
+            font-size: $font-small;
+            color: darken($gray-font-color, 20);
+            font-weight: 500;
+        }
 
-    //     &::before {
-    //         content: "";
-    //         position: absolute;
-    //         top: 50%;
-    //         right: 1rem;
-    //         width: 0;
-    //         height: 0;
-    //         margin-top: -.2rem;
-    //         border-left: .3rem solid transparent;
-    //         border-right: .3rem solid transparent;
-    //         border-top: .4rem solid $gray-font-color;
-    //     }
-    // }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            width: 0;
+            height: 0;
+            margin-top: -.2rem;
+            border-left: .3rem solid transparent;
+            border-right: .3rem solid transparent;
+            border-top: .4rem solid $gray-font-color;
+        }
+    }
 
     article {
         box-shadow: 0 6px 16px rgba(34, 31, 36, 0.09);
@@ -266,19 +266,21 @@ article {
 
 @include mobile {
     section.posts {
-        // .select-wrap {
-        //     width: 100%;
-        // }
+        .select-wrap {
+            width: 100%;
+            display: block;
+        }
 
         .switcher-wrap {
-            width: auto;
-            display: flex;
-            height: 2.6rem;
-            .switcher-option{
-                letter-spacing: 0;
-                flex: 1;
-                text-align: center;
-            }
+            display: none;
+            // width: auto;
+            // display: flex;
+            // height: 2.6rem;
+            // .switcher-option{
+            //     letter-spacing: 0;
+            //     flex: 1;
+            //     text-align: center;
+            // }
         }
 
         article {
