@@ -9,7 +9,7 @@ import Github from '../../static/images/github.svg';
 import LinkedIn from '../../static/images/linkedin.svg';
 import Logo from '../../static/images/logo.png';
 
-const Header = ({ location, category}) => {
+const Header = ({ location, menu}) => {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
       site {
@@ -52,7 +52,7 @@ return (
             <h4 key={link.name} 
                 className={'gnb' + (link.name.toUpperCase() == path
                                     || (location.pathname == '/' && link.name.toUpperCase() == 'HOME') 
-                                    || category && link.name.toUpperCase() == category.toUpperCase() ? ' selected' : '')}>
+                                    || menu && link.name.toUpperCase() == menu.toUpperCase() ? ' selected' : '')}>
               <Link to={link.link}>
                 {link.name}
               </Link>

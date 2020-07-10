@@ -1,5 +1,6 @@
 ---
-category : Dev
+menu : DEV
+category : DevOps
 title: 테스트 게시물 -3
 date: "2020-07-18"
 tags: ["React"]

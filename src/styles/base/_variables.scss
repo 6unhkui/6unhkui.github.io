@@ -7,11 +7,13 @@ $font-family-logo : "Pacifico", cursive;
 // Color
 $default-font-color : #464646;
 $gray-font-color : #b1b2b3;
-$primary-color : #6a4cff;
-// $secondary-color : #ffc600;
+$primary-color : #7b22ec;
+$secondary-color : #ffc600;
 $gray-bg : #f6f6f6;
 $border-color: #ebebeb;
-$selection-color: #f6ebff;
+// $selection-color: #e2dbff;
+$selection-color: lighten($primary-color, 10);
+$gradient-color: linear-gradient(90deg, #7b22ec 0%, rgba(125,33,237,1) 50%, rgba(180,33,237,1) 100%);
 
 // Font Size
 $font-x-x-x-large: 3rem;

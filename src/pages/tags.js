@@ -10,8 +10,15 @@ const TagsPage = ({ data, location }) => {
   return (
     <Layout location={location}>
       <div>
-        <PageTitle title="Tags" emoji="🏷"/>
-        
+        <section className="page-title-wrap">
+          <div className='container'>
+            <h1 className="page-title">
+              <span role="img" className="emoji">🏷</span>
+              Tags
+            </h1>
+          </div>
+        </section>
+
         <section className="all-tags-wrap">
           <div className="container">
             {allTags.map(tag => (

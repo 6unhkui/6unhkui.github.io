@@ -12,19 +12,18 @@ export default function PostTemplate({ data, pageContext, location }) {
   const { previous, next } = pageContext;
   const { author, social, description } = data.site.siteMetadata;
 
-  const {category, title, date, tags, featuredImage} = post.frontmatter;
+  const {menu, category, title, date, tags, featuredImage} = post.frontmatter;
 
-  console.log(featuredImage);
-
+  // console.log(post.tableOfContents)
   const avatar = data.avatar.childImageSharp.fixed;
 
   return (
-    <Layout location={location} category={category}>
+    <Layout location={location} menu={menu}>
         <SEO
           title={post.frontmatter.title}
           description={post.excerpt}
         />
-
+        
         <section className="post-view">
           <div className="container">
           <article>
@@ -98,9 +97,11 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      tableOfContents
       frontmatter {
+        menu
         title
-        date(formatString: "YYYY년 MM월 DD일")
+        date(formatString: "YYYY. M. D")
         category
         tags
         featuredImage {

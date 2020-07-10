@@ -17,7 +17,7 @@ export default ProjectPage;
 
 export const pageQuery = graphql`
 query {
-    allMarkdownRemark(filter: { frontmatter: { category: { eq: "Project" } } }, sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(filter: { frontmatter: { menu: { eq: "PROJECT" } } }, sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt

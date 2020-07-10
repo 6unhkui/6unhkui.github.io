@@ -1,5 +1,6 @@
 ---
-category : Dev
+menu : DEV
+category : Front-End
 title: 테스트 게시물 -2
 date: "2020-07-10"
 tags : ['tag1', "React"]

@@ -3,21 +3,96 @@ section.posts {
     padding-top : 3rem;;
     padding-bottom : 3rem;
 
-    .posts-category {
+    .section-title {
         font-size: $font-large;
         margin-bottom: 1.5rem;
     }
 
+    .switcher-wrap {
+        padding: 3px;
+        border: 1px solid darken($border-color, 10);
+        border-radius: 10px;
+        display: flex;
+        width: fit-content;
+        margin: 0 auto;
+        margin-bottom: 2.6rem;
+        .switcher-option {
+            font-size: $font-small;
+            font-weight: bold;
+            letter-spacing: .1rem;
+            line-height: 2rem;
+            text-transform: uppercase;
+            padding: .3rem 1.3rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: normal;
+            color: darken($gray-font-color, 10);
+            transition: color 1s;
+            &.selected {
+                background: $primary-color;
+                color: #fff;
+                font-weight: 500;
+                background: $gradient-color;
+            }
+        }
+    }
+
+    // .select-wrap {
+    //     display: none;
+    //     position: relative;
+    //     width: 12rem;
+    //     border: 1px solid darken($border-color, 15);
+    //     border-radius: 4px;
+    //     z-index: 1;
+    //     margin-bottom: 1rem;
+
+    //     select {
+    //         text-transform: uppercase;
+    //         padding: 1em .8em;
+    //         border: 0;
+    //         width: 100%;
+    //         filter: alpha(opacity=0);
+    //         -webkit-appearance: none;
+    //         font-size: $font-small;
+    //         color: darken($gray-font-color, 20);
+    //         font-weight: 500;
+    //     }
+
+    //     &::before {
+    //         content: "";
+    //         position: absolute;
+    //         top: 50%;
+    //         right: 1rem;
+    //         width: 0;
+    //         height: 0;
+    //         margin-top: -.2rem;
+    //         border-left: .3rem solid transparent;
+    //         border-right: .3rem solid transparent;
+    //         border-top: .4rem solid $gray-font-color;
+    //     }
+    // }
+
     article {
-        box-shadow: 0 6px 16px rgba(36, 37, 38, 0.08);
+        box-shadow: 0 6px 16px rgba(34, 31, 36, 0.09);
         background-color: #fff;
-        padding: 1.6rem;
+        padding: 1.8rem;
         border-radius: 8px;
         flex: 1;
         margin-bottom: 1.6rem;
+        position: relative;
+        display: inline-block;
+        width: calc(50% - 4.4rem);
+        min-height: 12rem;
+        margin-right: 1.5rem;
+        margin-bottom: 1.5rem;
+        overflow: hidden;
+
+        &:nth-of-type(2n){
+            margin-right: 0;
+        }
 
         .title {
-            margin: 6px 0;
+            margin: 10px 0 6px 0;
             font-size: $font-medium;
             color: $default-font-color;
         }
@@ -43,13 +118,13 @@ section.posts {
     .load-more {
         text-align: center;
         button {
-            border: 1px solid lighten($gray-font-color, 10);
+            border: 1px solid lighten($primary-color, 20);
             background: none;
             font-size: $font-small;
-            padding: 10px 20px;
+            padding: 1rem 3rem;
             border-radius: 4px;
             // font-weight: bold;
-            color : $gray-font-color;
+            color : $primary-color;
             cursor: pointer;
         }
     }
@@ -73,9 +148,10 @@ section.post-view {
         }
 
         hr {
-            height: 2px;
-            background-color: $border-color;
+            height: 1px;
+            background: $gradient-color;
             margin-top: 3rem;
+            opacity: .8;
         }
     
         .content {
@@ -170,7 +246,7 @@ article {
 
         .tag:hover {
             cursor: pointer;
-            background-color: $primary-color;
+            background: $gradient-color;
             transition: background-color 1s;
             a {
                 color : #fff;
@@ -180,7 +256,38 @@ article {
     }
 }
 
+@include tablet {
+    section.posts {
+        article {
+            height: 13.4rem;
+        }
+    }
+}
+
 @include mobile {
+    section.posts {
+        // .select-wrap {
+        //     width: 100%;
+        // }
+
+        .switcher-wrap {
+            width: auto;
+            display: flex;
+            height: 2.6rem;
+            .switcher-option{
+                letter-spacing: 0;
+                flex: 1;
+                text-align: center;
+            }
+        }
+
+        article {
+            width: -webkit-fill-available;
+            margin-right: 0;
+            min-height: fit-content;
+        }
+    }
+
     section.post-view {
       article {
         .post-info-wrap{

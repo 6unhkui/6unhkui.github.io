@@ -14,7 +14,7 @@
 .all-tags-wrap {
     .tag {
         border-top: 1px solid $border-color;
-        padding: 1rem 0;
+        padding: 1.2rem 0;
         // font-size: $font-medium;
         font-weight: bold;
 
@@ -23,8 +23,9 @@
         }
 
         .tag-count {
-            float: right;
+            margin-left: .6rem;
             color: $gray-font-color;
+            font-weight: normal;
         }
     }
 }
