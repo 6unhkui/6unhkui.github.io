@@ -3,10 +3,6 @@ main {
   position: relative;
   margin-top: 3.7rem;
 
-  .container {
-    @include contentWrap;
-  }
-
   .page-title-wrap {
     margin-bottom: 4.6rem;
     // text-align: center;

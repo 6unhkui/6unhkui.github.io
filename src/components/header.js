@@ -1,36 +1,11 @@
 import React, {useState} from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-// import styled from "styled-components"
-// import Image from "gatsby-image"
-import { useStaticQuery, graphql } from "gatsby"
-// import Mimoji from '../../static/images/header_img.png';
 import Github from '../../static/images/github.svg';
 import LinkedIn from '../../static/images/linkedin.svg';
 import Logo from '../../static/images/logo.png';
 
-const Header = ({ location, menu}) => {
-  const data = useStaticQuery(graphql`
-    query HeaderQuery {
-      site {
-        siteMetadata {
-          title
-          description
-          author
-          social {
-            github
-            linkedin
-          }
-          menuLinks {
-            name
-            link
-          }
-        }
-      }
-     
-   }
-`); 
-
+const Header = ({ data, location, menu}) => {
 const [showMenu, setShowMenu] = useState(false);
 
 const site = data.site.siteMetadata;
@@ -71,26 +46,10 @@ return (
             ))}
             </div>
         </div>
-
-        <div className="social-wrap">
-          <div className="social">
-            <a href={site.social.github} target="_blank" ><img src={Github} alt="Github"/></a>
-          </div>
-          <div className="social"><img src={LinkedIn} alt="LinkedIn"/>
-          </div>
-        </div> 
       </nav>
     </div>
   </header>
   )
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Header

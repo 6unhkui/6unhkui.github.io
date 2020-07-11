@@ -1,20 +1,38 @@
 import React, {useState} from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import Header from "./header"
-import TopButton from './topButton';
-// import "../styles/layout.scss";
+import Footer from "./footer"
+import TopButton from './topButton'
 
 const Layout = ({ children, location, menu}) => {
-  return (
+  const data = useStaticQuery(graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        description
+        author
+        social {
+          github
+          linkedin
+        }
+        menuLinks {
+          name
+          link
+        }
+      }
+    }
+   
+ }
+`); 
+
+  return ( 
     <div className='wrapper'> 
       <TopButton scrollStepInPx="50" delayInMs="16.66"/>
-      <Header location={location} menu={menu}/>
-    
+      <Header location={location} data={data} menu={menu}/>
       <main>{children}</main>
-
-      <footer>
-        © Inkyung. {new Date().getFullYear()}
-      </footer>
+      <Footer data={data}/>
     </div>
   )
 }

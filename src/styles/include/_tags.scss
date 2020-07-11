@@ -16,14 +16,14 @@
         border-top: 1px solid $border-color;
         padding: 1.2rem 0;
         // font-size: $font-medium;
-        font-weight: bold;
+        font-weight: 500;
 
         &:last-child {
             border-bottom: 1px solid $border-color;
         }
 
         .tag-count {
-            margin-left: .6rem;
+            margin-left: .2rem;
             color: $gray-font-color;
             font-weight: normal;
         }

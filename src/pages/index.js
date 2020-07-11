@@ -21,7 +21,7 @@ const IndexPage = ({data, location}) => {
                 />
           </h1>
           <div className="sub-txt">
-            <p>개발 공부를 하면서 공부한 내용을 기록하는 블로그입니다.<br/>
+            <p>개발 공부한 내용을 기록하는 블로그입니다.<br/>
                Gatsby.js를 사용하여 만들었습니다. 😊</p>
           </div> 
         </div>

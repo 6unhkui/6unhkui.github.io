@@ -40,32 +40,38 @@ ul {
   padding-inline-start: 20px;
 }
 
+.container {
+  @include contentWrap;
+}
 
 .scroll {
-  background-color: darken($gray-bg, $amount: 10);
-  opacity: .8;
-  width: 3rem;
-  height: 3rem;
+  background: $gradient-color;
+  box-shadow: 0px 5px 8px 0px rgba(34, 31, 36, 0.3);
+  // opacity: .8;
+  width: 2.5rem;
+  height: 2.5rem;
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
-  border-radius: 5px;
+  border-radius: 50%;
   border: none;
   z-index: 1;
   padding-top: .4rem;
+  cursor: pointer;
 
   &:hover {
-    background-color: darken($gray-bg, $amount: 20);
-    transition: background-color 1s;
+    box-shadow: none;
+    // background: lighten($gray-bg, $amount: 10);
+    transition: all .5s;
   }
 
   .arrow-up {
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
     border: solid #fff;
-    border-width: 0 .3rem .3rem 0;
+    border-width: 0 .2rem .2rem 0;
     display: inline-block;
-    padding: .3rem;
+    padding: .2rem;
   }
 }
 

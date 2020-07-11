@@ -13,7 +13,6 @@ const TagsPage = ({ data, location }) => {
         <section className="page-title-wrap">
           <div className='container'>
             <h1 className="page-title">
-              <span role="img" className="emoji">🏷</span>
               Tags
             </h1>
           </div>
@@ -25,7 +24,7 @@ const TagsPage = ({ data, location }) => {
               <div key={tag.fieldValue} className="tag">
                 <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
                   {'# ' + tag.fieldValue}
-                  <span className="tag-count">{tag.totalCount}</span>
+                  <span className="tag-count">{' (' + tag.totalCount + ')'}</span>
                 </Link>
               </div>
             ))}

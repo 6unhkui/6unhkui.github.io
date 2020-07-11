@@ -7,9 +7,9 @@ header {
   width: 100%;
   height: 3.7rem;
   border-bottom: 1px solid $border-color;
- 
 
   .header-wrap {
+    display: flex;
     max-width: 1500px;
     margin: auto;
    
@@ -45,15 +45,18 @@ header {
 
   // Navigation Area ///////////////////////
   nav.menu-wrap {
-    width : 500px;
+    // width : 500px;
+    flex: 1;
     display: flex;
     float: right;
 
     .menu-list-wrap {
       .menu-list {
         display: flex;
-        margin-right: 30px;
+        max-width: 30rem;
+        margin-left: auto;
       }
+      
       flex: 1;
       
       .menu {
@@ -124,10 +127,12 @@ header {
 
     .header-wrap{
       height: 100%;
+      display: block;
     }
 
     .logo-wrap {
       display: block;
+      text-align: center;
       // text-align: center;
     }
 
