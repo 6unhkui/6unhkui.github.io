@@ -50,7 +50,6 @@ const Posts = (props) => {
             {props.categories.map((v, i) => 
             (<option value={v.fieldValue} key={i}>{v.fieldValue}</option>))}
           </select>
-
         </div>
         </>
       }

@@ -4,6 +4,7 @@ import { kebabCase } from 'lodash';
 import { Link, graphql } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
+import TableOfContents from "../components/tableOfContents";
 import Image from "gatsby-image";
 
 export default function PostTemplate({ data, pageContext, location }) {
@@ -36,6 +37,7 @@ export default function PostTemplate({ data, pageContext, location }) {
             </div>
 
             <hr/>
+            {/* <TableOfContents items={post.tableOfContents}/>  */}
           
           <div className="content" dangerouslySetInnerHTML={{ __html: post.html }} />
 
@@ -46,8 +48,9 @@ export default function PostTemplate({ data, pageContext, location }) {
           </div> 
 
           <hr/>
+          </article>
 
-          <div className="navigation-wrap">
+        <div className="navigation-wrap">
             <div className="navigation previous">
               <p>Previous</p>
               {previous ? (
@@ -66,9 +69,8 @@ export default function PostTemplate({ data, pageContext, location }) {
             ) : <span>마지막 글입니다.</span>}
             </div>
           </div>
-        
-      </article>
       </div>
+      {/* <TableOfContents items={post.tableOfContents}/> */}
       </section>
 
     </Layout>
@@ -101,7 +103,7 @@ export const pageQuery = graphql`
       frontmatter {
         menu
         title
-        date(formatString: "YYYY. M. D")
+        date(formatString: "MMMM DD, yyyy")
         category
         tags
         featuredImage {

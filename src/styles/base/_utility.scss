@@ -1,10 +1,10 @@
 @mixin contentWrap {
-    max-width : 1000px;
+    max-width : 1024px;
     margin: 0 auto;
 };
 
 @mixin mobile {
-    @media (min-width: #{$breakpoint-mobile}) and (max-width: #{$breakpoint-tablet - 1px}) {
+    @media (max-width: #{$breakpoint-tablet - 1px}) {
       @content;
     }
 }

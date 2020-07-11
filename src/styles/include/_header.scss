@@ -44,17 +44,19 @@ header {
   // }
 
   // Navigation Area ///////////////////////
-  nav {
+  nav.menu-wrap {
     width : 500px;
     display: flex;
     float: right;
 
-    .gnb-wrap {
-      display: flex;
+    .menu-list-wrap {
+      .menu-list {
+        display: flex;
+        margin-right: 30px;
+      }
       flex: 1;
-      margin-right: 30px;
       
-      .gnb {
+      .menu {
         // text-align: center;
         flex: 1;
         display: inherit;
@@ -117,7 +119,7 @@ header {
 
 @include mobile {
   header {
-    height: 6.4rem;
+    // height: 6.4rem;
     position: relative;
 
     .header-wrap{
@@ -126,19 +128,115 @@ header {
 
     .logo-wrap {
       display: block;
-      text-align: center;
+      // text-align: center;
     }
 
-    nav {
-      display: block;
-      width: 100%;
-
-      .gnb-wrap {
-        margin-right: 0;
-      }
-
+    nav.menu-wrap {
       .social-wrap {
         display: none;
+      }
+
+      .menu-toggle-wrap{
+        display: block;
+        flex:1;
+        position: absolute;
+        z-index: 100;
+        top: 2rem;
+        right: 1rem;
+        -moz-transform: translate(0, -50%);
+        -o-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        cursor: pointer;
+        font-size: 15px;
+        line-height: 20px;
+        color: #2A2F36;
+    
+        .menu-toggle {
+    
+          .menu-ico {
+            float: right;
+            position: relative;
+            width: 24px;
+            height: 20px;
+            margin-left: 8px;
+    
+            span, span:before, span:after {
+              content: '';
+              position: absolute;
+              top: 8px;
+              left: 0;
+              width: 100%;
+              height: 3px;
+              -webkit-transition: all 0.1s;
+              -moz-transition: all 0.1s;
+              -ms-transition: all 0.1s;
+              -o-transition: all 0.1s;
+              transition: all 0.1s;
+              background: #2A2F36;
+          }
+  
+            span:before {
+              top: -8px;
+            }
+          }
+        }
+
+        &.open {
+          position: fixed;
+          span {
+            background-color: transparent !important;
+
+            &::before {
+              -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+              top : 0 !important;
+            }
+
+            &::after {
+              -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+              top : 0 !important;
+            }
+          }
+
+        }
+      }
+
+      .menu-list-wrap {
+        position: fixed;
+        right: 0;
+        width: -webkit-fill-available;
+        height: -webkit-fill-available;
+        /* box-shadow: 0 0 10px #85888C; */
+        margin: -50px 0 0 -50px;
+        padding-left: 50px;
+        padding-top: 125px;
+        background-color: #fff;
+        -webkit-font-smoothing: antialiased;
+        transform-origin: 0% 0%;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+        transform: translate(100%, 0);
+
+        .menu-list {
+          margin: 0 auto;
+          text-align: center;
+          flex-direction: column;
+          -webkit-flex-direction: column;
+
+          .menu {
+            font-size: $font-x-large;
+
+            a:after {
+              visibility: hidden;
+            }
+          }
+        }
+
+        &.open {
+          transform : none;
+        }
       }
     }
   }

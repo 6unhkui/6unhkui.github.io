@@ -7,7 +7,7 @@ import TopButton from './topButton';
 const Layout = ({ children, location, menu}) => {
   return (
     <div className='wrapper'> 
-     <TopButton scrollStepInPx="50" delayInMs="16.66"/>
+      <TopButton scrollStepInPx="50" delayInMs="16.66"/>
       <Header location={location} menu={menu}/>
     
       <main>{children}</main>

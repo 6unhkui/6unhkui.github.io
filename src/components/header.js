@@ -1,6 +1,6 @@
+import React, {useState} from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
 // import styled from "styled-components"
 // import Image from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
@@ -30,7 +30,9 @@ const Header = ({ location, menu}) => {
      
    }
 `); 
-  
+
+const [showMenu, setShowMenu] = useState(false);
+
 const site = data.site.siteMetadata;
 const path = location.pathname.substr(location.pathname.lastIndexOf('/') + 1).toUpperCase();
 
@@ -46,18 +48,28 @@ return (
         {/* </h1> */}  
       </div>
 
-      <nav>
-        <div className='gnb-wrap'>
+      <nav className="menu-wrap">
+        <div className={"menu-toggle-wrap " + (showMenu ? 'open' : '')} onClick={() => {showMenu ? setShowMenu(false) : setShowMenu(true)}}>
+          <div className="menu-toggle">
+            <div className="menu-ico">
+              <span></span>
+            </div>
+          </div>
+        </div> 
+
+        <div className={"menu-list-wrap " + (showMenu ? 'open' : '')}>
+          <div className="menu-list">
           {site.menuLinks.map(link => (
             <h4 key={link.name} 
-                className={'gnb' + (link.name.toUpperCase() == path
+                className={'menu' + (link.name.toUpperCase() == path
                                     || (location.pathname == '/' && link.name.toUpperCase() == 'HOME') 
                                     || menu && link.name.toUpperCase() == menu.toUpperCase() ? ' selected' : '')}>
-              <Link to={link.link}>
+              <Link to={link.link} onClick={() => setShowMenu(false)}>
                 {link.name}
               </Link>
             </h4>
             ))}
+            </div>
         </div>
 
         <div className="social-wrap">
@@ -67,7 +79,7 @@ return (
           <div className="social"><img src={LinkedIn} alt="LinkedIn"/>
           </div>
         </div> 
-      </nav> 
+      </nav>
     </div>
   </header>
   )
