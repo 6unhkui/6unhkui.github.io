@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { kebabCase } from 'lodash';
 import { Link } from "gatsby"
-import Image from "gatsby-image";
+// import Image from "gatsby-image";
+import Img from "gatsby-image/withIEPolyfill"
 
 const Posts = (props) => {
   const showCount = 12;
@@ -64,9 +65,14 @@ const Posts = (props) => {
             else return s.node.frontmatter.category.toUpperCase() === selectedCategory.toUpperCase()})
           .slice(0, postsToShow).map((post, i) => {
             const {title, category, tags, featuredImage} = post.node.frontmatter;
+            console.log(featuredImage);
 
             return (
             <article key={i}>
+              
+              {/* {featuredImage && <img src={featuredImage.childImageSharp.resize.src} /> } */}
+
+              <div className="post-info">
               <Link to={post.node.fields.slug}>
                 <span className="category">{category.toUpperCase()}</span>
                 <h1 className="title">
@@ -81,6 +87,7 @@ const Posts = (props) => {
                   ))}
                 </div> 
               </Link>
+              </div>
             </article>
           )})
           }

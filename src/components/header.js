@@ -17,8 +17,8 @@ return (
       <div className="logo-wrap">
         {/* <h1 className="logo"> */}
           <Link to="/">
-            <img src={Logo} alt={site.title} className="logo"/>
-            {/* {site.title} */}
+            {/* <img src={Logo} alt={site.title} className="logo"/> */}
+            {site.title}
           </Link>
         {/* </h1> */}  
       </div>

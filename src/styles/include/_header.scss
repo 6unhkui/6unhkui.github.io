@@ -22,26 +22,24 @@ header {
   }
 
   .logo-wrap {
+    a { 
+      font-family: $font-family-logo;
+      font-size: $font-large;
+      color: #1b1b1b;
+    }
     display: inline-block;
     flex : 1;
     position: relative;
-    top: .8rem;
 
     .logo {
       width: 5.4rem;
     }
 
-    img[alt]{
-      font-family: $font-family-logo;
-      font-size: $font-medium;
-    }
+    // img[alt]{
+      // font-family: $font-family-logo;
+      // font-size: $font-medium;
+    // }
   }
-
-  // .logo {
-  //   font-family: $font-family-logo;
-  //   font-size: $font-medium;
-  //   margin-top: .4rem;
-  // }
 
   // Navigation Area ///////////////////////
   nav.menu-wrap {
@@ -51,69 +49,46 @@ header {
     float: right;
 
     .menu-list-wrap {
+      flex: 1;
+
       .menu-list {
         display: flex;
         max-width: 30rem;
         margin-left: auto;
-      }
-      
-      flex: 1;
-      
-      .menu {
-        // text-align: center;
-        flex: 1;
-        display: inherit;
 
-        a {
-          text-transform: uppercase;
-          padding: 1.3rem 0;
-          position: relative;
-          margin: 0 auto;
-        }
-          
-        a:after {
-          background: none repeat scroll 0 0 transparent;
-          bottom: 0;
-          content: "";
-          display: block;
-          height: 2px;
-          left: 50%;
-          position: absolute;
-          background: $primary-color;
-          transition: width 0.3s ease 0s, left 0.3s ease 0s;
-          width: 0;
-        }
-
-        a:hover:after, &.selected a:after{
-          width: 100%; 
-          left: 0; 
-        }
-
-        &.selected a {
-            color : $primary-color;
-        }
-      }
-    }
-
-    .social-wrap {
-      text-align: right;
-      margin-top: 1rem;
-      flex: none;
+        .menu {
+          flex: 1;
+          display: inherit;
   
-      .social {
-        color : $gray-font-color;
-        font-weight: 500;
-        display: inline-block;
-        font-size: $font-small;
-
-        &:not(:last-child) {
-          margin-right: 20px;
-        }
-    
-        img {
-          width: 1.5rem;
-          position: relative;
-          top: 2px;
+          a {
+            text-transform: uppercase;
+            padding: 1.3rem 0;
+            position: relative;
+            margin: 0 auto;
+            letter-spacing: .08rem;
+          }
+            
+          a:after {
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            background: $primary-color;
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+          }
+  
+          a:hover:after, &.selected a:after{
+            width: 100%; 
+            left: 0; 
+          }
+  
+          &.selected a {
+              color : $primary-color;
+          }
         }
       }
     }
@@ -122,9 +97,6 @@ header {
 
 @include mobile {
   header {
-    // height: 6.4rem;
-    position: relative;
-
     .header-wrap{
       height: 100%;
       display: block;
@@ -156,10 +128,8 @@ header {
         cursor: pointer;
         font-size: 15px;
         line-height: 20px;
-        color: #2A2F36;
     
         .menu-toggle {
-    
           .menu-ico {
             float: right;
             position: relative;
@@ -179,7 +149,7 @@ header {
               -ms-transition: all 0.1s;
               -o-transition: all 0.1s;
               transition: all 0.1s;
-              background: #2A2F36;
+              background: $default-font-color;
           }
   
             span:before {

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `dev.log`,
+    title: `i.log`,
     description: `기록하는 습관 📝`,
     author: `Inkyung`,
     email : ``,
@@ -49,7 +49,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
-        short_name: `starter`,
+        short_name: `i.log`,
         start_url: `/`,
         background_color: `#dba61a`,
         theme_color: `#dba61a`,
@@ -70,7 +70,7 @@ module.exports = {
                 classPrefix: "language-",
                 inlineCodeMarker: null,
                 aliases: {},
-                noInlineHighlight: false
+                noInlineHighlight: false,
               }
             },
             {
@@ -108,8 +108,19 @@ module.exports = {
               },
             }
           ],
-
       },
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Roboto', 'Noto Sans KR', 'Blinker', 'Inter', 'Pacifico']
+        },
+        typekit: {
+          id: 'Spoqa Han Sans',
+          api : '//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css'
+        }
+      }
     },
     `gatsby-plugin-slug`,
     `gatsby-plugin-sass`,

@@ -44,17 +44,21 @@ section.posts {
     article {
         box-shadow: 0 6px 16px rgba(34, 31, 36, 0.09);
         background-color: #fff;
-        padding: 1.8rem;
         border-radius: 8px;
         flex: 1;
         margin-bottom: 1.6rem;
         position: relative;
         display: inline-block;
-        width: calc(50% - 4.4rem);
-        min-height: 12rem;
+        width: calc(50% - .8rem);
         margin-right: 1.5rem;
         margin-bottom: 1.5rem;
         overflow: hidden;
+        min-height: 12rem;
+
+        .post-info {
+            padding: 1.8rem;
+            min-height: 12rem;
+        }
 
         &:nth-of-type(2n){
             margin-right: 0;
@@ -86,7 +90,7 @@ section.posts {
         text-align: center;
         height: 30rem;
         line-height: 30rem;
-        color: $gray-font-color;
+        color: darken($gray-font-color, 10);
     }
 
     .load-more {
@@ -126,14 +130,14 @@ section.post-view {
             height: 1px;
             background: $gradient-color;
             margin-top: 3rem;
-            opacity: .8;
+            // opacity: .8;
         }
     
         .content {
-            margin: 3rem 0;
+            margin: 4rem 0;
     
             h1, h2, h3, h4 {
-                margin : 3rem 0 .8rem 0;
+                margin : 3.4rem 0 .8rem 0;
             }
 
             h1, h2, h3 {
@@ -159,7 +163,7 @@ section.post-view {
 
             a:not(.anchor-header){
                 font-weight: 700;
-                border-bottom: 3px solid lighten($primary-color, 36);
+                border-bottom: 3px solid lighten($primary-color, 40);
                 transition: all 0.3s ease-in-out;
                 -webkit-transition: all 0.3s ease-in-out;
                 padding-bottom: 4px;
@@ -168,15 +172,6 @@ section.post-view {
             ul, li, p {
               margin: 0;
               line-height: 2rem;
-            }
-        }
-    
-        // Responsive //////////////////
-        @include mobile {
-            .content {
-                img {
-                    width: 90%;
-                }
             }
         }
     }
@@ -206,7 +201,7 @@ section.post-view {
 article {
     .category {
         color : $primary-color;
-        font-weight: bold;
+        font-weight: 600;
         font-size: $font-small;
         letter-spacing: .1rem;
     }
@@ -222,7 +217,6 @@ article {
             a {
                 color : darken($gray-font-color, 20);
             }
-            // border: 1px solid $border-color;
             background-color: $gray-bg;;
             border-radius: 2px;
             transition: all 1s ease-in-out;
@@ -286,20 +280,14 @@ article {
 
         .switcher-wrap {
             display: none;
-            // width: auto;
-            // display: flex;
-            // height: 2.6rem;
-            // .switcher-option{
-            //     letter-spacing: 0;
-            //     flex: 1;
-            //     text-align: center;
-            // }
         }
 
         article {
+            .post-info {
+                min-height: fit-content;
+            }
             width: -webkit-fill-available;
             margin-right: 0;
-            min-height: fit-content;
         }
     }
 
@@ -326,9 +314,12 @@ article {
             }
         
             h4 {
-                font-size : $font-small;
+                font-size : 1.2rem;
             }
-        
+
+            img {
+                width: 90%;
+            }
         }
       }
     }

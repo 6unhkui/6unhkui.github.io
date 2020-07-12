@@ -4,7 +4,7 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    padding: 1.4rem 0;
+    padding: 1.6rem 0;
 
     .footer-wrap {
         display: flex;
@@ -33,6 +33,11 @@ footer {
             img {
               width: 1.5rem;
               position: relative;
+              transition: all .4s ease;
+
+              &:hover {
+                opacity: .6;
+              }
             }
           }
         }
@@ -48,7 +53,7 @@ footer {
       text-align: center;
 
       .copyright {
-        font-size: 1rem;
+        // font-size: 1rem;
         text-align: center;
         font-weight: normal;
       }
@@ -60,6 +65,10 @@ footer {
         .social img {
           width: 2rem;
           position: relative;
+          
+          &:hover {
+            fill: #7b22ec;
+          }
         }
       }
     }

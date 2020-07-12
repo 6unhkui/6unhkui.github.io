@@ -36,6 +36,20 @@ query {
             title
             tags
             category
+            featuredImage {
+              childImageSharp{
+                resize(fit: COVER, height: 300, cropFocus: CENTER, width: 450) {
+                  src
+                  height
+                  width
+                }
+                fluid(cropFocus: CENTER, fit: COVER, maxWidth: 450) {
+                  base64
+                  originalImg
+                  src
+                }
+              }
+             }
           }
         }
       }

@@ -26,7 +26,7 @@ const IndexPage = ({data, location}) => {
           </div> 
         </div>
       </section>
-      <Posts posts={data.allMarkdownRemark.edges} sectionTitle="Recent Posts"/>
+      <Posts posts={data.allMarkdownRemark.edges} sectionTitle="✏️ Recent Posts"/>
     </Layout>
   );
 }

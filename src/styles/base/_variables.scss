@@ -1,8 +1,6 @@
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css), url(//rsms.me/inter/inter.css), url('//fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
 // Typography
-$font-family : "-apple-system", "BlinkMacSystemFont","Apple SD Gothic Neo", "Inter", "Spoqa Han Sans", "Segoe UI", Sans-Serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$font-family-logo : "Pacifico", cursive;
+$font-family : "-apple-system", "BlinkMacSystemFont", "Apple SD Gothic Neo", "Inter", "Spoqa Han Sans", "Segoe UI", Sans-Serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-logo : "Pacifico", Sans-Serif;
 
 // Color
 $default-font-color : #464646;
@@ -21,6 +19,7 @@ $font-x-x-large: 2.4rem;
 $font-x-large: 2.2rem;
 $font-large: 1.9rem;
 $font-medium: 1.6rem;
+// $font-medium: 1.2rem;
 $font-small: 0.8rem;
 
 // Breakpoints

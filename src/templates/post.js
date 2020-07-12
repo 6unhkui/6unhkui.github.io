@@ -24,9 +24,10 @@ export default function PostTemplate({ data, pageContext, location }) {
           title={post.frontmatter.title}
           description={post.excerpt}
         />
-        
+        {/* <TableOfContents items={post.tableOfContents}/> */}
         <section className="post-view">
           <div className="container">
+            
           <article>
             {featuredImage && <Image fluid={featuredImage.childImageSharp.fluid} />} 
 
@@ -37,20 +38,19 @@ export default function PostTemplate({ data, pageContext, location }) {
             </div>
 
             <hr/>
-            {/* <TableOfContents items={post.tableOfContents}/>  */}
           
-          <div className="content" dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div className="content" dangerouslySetInnerHTML={{ __html: post.html }} />
 
-          <div className="tags-wrap">
+            <div className="tags-wrap">
               {tags.map((tag, i) => (
                 <span className='tag' key={i}><Link to={`/tags/${kebabCase(tag)}/`}>{'# ' + tag}</Link></span>
               ))}
-          </div> 
+            </div> 
 
-          <hr/>
+            <hr/>
           </article>
 
-        <div className="navigation-wrap">
+          <div className="navigation-wrap">
             <div className="navigation previous">
               <p>Previous</p>
               {previous ? (
@@ -69,8 +69,7 @@ export default function PostTemplate({ data, pageContext, location }) {
             ) : <span>마지막 글입니다.</span>}
             </div>
           </div>
-      </div>
-      {/* <TableOfContents items={post.tableOfContents}/> */}
+        </div>
       </section>
 
     </Layout>
