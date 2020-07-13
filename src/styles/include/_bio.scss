@@ -1,13 +1,18 @@
 .bio-wrap {
-    padding-right: 6rem;
+    padding: 2.4rem;
+    margin-top: 2.4rem;
+    /* width: fit-content; */
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(34, 31, 36, 0.08);
+    background-color: #fff;
     text-align: center;
 
     .user-info {
         text-align: left;
         display: inline-block;
         margin-left: 14px;
-        position: absolute;
-        margin-top: 4px;
+        position: relative;
+        top: -10px;
 
         .write-by {
             color : $gray-font-color;

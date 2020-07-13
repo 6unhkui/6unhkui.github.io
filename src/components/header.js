@@ -12,7 +12,7 @@ const site = data.site.siteMetadata;
 const path = location.pathname.substr(location.pathname.lastIndexOf('/') + 1).toUpperCase();
 
 return (
-  <header>
+  <header className={(showMenu ? 'open' : '')} >
     <div className="header-wrap container">
       <div className="logo-wrap">
         {/* <h1 className="logo"> */}

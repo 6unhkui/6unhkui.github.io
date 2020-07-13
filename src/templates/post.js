@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import Layout from "../components/layout"
 import TableOfContents from "../components/tableOfContents";
 import Image from "gatsby-image";
+import Bio from "../components/bio";
 
 export default function PostTemplate({ data, pageContext, location }) {
   
@@ -26,26 +27,32 @@ export default function PostTemplate({ data, pageContext, location }) {
         />
         {/* <TableOfContents items={post.tableOfContents}/> */}
         <section className="post-view">
-          <div className="container">
-            
-          <article>
-            {featuredImage && <Image fluid={featuredImage.childImageSharp.fluid} />} 
-
-            <div className="post-info-wrap">
-              <span className="category">{category.toUpperCase()}</span>
-              <h1 className="title">{title}</h1>
-              <p className="date">{date}</p>
-            </div>
-
-            <hr/>
-          
-            <div className="content" dangerouslySetInnerHTML={{ __html: post.html }} />
-
-            <div className="tags-wrap">
-              {tags.map((tag, i) => (
+            <div className="featured-image" style={{backgroundImage : featuredImage ? `url(${featuredImage.childImageSharp.fluid.originalImg})` : ''}}>
+              <div className="post-info-wrap">
+                <div className="post-info container">
+                  <span className="category">{category.toUpperCase()}</span>
+                  <h1 className="title">{title}</h1>
+                  <span className="date">{'by ' + author + ' ∙ ' + date}</span>
+                  <div className="tags-wrap">
+                  {tags.map((tag, i) => (
                 <span className='tag' key={i}><Link to={`/tags/${kebabCase(tag)}/`}>{'# ' + tag}</Link></span>
               ))}
             </div> 
+                </div>
+              </div>
+            </div>
+          <div className="container">
+            
+            
+          <article>
+          
+            <div className="content" dangerouslySetInnerHTML={{ __html: post.html }} />
+
+            {/* <div className="tags-wrap">
+              {tags.map((tag, i) => (
+                <span className='tag' key={i}><Link to={`/tags/${kebabCase(tag)}/`}>{'# ' + tag}</Link></span>
+              ))}
+            </div>  */}
 
             <hr/>
           </article>
@@ -107,7 +114,13 @@ export const pageQuery = graphql`
         tags
         featuredImage {
           childImageSharp {
+            resize(fit: COVER, height: 500, cropFocus: CENTER) {
+              src
+              height
+              width
+            }
             fluid(maxWidth: 800) {
+              originalImg
               base64
               src
               srcSet
