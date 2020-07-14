@@ -2,12 +2,14 @@ import React from "react"
 import {graphql } from "gatsby"
 import Layout from "../components/layout"
 import Posts from "../components/posts"
+import SEO from "../components/seo"
 import PageTitle from "../components/pageTitle"
 import Typed from 'react-typed';
 
 const IndexPage = ({data, location}) => {
   return (
     <Layout location={location}>
+      <SEO title="Home"/>
       <section className="page-title-wrap">
           <div className='container'>
           <h1 className="page-title">

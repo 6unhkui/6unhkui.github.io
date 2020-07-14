@@ -23,7 +23,6 @@ const Layout = ({ children, location, menu}) => {
         }
       }
     }
-   
  }
 `); 
 

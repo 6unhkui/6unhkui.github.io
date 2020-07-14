@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, image: metaImage, title }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -19,6 +19,8 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            keywords
+            siteUrl
           }
         }
       }
@@ -26,7 +28,8 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-
+  const image = metaImage && metaImage.src ? `${site.siteMetadata.siteUrl}${metaImage.src}` : null;
+  console.log(metaImage)
   return (
     <Helmet
       htmlAttributes={{
@@ -38,6 +41,10 @@ function SEO({ description, lang, meta, title }) {
         {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          name: "keywords",
+          content: site.siteMetadata.keywords.join(","),
         },
         {
           property: `og:title`,
@@ -67,7 +74,35 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+      ]
+      .concat(
+        metaImage
+          ? [
+              {
+                property: "og:image",
+                content: image,
+              },
+              {
+                property: "og:image:width",
+                content: metaImage.presentationWidth,
+              },
+              {
+                property: "og:image:height",
+                content: metaImage.presentationHeight,
+              },
+              {
+                name: "twitter:card",
+                content: "summary_large_image",
+              },
+            ]
+          : [
+              {
+                name: "twitter:card",
+                content: "summary",
+              },
+            ]
+      )
+      .concat(meta)}
     />
   )
 }
@@ -83,6 +118,11 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  image: PropTypes.shape({
+    src: PropTypes.string.isRequired,
+    presentationHeight: PropTypes.number.isRequired,
+    presentationWidth: PropTypes.number.isRequired,
+  }),
 }
 
 export default SEO

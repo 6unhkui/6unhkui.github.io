@@ -1,13 +1,8 @@
 import React, {useState} from "react"
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import Github from '../../static/images/github.svg';
-import LinkedIn from '../../static/images/linkedin.svg';
-import Logo from '../../static/images/logo.png';
 
 const Header = ({ data, location, menu}) => {
 const [showMenu, setShowMenu] = useState(false);
-
 const site = data.site.siteMetadata;
 const path = location.pathname.substr(location.pathname.lastIndexOf('/') + 1).toUpperCase();
 
@@ -15,16 +10,14 @@ return (
   <header className={(showMenu ? 'open' : '')} >
     <div className="header-wrap container">
       <div className="logo-wrap">
-        {/* <h1 className="logo"> */}
           <Link to="/">
             {/* <img src={Logo} alt={site.title} className="logo"/> */}
             {site.title}
           </Link>
-        {/* </h1> */}  
       </div>
 
       <nav className="menu-wrap">
-        <div className={"menu-toggle-wrap " + (showMenu ? 'open' : '')} onClick={() => {showMenu ? setShowMenu(false) : setShowMenu(true)}}>
+        <div className={"menu-toggle-wrap " + (showMenu ? 'open' : '')} onClick={() => {setShowMenu(!showMenu)}}>
           <div className="menu-toggle">
             <div className="menu-ico">
               <span></span>

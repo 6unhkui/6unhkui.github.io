@@ -1,13 +1,14 @@
 import React from 'react';
 import Layout from "../components/layout"
 import Post from "../components/posts";
+import SEO from "../components/seo"
 import PageTitle from "../components/pageTitle";
 
 const ProjectPage = ({data, location}) => {
     return (
         <Layout location={location}>
             {/* <PageTitle title="Project" emoji="🏢"/> */}
-            
+            <SEO title="Project"/>
             <Post posts={data.allMarkdownRemark.edges}/>
         </Layout>
     )

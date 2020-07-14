@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { kebabCase } from 'lodash';
 import { Link } from "gatsby"
-// import Image from "gatsby-image";
-import Img from "gatsby-image/withIEPolyfill"
 
 const Posts = (props) => {
   const showCount = 12;
@@ -28,30 +26,28 @@ const Posts = (props) => {
   return (
   <section className="posts">
     <div className="container">
-      {/** Section Title Area */}
       {props.sectionTitle && <h1 className="section-title">{props.sectionTitle}</h1>}
 
-      {/** Category Switch Area */}
       {props.categories && 
         <>
         <div className="switcher-wrap">
           <div className={'switcher-option ' + (selectedCategory === 'ALL' && 'selected')} 
                data-category="ALL"
                onClick={changeCategory}>ALL</div>
-          {props.categories.map((v, i) => 
-          (<div key={i} 
+            {props.categories.map((v, i) => 
+              (<div key={i} 
                 className={'switcher-option ' + (selectedCategory === `${v.fieldValue.toUpperCase()}` ? 'selected' : '')} 
                 data-category={v.fieldValue}
                 onClick={changeCategory}>{v.fieldValue}</div>))}
-        </div>
+          </div>
 
-        <div className="select-wrap">
-          <select name="category" onChange={(e) => {setSelectedCategory(e.target.value)}}>
-            <option value="ALL" selected>ALL</option>
-            {props.categories.map((v, i) => 
-            (<option value={v.fieldValue} key={i}>{v.fieldValue}</option>))}
-          </select>
-        </div>
+          <div className="select-wrap">
+            <select name="category" onChange={(e) => {setSelectedCategory(e.target.value)}}>
+              <option value="ALL" selected>ALL</option>
+              {props.categories.map((v, i) => 
+                (<option value={v.fieldValue} key={i}>{v.fieldValue}</option>))}
+            </select>
+          </div>
         </>
       }
 
@@ -65,30 +61,26 @@ const Posts = (props) => {
             else return s.node.frontmatter.category.toUpperCase() === selectedCategory.toUpperCase()})
           .slice(0, postsToShow).map((post, i) => {
             const {title, category, tags, featuredImage} = post.node.frontmatter;
-            console.log(featuredImage);
 
             return (
-            <article key={i}>
-              
-              {/* {featuredImage && <img src={featuredImage.childImageSharp.resize.src} /> } */}
-
-              <div className="post-info">
-              <Link to={post.node.fields.slug}>
-                <span className="category">{category.toUpperCase()}</span>
-                <h1 className="title">
-                  {title}
-                </h1>
+              <article key={i}>
+                <div className="post-info">
+                  <Link to={post.node.fields.slug}>
+                    <span className="category">{category.toUpperCase()}</span>
+                    <h1 className="title">
+                      {title}
+                    </h1>
        
-                <p className="summary" dangerouslySetInnerHTML={{__html: post.node.excerpt,}}/> 
+                    <p className="summary" dangerouslySetInnerHTML={{__html: post.node.excerpt,}}/> 
       
-                <div className="tags-wrap">
-                  {tags.map((tag, i) => (
-                    <span className='tag' key={i}><Link to={`/tags/${kebabCase(tag)}/`}>{'# ' + tag}</Link></span>
-                  ))}
-                </div> 
-              </Link>
-              </div>
-            </article>
+                    <div className="tags-wrap">
+                      {tags.map((tag, i) => (
+                        <span className='tag' key={i}><Link to={`/tags/${kebabCase(tag)}/`}>{'# ' + tag}</Link></span>
+                      ))}
+                    </div> 
+                  </Link>
+                </div>
+              </article>
           )})
           }
         </>

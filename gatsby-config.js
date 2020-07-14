@@ -4,10 +4,12 @@ module.exports = {
     description: `기록하는 습관 📝`,
     author: `Inkyung`,
     email : ``,
+    siteUrl : `https://suspicious-lichterman-f1b575.netlify.app`,
     social : {
       github : `https://github.com/6unhkui`,
       linkedin : `inkyung`
     },
+    keywords : ['Java', 'React', 'Spring Framework', 'Web Developer'],
     menuLinks:[
       {
         name:`About`,
@@ -118,7 +120,7 @@ module.exports = {
         },
         typekit: {
           id: 'Spoqa Han Sans',
-          api : '//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css'
+          api : 'spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css'
         }
       }
     },

@@ -5,29 +5,25 @@ import { Link, graphql } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import TableOfContents from "../components/tableOfContents";
-import Image from "gatsby-image";
-import Bio from "../components/bio";
 
 export default function PostTemplate({ data, pageContext, location }) {
-  
   const post = data.markdownRemark;
   const { previous, next } = pageContext;
-  const { author, social, description } = data.site.siteMetadata;
-
+  const { author} = data.site.siteMetadata;
   const {menu, category, title, date, tags, featuredImage} = post.frontmatter;
 
-  // console.log(post.tableOfContents)
-  const avatar = data.avatar.childImageSharp.fixed;
+  const image = featuredImage ? featuredImage.childImageSharp.fluid : null;
 
   return (
     <Layout location={location} menu={menu}>
         <SEO
           title={post.frontmatter.title}
           description={post.excerpt}
+          image = {image}
         />
         {/* <TableOfContents items={post.tableOfContents}/> */}
         <section className="post-view">
-            <div className="featured-image" style={{backgroundImage : featuredImage ? `url(${featuredImage.childImageSharp.fluid.originalImg})` : ''}}>
+            <div className="featured-image" style={{backgroundImage : image ? `url(${image.originalImg})` : ''}}>
               <div className="post-info-wrap">
                 <div className="post-info container">
                   <span className="category">{category.toUpperCase()}</span>
@@ -45,15 +41,7 @@ export default function PostTemplate({ data, pageContext, location }) {
             
             
           <article>
-          
             <div className="content" dangerouslySetInnerHTML={{ __html: post.html }} />
-
-            {/* <div className="tags-wrap">
-              {tags.map((tag, i) => (
-                <span className='tag' key={i}><Link to={`/tags/${kebabCase(tag)}/`}>{'# ' + tag}</Link></span>
-              ))}
-            </div>  */}
-
             <hr/>
           </article>
 
@@ -85,17 +73,6 @@ export default function PostTemplate({ data, pageContext, location }) {
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    avatar: file(absolutePath: { regex: "/profile.png/" }) {
-      childImageSharp {
-          fixed(width: 40, height: 40) {
-              base64
-              width
-              height
-              src
-              srcSet
-          }
-      }
-    }
     site {
       siteMetadata {
         author
@@ -114,16 +91,13 @@ export const pageQuery = graphql`
         tags
         featuredImage {
           childImageSharp {
-            resize(fit: COVER, height: 500, cropFocus: CENTER) {
-              src
-              height
-              width
-            }
-            fluid(maxWidth: 800) {
+            fluid(maxWidth: 1024) {
               originalImg
               base64
               src
               srcSet
+              presentationHeight
+              presentationWidth
             }
           }
         }
