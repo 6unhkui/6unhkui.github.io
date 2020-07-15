@@ -12,7 +12,7 @@ export default function PostTemplate({ data, pageContext, location }) {
   const { author} = data.site.siteMetadata;
   const {menu, category, title, date, tags, featuredImage} = post.frontmatter;
 
-  const image = featuredImage ? featuredImage.childImageSharp.fluid : null;
+  const image = featuredImage ? featuredImage.childImageSharp.original : null;
 
   return (
     <Layout location={location} menu={menu}>
@@ -23,7 +23,7 @@ export default function PostTemplate({ data, pageContext, location }) {
         />
         {/* <TableOfContents items={post.tableOfContents}/> */}
         <section className="post-view">
-            <div className="featured-image" style={{backgroundImage : image ? `url(${image.originalImg})` : ''}}>
+            <div className="featured-image" style={{backgroundImage : image ? `url(${image.src})` : ''}}>
               <div className="post-info-wrap">
                 <div className="post-info container">
                   <span className="category">{category}</span>
@@ -45,23 +45,23 @@ export default function PostTemplate({ data, pageContext, location }) {
           </article>
 
           <div className="navigation-wrap">
-            <div className="navigation previous">
-              <p>Previous</p>
-              {previous ? (
+            {previous && (
+              <div className="navigation previous">
+                <p>Previous</p>
                 <Link to={previous.fields.slug} rel="prev">
                   ← {previous.frontmatter.title}
                 </Link>
-              ) :  <span>첫번째 글입니다.</span>}
-            </div>
+              </div> )
+            }
 
-            <div className="navigation next">
-              <p>Next</p>
-              {next ? (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            ) : <span>마지막 글입니다.</span>}
-            </div>
+            {next &&
+              <div className="navigation next">
+                <p>Next</p>
+                <Link to={next.fields.slug} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              </div>
+            }
           </div>
         </div>
       </section>
@@ -90,13 +90,10 @@ export const pageQuery = graphql`
         tags
         featuredImage {
           childImageSharp {
-            fluid(maxWidth: 1024) {
-              originalImg
-              base64
+            original {
               src
-              srcSet
-              presentationHeight
-              presentationWidth
+              width
+              height
             }
           }
         }

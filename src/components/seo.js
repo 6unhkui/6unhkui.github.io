@@ -85,11 +85,11 @@ function SEO({ description, lang, meta, image: metaImage, title }) {
               },
               {
                 property: "og:image:width",
-                content: metaImage.presentationWidth,
+                content: metaImage.width,
               },
               {
                 property: "og:image:height",
-                content: metaImage.presentationHeight,
+                content: metaImage.height,
               },
               {
                 name: "twitter:card",
@@ -121,8 +121,8 @@ SEO.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.shape({
     src: PropTypes.string.isRequired,
-    presentationHeight: PropTypes.number.isRequired,
-    presentationWidth: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
   }),
 }
 

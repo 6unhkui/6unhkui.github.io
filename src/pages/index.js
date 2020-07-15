@@ -23,7 +23,7 @@ const IndexPage = ({data, location}) => {
                 />
           </h1>
           <div className="sub-txt">
-            <p>개발 공부한 내용을 기록하는 블로그입니다.<br/>
+            <p>웹 개발자 심인경입니다. <br/>
                Gatsby.js를 사용하여 만들었습니다. 😊</p>
           </div> 
         </div>
@@ -57,9 +57,7 @@ query {
             category
             featuredImage {
               childImageSharp{
-                fluid(cropFocus: CENTER, fit: COVER, maxWidth: 450) {
-                  base64
-                  originalImg
+                resize(width: 700) {
                   src
                 }
               }
@@ -69,37 +67,3 @@ query {
       }
     }
 }`
-
-// export const pageQuery = graphql`
-//   query {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-//     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 3) {
-//       edges {
-//         node {
-//           excerpt
-//           fields {
-//             slug
-//           }
-//           frontmatter {
-//             date(formatString: "MMMM DD, YYYY")
-//             title
-//             category
-//             tags
-//             featuredImage {
-//               childImageSharp {
-//                 sizes(maxWidth: 630) {
-//                   base64
-//                   src
-//                   srcSet
-//                 }
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }`

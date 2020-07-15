@@ -46,9 +46,7 @@ export const pageQuery = graphql`
             category
             featuredImage {
               childImageSharp{
-                fluid(cropFocus: CENTER, fit: COVER, maxWidth: 450) {
-                  base64
-                  originalImg
+                resize(width: 700) {
                   src
                 }
               }

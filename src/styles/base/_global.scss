@@ -69,10 +69,11 @@ ul {
   z-index: 1;
   padding-top: .4rem;
   cursor: pointer;
+  transition: all .4s ease;
 
   &:hover {
-    box-shadow: none;
-    transition: all .5s;
+    box-shadow: 0 2px 0px rgba(34, 31, 36, 0.15);
+    opacity: .7;
   }
 
   .arrow-up {

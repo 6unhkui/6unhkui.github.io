@@ -29,10 +29,12 @@ const Posts = (props) => {
           {props.posts.slice(0, postsToShow).map((post, i) => {
             const {title, category, tags, featuredImage} = post.node.frontmatter;
 
+            console.log(featuredImage)
+
             return (
               <article key={i} >
                 <Link to={post.node.fields.slug}>
-                  <img src={featuredImage ? featuredImage.childImageSharp.fluid.src : Thumbnail} />
+                  <img src={featuredImage ? featuredImage.childImageSharp.resize.src : Thumbnail} />
 
                   <div className="post-info">
                     <span className="category">{category}</span>

@@ -73,6 +73,7 @@ module.exports = {
                 inlineCodeMarker: null,
                 aliases: {},
                 noInlineHighlight: false,
+                showLineNumbers: true,
               }
             },
             {
@@ -116,7 +117,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Roboto', 'Noto Sans KR', 'Blinker', 'Inter', 'Pacifico']
+          families: ['Roboto', 'IBM Plex Mono', 'Roboto Mono', 'Noto Sans KR', 'Blinker', 'Inter', 'Pacifico']
         },
         typekit: {
           id: 'Spoqa Han Sans',

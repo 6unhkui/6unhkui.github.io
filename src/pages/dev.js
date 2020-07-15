@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const DevPage = ({data, location}) => {
+  let input;
   const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [searchValue, setSearchValue] = useState('');
 
@@ -15,6 +16,10 @@ const DevPage = ({data, location}) => {
     setSelectedCategory(value);
     setSearchValue('');
   };
+
+  useEffect(()=> {
+    input.focus();
+  }, []);
 
   return (
       <Layout location={location}>
@@ -45,7 +50,10 @@ const DevPage = ({data, location}) => {
               <span class="ico-search">
                 <FontAwesomeIcon icon={"search"} style={{opacity: '.15' , width: '1.5rem', height:'1.5rem'}}/>
               </span>
-              <input type="text" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} placeholder="검색어를 입력하세요"/>
+              <input type="text" 
+                     placeholder="검색어를 입력하세요."
+                     ref={(ref) => {input = ref;}}
+                     value={searchValue} onChange={(e) => setSearchValue(e.target.value)}/>
             </div>
 
             <Posts posts={posts.filter((s) => {
@@ -81,9 +89,7 @@ query {
             category
             featuredImage {
               childImageSharp{
-                fluid(cropFocus: CENTER, fit: COVER, maxWidth: 450) {
-                  base64
-                  originalImg
+                resize(width: 700) {
                   src
                 }
               }

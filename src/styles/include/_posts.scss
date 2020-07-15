@@ -2,6 +2,8 @@ section.posts {
     background-color: $gray-bg;
     padding-top : 3rem;;
     padding-bottom : 3rem;
+    transition: all .4s ease; 
+
     .category {
         color : $primary-color;
         font-weight: 600;
@@ -68,6 +70,12 @@ section.posts {
             font-weight: normal;
             color: darken($gray-font-color, 15);
             transition: color 1s;
+            transition: opacity .4s;
+
+            &:hover {
+                opacity: .7;
+            }
+            
             &.selected {
                 background: $primary-color;
                 color: #fff;
@@ -127,6 +135,7 @@ section.posts {
         margin-right: 1.7rem;
         margin-bottom: 1.7rem;
         overflow: hidden;
+        transition: all .4s ease;
 
         img {
             object-fit: cover;
@@ -162,8 +171,8 @@ section.posts {
         }
 
         &:hover {
-            box-shadow: none;
-            transition: box-shadow 1s;
+            box-shadow: 0 1px 0px rgba(34, 31, 36, 0.15);
+            opacity: .7;
         }
     }
 
@@ -222,7 +231,7 @@ section.post-view {
             font-size: $font-x-x-x-large + .4rem;
             margin: .4rem 0;
         }
-    
+
         .date {
             color : #fff;
             opacity: .5;
@@ -237,8 +246,8 @@ section.post-view {
         position: relative;
         top: -3.7rem;
         z-index: 0;
-        background-size: cover;
-        background-repeat: no-repeat;
+        // background-size: cover;
+        // background-repeat: no-repeat;
         background-position: center center;
 
         &::after {
@@ -294,6 +303,13 @@ section.post-view {
                 -webkit-transition: all 0.3s ease-in-out;
                 padding-bottom: 4px;
             }
+
+            blockquote {
+                border-left: 5px solid $primary-color;
+                background: lighten($primary-color, 45);
+                margin: 1.5rem 0;
+                padding: .8rem 1.2rem;
+            }
         
             ul, li, p {
               margin: 0;
@@ -313,11 +329,29 @@ section.post-view {
                 font-weight: bold;
                 text-transform: uppercase;
                 color : $gray-font-color;
+                margin-bottom: 10px;
+            }
+
+            a {
+                color: $primary-color;
+                transition: all .4s ease;
+                &:hover {
+                    opacity: .6;
+                }
+            }
+
+            &.previous{
+                p {
+                    margin-left: 16px;
+                }
             }
 
             &.next {
                 float: right;
-                position: relative;
+                p {
+                    text-align: right;
+                    margin-right: 16px;
+                }
             }
         }
     }
@@ -348,7 +382,7 @@ section.post-view {
         }
 
         article {
-            width: calc(50% - .8rem);
+            width: calc(50% - .95rem);
             &:nth-of-type(2n){
                 margin-right: 0;
             }

@@ -1,0 +1,262 @@
+/**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+ code[class*="language-"],
+ pre[class*="language-"] {
+   color: #333;
+   background: none;
+   font-family: IBM Plex Mono, Noto Sans KR, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+   text-align: left;
+   white-space: pre;
+   word-spacing: normal;
+   word-break: normal;
+   word-wrap: normal;
+   line-height: 1.4;
+ 
+   -moz-tab-size: 8;
+   -o-tab-size: 8;
+   tab-size: 8;
+ 
+   -webkit-hyphens: none;
+   -moz-hyphens: none;
+   -ms-hyphens: none;
+   hyphens: none;
+ }
+ 
+ /* Code blocks */
+ pre[class*="language-"] {
+   padding: .8em;
+   overflow: auto;
+   border: 1px solid lighten($primary-color, $amount: 40);
+   border-radius: 4px;
+   background: lighten($primary-color, $amount: 46);
+   margin: 1.5rem 0;
+ }
+ 
+ /* Inline code */
+ :not(pre) > code[class*="language-"] {
+	background-color: lighten($primary-color, 44);
+  padding: .2rem .4rem;
+	border-radius: 4px;
+	color: $primary-color;
+	margin: 0 .2rem;
+	font-size: $font-small;
+	border: 1px solid lighten($primary-color, 40);
+}
+ 
+ .token.comment,
+ .token.blockquote {
+   color: #aeacb1;
+ }
+ 
+ .token.cdata {
+   color: #183691;
+ }
+ 
+ .token.doctype,
+ .token.punctuation,
+ .token.variable,
+ .token.macro.property {
+   color: #333;
+ }
+ 
+ .token.operator,
+ .token.important,
+ .token.keyword,
+ .token.rule,
+ .token.builtin {
+   color: #a71d5d;
+ }
+ 
+ .token.string,
+ .token.url,
+ .token.regex,
+ .token.attr-value {
+   color: #183691;
+ }
+ 
+ .token.property,
+ .token.number,
+ .token.boolean,
+ .token.entity,
+ .token.atrule,
+ .token.constant,
+ .token.symbol,
+ .token.command,
+ .token.code {
+   color: #0086b3;
+ }
+ 
+ .token.tag,
+ .token.selector,
+ .token.prolog {
+   color: #63a35c;
+ }
+ 
+ .token.function,
+ .token.namespace,
+ .token.pseudo-element,
+ .token.class,
+ .token.class-name,
+ .token.pseudo-class,
+ .token.id,
+ .token.url-reference .token.variable,
+ .token.attr-name {
+   color: #795da3;
+ }
+ 
+ .token.entity {
+   cursor: help;
+ }
+ 
+ .token.title,
+ .token.title .token.punctuation {
+   font-weight: bold;
+   color: #1d3e81;
+ }
+ 
+ .token.list {
+   color: #ed6a43;
+ }
+ 
+ .token.inserted {
+   background-color: #eaffea;
+   color: #55a532;
+ }
+ 
+ .token.deleted {
+   background-color: #ffecec;
+   color: #bd2c00;
+ }
+ 
+ .token.bold {
+   font-weight: bold;
+ }
+ 
+ .token.italic {
+   font-style: italic;
+ }
+ 
+ 
+ /* JSON */
+ .language-json .token.property {
+   color: #183691;
+ }
+ 
+ .language-markup .token.tag .token.punctuation {
+   color: #333;
+ }
+ 
+ /* CSS */
+ code.language-css,
+ .language-css .token.function {
+   color: #0086b3;
+ }
+ 
+ /* YAML */
+ .language-yaml .token.atrule {
+   color: #63a35c;
+ }
+ 
+ code.language-yaml {
+   color: #183691;
+ }
+ 
+ /* Ruby */
+ .language-ruby .token.function {
+   color: #333;
+ }
+ 
+ /* Markdown */
+ .language-markdown .token.url {
+   color: #795da3;
+ }
+ 
+ /* Makefile */
+ .language-makefile .token.symbol {
+   color: #795da3;
+ }
+ 
+ .language-makefile .token.variable {
+   color: #183691;
+ }
+ 
+ .language-makefile .token.builtin {
+   color: #0086b3;
+ }
+ 
+ /* Bash */
+ .language-bash .token.keyword {
+   color: #0086b3;
+ }
+
+
+/* Line numbering - s */
+code.language-text + .line-numbers-rows{
+  display: none;
+}
+
+code:not(.language-text) {
+	left: .4rem;
+}
+
+code:not(.language-text) + .line-numbers-rows {
+  left: 1.1rem !important;
+  line-height: 1.4rem !important;
+  top: 2.3rem !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
+
+	span:before {
+		color :rgba(0, 0, 0, 0.15) !important;
+	}
+}
+/* Line numbering - e */
+
+/* Language - s */
+pre[class*="language-"]{
+	padding: 2.2rem 1.5rem 1.5rem 1.5rem;
+	
+	&::before{
+		color: #000;
+		font-size: 0.75rem;
+		letter-spacing: 0.05em;
+		line-height: 1;
+		position: absolute;
+		margin-top: -2.3rem;
+		/* left: 1.5rem; */
+		text-align: right;
+		text-transform: uppercase;
+		/* top: -37px; */
+		border-radius: 0px 0px 4px 4px;
+		padding: 0.3rem 0.5rem;
+    z-index: 1;
+    background-color: darken(#f6f6f6, 10);
+	}
+
+	code {
+		margin-top: 20px;
+	}
+}
+
+pre.language-text {
+  padding: 1.5rem !important;
+}
+
+pre.language-javascript::before {
+  content: "js";
+	background: #f7df1e;
+}
+
+pre.language-java::before {
+	content: "java";
+	background: #ffa621;
+}
+
+pre.language-shell::before {
+	content: "shell";
+	// background: #ffa621;
+}
+/* Language - e */
+
+
