@@ -2,14 +2,11 @@
 @import './base/utility';
 @import './base/global';
 
-@import './include/header';
-@import './include/main';
-@import './include/footer';
 @import './include/bio';
 @import './include/posts';
 @import './include/tags';
+@import './include/prism-material-dark.scss';
 
-@import './layout/index';
-
-
-@import "./prism-material-dark.scss";
+@import './layout/header';
+@import './layout/main';
+@import './layout/footer';

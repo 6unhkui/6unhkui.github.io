@@ -26,7 +26,7 @@ export default function PostTemplate({ data, pageContext, location }) {
             <div className="featured-image" style={{backgroundImage : image ? `url(${image.originalImg})` : ''}}>
               <div className="post-info-wrap">
                 <div className="post-info container">
-                  <span className="category">{category.toUpperCase()}</span>
+                  <span className="category">{category}</span>
                   <h1 className="title">{title}</h1>
                   <span className="date">{'by ' + author + ' ∙ ' + date}</span>
                   <div className="tags-wrap">
@@ -38,7 +38,6 @@ export default function PostTemplate({ data, pageContext, location }) {
               </div>
             </div>
           <div className="container">
-            
             
           <article>
             <div className="content" dangerouslySetInnerHTML={{ __html: post.html }} />

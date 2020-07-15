@@ -7,9 +7,13 @@ import PageTitle from "../components/pageTitle";
 const ProjectPage = ({data, location}) => {
     return (
         <Layout location={location}>
-            {/* <PageTitle title="Project" emoji="🏢"/> */}
             <SEO title="Project"/>
-            <Post posts={data.allMarkdownRemark.edges}/>
+
+            <section className="posts">
+              <div className="container">
+                <Post posts={data.allMarkdownRemark.edges}/>
+              </div>
+            </section>
         </Layout>
     )
 }

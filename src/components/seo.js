@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import Bg from "../../static/images/gradationBg.png";
 
 function SEO({ description, lang, meta, image: metaImage, title }) {
   const { site } = useStaticQuery(
@@ -28,8 +29,8 @@ function SEO({ description, lang, meta, image: metaImage, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const image = metaImage && metaImage.src ? `${site.siteMetadata.siteUrl}${metaImage.src}` : null;
-  console.log(metaImage)
+  const image = metaImage && metaImage.src ? `${site.siteMetadata.siteUrl}${metaImage.src}` : `${site.siteMetadata.siteUrl}${Bg}`;
+  
   return (
     <Helmet
       htmlAttributes={{

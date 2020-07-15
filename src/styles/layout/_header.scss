@@ -1,5 +1,4 @@
 header {
-  // position: fixed;
   z-index: 999;
   top: 0;
   background-color: #fff;
@@ -12,38 +11,21 @@ header {
     display: flex;
     max-width: 1500px;
     margin: auto;
-   
-    @include desktop {
-      & {
-        padding : 0 10%;
-        // @include contentWrap;
-      }
-    }
   }
 
   .logo-wrap {
-    a { 
-      font-family: $font-family-logo;
-      font-size: $font-large;
-      color: #1b1b1b;
-    }
     display: inline-block;
     flex : 1;
     position: relative;
 
     .logo {
-      width: 5.4rem;
+      width: 3.6rem;
+      margin-top: .5rem;
     }
-
-    // img[alt]{
-      // font-family: $font-family-logo;
-      // font-size: $font-medium;
-    // }
   }
 
   // Navigation Area ///////////////////////
   nav.menu-wrap {
-    // width : 500px;
     flex: 1;
     display: flex;
     float: right;
@@ -95,6 +77,12 @@ header {
   }
 }
 
+@include desktop {
+  .header-wrap {
+    padding : 0 10%;
+  }
+}
+
 @include mobile {
   header {
     &.open {
@@ -109,16 +97,12 @@ header {
     }
 
     .logo-wrap {
-      // transition: all 0.1s;
       display: block;
       text-align: center;
       z-index: 1;
       opacity: 1;
       transition: opacity 0.5s;
-      // text-align: center;
     }
-
-    
 
     nav.menu-wrap {
       .social-wrap {
@@ -196,14 +180,12 @@ header {
         right: 0;
         width: -webkit-fill-available;
         height: -webkit-fill-available;
-        /* box-shadow: 0 0 10px #85888C; */
         margin: -50px 0 0 -50px;
         padding-left: 50px;
         padding-top: 125px;
         background-color: #fff;
         -webkit-font-smoothing: antialiased;
         transform-origin: 0% 0%;
-        // transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
         transform: translate(100%, 0);
 
         .menu-list {

@@ -1,15 +1,12 @@
 main {
   min-height: 30rem;
   position: relative;
-  // margin-top: 3.7rem;
 
   .page-title-wrap {
     margin-bottom: 4.6rem;
-    // text-align: center;
     padding-top: 4.2rem;
 
     p {
-      // font-size: $font-medium;
       color : darken($gray-font-color, 20);
       line-height: $font-large;
     }
@@ -22,12 +19,5 @@ main {
         margin-right: 14px;
       }
     }
+  }
 }
-}
-
-// @include mobile {
-//   main {
-//     // margin-top: 6.4rem;
-//     // margin-top: 0;
-//   }
-// }

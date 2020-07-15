@@ -11,7 +11,7 @@ const TagsPage = ({ data, location }) => {
   return (
     <Layout location={location}>
       <SEO title="Tags" />
-      <div>
+      <div style={{paddingBottom : '6rem'}}>
         <section className="page-title-wrap">
           <div className='container'>
             <h1 className="page-title">

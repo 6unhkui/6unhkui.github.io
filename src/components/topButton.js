@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 
-const TopButton = (props) => {
+export default function TopButton(props){
     const [intervalId, setIntervalId] = useState(0);
-
     const scrollStep = () => {
         if (window.pageYOffset === 0) {
             clearInterval(intervalId);
@@ -13,18 +12,11 @@ const TopButton = (props) => {
             behavior: 'smooth'
         })
     }
-
-    const scrollToTop = () => {
-        let intervalId = setInterval(scrollStep(), props.delayInMs);
-        setIntervalId(intervalId);
-    }
       
     return (
         <button title='Back to top' className='scroll' 
-               onClick={ () => {scrollToTop();}}>
-            <span className='arrow-up glyphicon glyphicon-chevron-up'></span>
+                onClick={() => {setIntervalId(setInterval(scrollStep(), props.delayInMs));}}>
+            <span className='arrow-up'></span>
         </button>
     )
 }
-
-export default TopButton;

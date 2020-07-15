@@ -1,10 +1,9 @@
 ---
 menu : DEV
-category : Front-End
-title: 테스트 게시물 1
+category : FE
+title: React 1
 date: "2020-07-12"
-tags : ['tag1', "React"]
-featuredImage: ./thum.png
+tags : ["React"]
 ---
 
 # 제목

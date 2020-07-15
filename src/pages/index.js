@@ -28,7 +28,13 @@ const IndexPage = ({data, location}) => {
           </div> 
         </div>
       </section>
-      <Posts posts={data.allMarkdownRemark.edges} sectionTitle="✏️ Recent Posts"/>
+
+      <section className="posts index">
+        <div className="container">
+          <h1 className="section-title">✏️ Recent Posts</h1>
+          <Posts posts={data.allMarkdownRemark.edges}/>
+        </div>
+      </section>
     </Layout>
   );
 }
@@ -49,6 +55,15 @@ query {
             title
             tags
             category
+            featuredImage {
+              childImageSharp{
+                fluid(cropFocus: CENTER, fit: COVER, maxWidth: 450) {
+                  base64
+                  originalImg
+                  src
+                }
+              }
+            }
           }
         }
       }

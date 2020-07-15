@@ -13,7 +13,12 @@ const Tags = ({ pageContext, data, location }) => {
       <SEO title={tag}/>
       <div className="tags-page-wrap">
         <PageTitle title={tag} emoji="#️" subtxt={[`${data.allMarkdownRemark.totalCount} post${(data.allMarkdownRemark.totalCount === 1 ? '' : 's')}`]}/>
-        <Post posts={data.allMarkdownRemark.edges}/>
+        
+        <section className="posts">
+          <div className="container">
+            <Post posts={data.allMarkdownRemark.edges}/>
+          </div>
+        </section>
       </div>
     </Layout>
   );
@@ -39,6 +44,15 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             tags
             category
+            featuredImage {
+              childImageSharp{
+                fluid(cropFocus: CENTER, fit: COVER, maxWidth: 450) {
+                  base64
+                  originalImg
+                  src
+                }
+              }
+            }
           }
         }
       }

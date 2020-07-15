@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import { Link } from "gatsby"
+import Logo from "../../static/images/logo.svg";
 
 const Header = ({ data, location, menu}) => {
 const [showMenu, setShowMenu] = useState(false);
@@ -11,8 +12,7 @@ return (
     <div className="header-wrap container">
       <div className="logo-wrap">
           <Link to="/">
-            {/* <img src={Logo} alt={site.title} className="logo"/> */}
-            {site.title}
+            <img src={Logo} alt={site.title} className="logo"/>
           </Link>
       </div>
 

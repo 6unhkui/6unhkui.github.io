@@ -1,9 +1,9 @@
 ---
 menu : DEV
-category : Front-End
-title: 테스트 게시물 -2
-date: "2020-07-10"
-tags : ['tag1', "React"]
+category : Network
+title: 네트워크 1
+date: "2020-07-14"
+tags : ["Network"]
 ---
 
 # 제목
