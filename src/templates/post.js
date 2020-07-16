@@ -1,10 +1,11 @@
 // markdown-template.js
-import React, {useState} from "react"
+import React from "react"
 import { kebabCase } from 'lodash';
 import { Link, graphql } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import TableOfContents from "../components/tableOfContents";
+import { DiscussionEmbed } from "disqus-react"
 
 export default function PostTemplate({ data, pageContext, location }) {
   const post = data.markdownRemark;
@@ -14,6 +15,11 @@ export default function PostTemplate({ data, pageContext, location }) {
 
   const image = featuredImage ? featuredImage.childImageSharp.original : null;
 
+  const disqusConfig = {
+    shortname: process.env.GATSBY_DISQUS_NAME,
+    config: { identifier: post.fields.slug, title },
+  }
+
   return (
     <Layout location={location} menu={menu}>
         <SEO
@@ -21,7 +27,7 @@ export default function PostTemplate({ data, pageContext, location }) {
           description={post.excerpt}
           image = {image}
         />
-        {/* <TableOfContents items={post.tableOfContents}/> */}
+       
         <section className="post-view">
             <div className="featured-image" style={{backgroundImage : image ? `url(${image.src})` : ''}}>
               <div className="post-info-wrap">
@@ -31,19 +37,21 @@ export default function PostTemplate({ data, pageContext, location }) {
                   <span className="date">{'by ' + author + ' ∙ ' + date}</span>
                   <div className="tags-wrap">
                   {tags.map((tag, i) => (
-                <span className='tag' key={i}><Link to={`/tags/${kebabCase(tag)}/`}>{'# ' + tag}</Link></span>
-              ))}
+                    <span className='tag' key={i}><Link to={`/tags/${kebabCase(tag)}/`}>{'# ' + tag}</Link></span>
+                  ))}
             </div> 
                 </div>
               </div>
             </div>
+
           <div className="container">
-            
+          <TableOfContents items={post.tableOfContents}/>
           <article>
             <div className="content" dangerouslySetInnerHTML={{ __html: post.html }} />
-            <hr/>
+            {/* <hr/> */}
           </article>
-
+          
+          <hr/>
           <div className="navigation-wrap">
             {previous && (
               <div className="navigation previous">
@@ -63,9 +71,10 @@ export default function PostTemplate({ data, pageContext, location }) {
               </div>
             }
           </div>
+          
+          <DiscussionEmbed {...disqusConfig} style={{marginTop : '4rem'}} />
         </div>
       </section>
-
     </Layout>
   )
 }
@@ -78,6 +87,9 @@ export const pageQuery = graphql`
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
+      fields {
+        slug
+      }
       id
       excerpt(pruneLength: 160)
       html

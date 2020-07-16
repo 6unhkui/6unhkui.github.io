@@ -3,8 +3,8 @@ import { kebabCase } from 'lodash';
 import { Link } from "gatsby"
 import Thumbnail from "../../static/images/gradationBg.png";
 
-const Posts = (props) => {
-  const showCount = 6;
+const showCount = 6;
+const Posts = ({posts}) => {
   const [postsToShow, setPostsToShow] = useState(showCount);
   
   useEffect(() => {
@@ -19,18 +19,15 @@ const Posts = (props) => {
     if(scrollTop + clientHeight === scrollHeight) {
       setPostsToShow(postsToShow + showCount);
     }
-  } 
-
+  }
+  
   return (
     <>
       {/** Post List Area */}   
-      {props.posts.length > 0 ?
+      {posts.length > 0 ?
         <>
-          {props.posts.slice(0, postsToShow).map((post, i) => {
+          {posts.slice(0, postsToShow).map((post, i) => {
             const {title, category, tags, featuredImage} = post.node.frontmatter;
-
-            console.log(featuredImage)
-
             return (
               <article key={i} >
                 <Link to={post.node.fields.slug}>

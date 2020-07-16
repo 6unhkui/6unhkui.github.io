@@ -36,11 +36,11 @@ __strong_underbar__
 ## 소제목
 ```java
 class Apple {
-	public String toString() { return "I am an apple."; }
+  public String toString() { return "I am an apple."; }
 }
 
 class Orange {
-	public String toString() { return "I am an orange."; }
+  public String toString() { return "I am an orange."; }
 }
 
 // 다음 상자는 사과도 오렌지도 담을 수 있음
@@ -65,6 +65,7 @@ class FruitAndBox {
 }
 ```
 
+### 소소제목
 ```
 // In your gatsby-config.js
 plugins: [
@@ -79,6 +80,7 @@ plugins: [
 ]
 ```
 
+#### 소소소 제목
 ```javascript
 // In your gatsby-config.js
 plugins: [

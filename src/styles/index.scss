@@ -3,7 +3,11 @@
 @import './base/global';
 
 @import './include/bio';
+@import './include/switcher';
+@import './include/search';
 @import './include/posts';
+@import './include/postView';
+@import './include/tableOfContent';
 @import './include/tags';
 @import './include/prism-theme.scss';
 

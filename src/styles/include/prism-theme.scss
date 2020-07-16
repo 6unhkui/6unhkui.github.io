@@ -198,11 +198,11 @@ code.language-text + .line-numbers-rows{
 }
 
 code:not(.language-text) {
-	left: .4rem;
+	left: .2rem;
 }
 
 code:not(.language-text) + .line-numbers-rows {
-  left: 1.1rem !important;
+  left: 1rem !important;
   line-height: 1.4rem !important;
   top: 2.3rem !important;
   border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
@@ -210,6 +210,16 @@ code:not(.language-text) + .line-numbers-rows {
 	span:before {
 		color :rgba(0, 0, 0, 0.15) !important;
 	}
+}
+
+@include mobile {
+  code + .line-numbers-rows{
+    display: none;
+  }
+
+  pre {
+    padding: 2.2rem 1.5rem 1.5rem 1.5rem !important;
+  }
 }
 /* Line numbering - e */
 
@@ -258,5 +268,3 @@ pre.language-shell::before {
 	// background: #ffa621;
 }
 /* Language - e */
-
-

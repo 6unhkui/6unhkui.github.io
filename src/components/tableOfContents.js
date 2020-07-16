@@ -4,7 +4,7 @@ export default function TableOfContents({ items, currentHeaderUrl }) {
     return items ? (
       <div className="toc-wrap">
         <div>
-            {/* <p>TABLE OF CONTENTS</p> */}
+            <h4>TABLE OF CONTENTS</h4>
             <div
                 dangerouslySetInnerHTML={{ __html: items }}
             />

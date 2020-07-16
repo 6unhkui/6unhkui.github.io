@@ -86,16 +86,18 @@ ul {
   }
 }
 
-// Responsive //////////////////
-@include tablet {
-  .container {
+.container {
+  @include desktop {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  @include tablet {
     padding-right: 1.4rem;
     padding-left: 1.4rem;
   }
-}
-      
-@include mobile {
-  .container {
+
+  @include mobile {
     padding-right: 1rem;
     padding-left: 1rem;
   }
