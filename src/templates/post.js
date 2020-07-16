@@ -16,7 +16,7 @@ export default function PostTemplate({ data, pageContext, location }) {
   const image = featuredImage ? featuredImage.childImageSharp.original : null;
 
   const disqusConfig = {
-    shortname: process.env.GATSBY_DISQUS_NAME,
+    shortname: "inkyung",
     config: { identifier: post.fields.slug, title },
   }
 

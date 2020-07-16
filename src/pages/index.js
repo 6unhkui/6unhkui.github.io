@@ -7,8 +7,6 @@ import PageTitle from "../components/pageTitle"
 import Typed from 'react-typed';
 
 const IndexPage = ({data, location}) => {
-  console.log(process.env.GATSBY_DISQUS_NAME)
-
   return (
     <Layout location={location}>
       <SEO title="Home"/>
