@@ -5,10 +5,13 @@
     & > div {
         position: fixed; 
         margin-left: 2rem;
+        border-left: 1px solid $border-color;
+        padding-left: 1rem;
+        font-size: $font-small;
 
         h4 {
             color: $gray-font-color;
-            font-size: $font-small;
+            // font-size: $font-small;
             letter-spacing: 0.1rem;
             text-transform: uppercase;
             margin-bottom: 1.2rem;

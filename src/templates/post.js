@@ -5,7 +5,8 @@ import { Link, graphql } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import TableOfContents from "../components/tableOfContents";
-import { DiscussionEmbed } from "disqus-react"
+import PostCommet from "../components/PostCommet";
+
 
 export default function PostTemplate({ data, pageContext, location }) {
   const post = data.markdownRemark;
@@ -14,11 +15,6 @@ export default function PostTemplate({ data, pageContext, location }) {
   const {menu, category, title, date, tags, featuredImage} = post.frontmatter;
 
   const image = featuredImage ? featuredImage.childImageSharp.original : null;
-
-  const disqusConfig = {
-    shortname: "i-log",
-    config: { identifier: post.fields.slug, title },
-  }
 
   return (
     <Layout location={location} menu={menu}>
@@ -48,10 +44,9 @@ export default function PostTemplate({ data, pageContext, location }) {
           <TableOfContents items={post.tableOfContents}/>
           <article>
             <div className="content" dangerouslySetInnerHTML={{ __html: post.html }} />
-            {/* <hr/> */}
           </article>
-          
           <hr/>
+
           <div className="navigation-wrap">
             {previous && (
               <div className="navigation previous">
@@ -59,20 +54,18 @@ export default function PostTemplate({ data, pageContext, location }) {
                 <Link to={previous.fields.slug} rel="prev">
                   ← {previous.frontmatter.title}
                 </Link>
-              </div> )
-            }
+              </div> )}
 
-            {next &&
+            {next && (
               <div className="navigation next">
                 <p>Next</p>
                 <Link to={next.fields.slug} rel="next">
                   {next.frontmatter.title} →
                 </Link>
-              </div>
-            }
+              </div>)}
           </div>
-          
-          <DiscussionEmbed {...disqusConfig} style={{marginTop : '4rem'}} />
+
+          <PostCommet repo="6unhkui/6unhkui.github.io" />
         </div>
       </section>
     </Layout>
