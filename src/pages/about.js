@@ -15,9 +15,7 @@ const AboutPage = ({location}) => {
                     About
                     </h1>
                     
-                    <div>
-                        안녕하세요. 웹 개발자 심인경입니다.
-                    </div>
+                    <div className="empty">작성중</div>
                 </div>
             </section>
         </Layout>

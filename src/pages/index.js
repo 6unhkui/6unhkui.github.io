@@ -16,7 +16,7 @@ const IndexPage = ({data, location}) => {
             <Typed strings={['Hello!', 'I\'m Inkyung', 'a Web Developer']}
                     typeSpeed={80}
                     backSpeed={80}
-                    backDelay={1000}
+                    backDelay={900}
                     showCursor
                     loop
                 />

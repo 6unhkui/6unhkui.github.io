@@ -92,9 +92,14 @@ section.post-view {
     // Tags - e /////////////////////////
 
 
-    // Content - s /////////////////////////
+    // Article - s /////////////////////////
     article {
+        width: calc(100% - 220px);
         margin-top: -3.4rem;
+
+        @include mobile {
+            width: 100%;
+        }
 
         .content {
             h1, h2, h3, h4 {
@@ -208,16 +213,14 @@ section.post-view {
             }
         }
     }
-    // Content - e /////////////////////////
+    // Article - e /////////////////////////
 
-
-    .container > hr {
+    hr.end-line {
         background: $gradient-color;
         border: none;
         height: 1px;
         margin-top: 3rem;
     }
-
 
     // Page Navigation - s /////////////////////////
     .navigation-wrap {
@@ -233,7 +236,8 @@ section.post-view {
                 font-weight: bold;
                 text-transform: uppercase;
                 color : $gray-font-color;
-                margin-bottom: .6rem;
+                margin-bottom: .2rem;
+                letter-spacing: .1rem;
             }
 
             a {

@@ -44,8 +44,8 @@ export default function PostTemplate({ data, pageContext, location }) {
           <TableOfContents items={post.tableOfContents}/>
           <article>
             <div className="content" dangerouslySetInnerHTML={{ __html: post.html }} />
-          </article>
-          <hr/>
+
+                      <hr className="end-line"/>
 
           <div className="navigation-wrap">
             {previous && (
@@ -66,6 +66,8 @@ export default function PostTemplate({ data, pageContext, location }) {
           </div>
 
           <PostCommet repo="6unhkui/6unhkui.github.io" />
+          </article>
+
         </div>
       </section>
     </Layout>

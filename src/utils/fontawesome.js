@@ -1,3 +1,3 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
-library.add(faSearch)
+import { faSearch, faBookmark} from '@fortawesome/free-solid-svg-icons'
+library.add(faSearch, faBookmark)

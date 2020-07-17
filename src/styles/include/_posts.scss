@@ -101,14 +101,7 @@ section.posts {
             }    
         }
     }
-
-    .empty {
-        text-align: center;
-        height: 30rem;
-        line-height: 30rem;
-        color: darken($gray-font-color, 10);
-    }
-
+    
     @include desktop {
         article {
             width: calc(33% - .95rem);

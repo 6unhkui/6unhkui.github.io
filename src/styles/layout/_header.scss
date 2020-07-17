@@ -83,12 +83,6 @@ header {
   }
 }
 
-@include desktop {
-  .header-wrap {
-    padding : 0 10%;
-  }
-}
-
 @include mobile {
   header {
     &.open {

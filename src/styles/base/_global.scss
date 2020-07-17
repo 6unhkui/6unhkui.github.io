@@ -56,6 +56,13 @@ ul {
   @include contentWrap;
 }
 
+.empty {
+  text-align: center;
+  height: 30rem;
+  line-height: 30rem;
+  color: darken($gray-font-color, 10);
+}
+
 .scroll {
   background: $gradient-color;
   box-shadow: 0px 5px 8px 0px rgba(34, 31, 36, 0.3);
