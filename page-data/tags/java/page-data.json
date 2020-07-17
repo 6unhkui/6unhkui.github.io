@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-templates-tags-js","path":"/tags/java/","result":{"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"excerpt":"제목 이 글을 테스트 글 입니다.   소제목","fields":{"slug":"/java-1"},"frontmatter":{"title":"자바 1","date":"July 12, 2020","tags":["Java","Spring Framework"],"category":"BE","featuredImage":null}}}]}},"pageContext":{"tag":"Java"}}}

@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-templates-tags-js","path":"/tags/react/","result":{"data":{"allMarkdownRemark":{"totalCount":1,"edges":[{"node":{"excerpt":"제목 이 글을 테스트 글 입니다.   소제목","fields":{"slug":"/react-1"},"frontmatter":{"title":"React 1","date":"July 12, 2020","tags":["React"],"category":"FE","featuredImage":null}}}]}},"pageContext":{"tag":"React"}}}
