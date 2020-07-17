@@ -20,10 +20,13 @@ section.post-view {
             margin: .4rem 0;
         }
 
-        .date {
+        .meta-data {
             color : #fff;
             opacity: .5;
             font-weight: 400;
+            .writer {
+                font-weight: 600;
+            }
         }
 
         @include mobile {
@@ -67,7 +70,7 @@ section.post-view {
        
         .tag {
             padding: .3rem .5rem;
-            margin-right: .6rem;
+            margin-right: .4rem;
             font-size: $font-small;
             background-color: rgba(255, 255, 255, 0.25);
             border-radius: 2px;
@@ -128,10 +131,49 @@ section.post-view {
             }
   
             blockquote {
-                border-left: 5px solid $primary-color;
+                border-left: 4px solid $primary-color;
                 background: lighten($primary-color, 45);
                 margin: 1.5rem 0;
                 padding: .8rem 1.2rem;
+            }
+
+            table {
+                display: block;
+                width: fit-content;
+                overflow: auto;
+                border-spacing: 0;
+                border-collapse: collapse;
+                margin : 1.2rem 0;
+                border: 1px solid $border-color;
+                
+                thead {
+                    display: table-header-group;
+                    vertical-align: middle;
+                    border-color: inherit;
+                    tr {
+                        background-color: #fff;
+                        border-bottom: 1px solid $primary-color !important;
+                    }
+                }
+
+                tbody {
+                    display: table-row-group;
+                    vertical-align: middle;
+                    border-color: inherit;
+                }
+
+                tr {
+                    &:not(:last-child){
+                        border-bottom: 1px solid $border-color;
+                    }
+                }
+
+                td, th {
+                    padding: .8rem;
+                    &:not(:last-child){
+                        border-right: 1px solid $border-color;
+                    }
+                }
             }
   
             ul, li, p {

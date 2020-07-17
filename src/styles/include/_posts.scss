@@ -1,7 +1,7 @@
 section.posts {
     background-color: $gray-bg;
     padding-top : 3rem;;
-    padding-bottom : 3rem;
+    padding-bottom : 2rem;
     transition: all .4s ease; 
 
     .section-title {
@@ -79,7 +79,7 @@ section.posts {
                 .tag {
                     flex-shrink: 0;
                     padding: .3rem .5rem;
-                    margin-right: .6rem;
+                    margin-right: .4rem;
                     font-size: $font-small;
                     background-color: $gray-bg;;
                     border-radius: 2px;

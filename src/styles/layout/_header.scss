@@ -21,6 +21,11 @@ header {
     .logo {
       width: 3.6rem;
       margin-top: .5rem;
+      transition: all .4s ease;
+
+      &:hover {
+        opacity: .6;
+      }
     }
   }
 

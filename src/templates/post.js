@@ -16,7 +16,7 @@ export default function PostTemplate({ data, pageContext, location }) {
   const image = featuredImage ? featuredImage.childImageSharp.original : null;
 
   const disqusConfig = {
-    shortname: "inkyung",
+    shortname: "i-log",
     config: { identifier: post.fields.slug, title },
   }
 
@@ -34,7 +34,7 @@ export default function PostTemplate({ data, pageContext, location }) {
                 <div className="post-info container">
                   <span className="category">{category}</span>
                   <h1 className="title">{title}</h1>
-                  <span className="date">{'by ' + author + ' ∙ ' + date}</span>
+                  <span className="meta-data">by <span className="writer">{author}</span>{' ∙ ' + date}</span>
                   <div className="tags-wrap">
                   {tags.map((tag, i) => (
                     <span className='tag' key={i}><Link to={`/tags/${kebabCase(tag)}/`}>{'# ' + tag}</Link></span>

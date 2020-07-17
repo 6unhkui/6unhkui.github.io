@@ -3,7 +3,6 @@ import {graphql } from "gatsby"
 import Layout from "../components/layout"
 import Posts from "../components/posts"
 import SEO from "../components/seo"
-import PageTitle from "../components/pageTitle"
 import Typed from 'react-typed';
 
 const IndexPage = ({data, location}) => {
@@ -13,18 +12,17 @@ const IndexPage = ({data, location}) => {
       <section className="page-title-wrap">
           <div className='container'>
           <h1 className="page-title">
-            <span role="img" className="emoji">👋</span>
-            <Typed strings={['Hello!']}
+            {/* <span role="img" className="emoji">👋</span> */}
+            <Typed strings={['Hello!', 'I\'m Inkyung', 'a Web Developer']}
                     typeSpeed={80}
                     backSpeed={80}
-                    backDelay={2000}
+                    backDelay={1000}
                     showCursor
                     loop
                 />
           </h1>
           <div className="sub-txt">
-            <p>웹 개발자 심인경입니다. <br/>
-               Gatsby.js를 사용하여 만들었습니다. 😊</p>
+            <p>웹 개발자 심인경입니다. 👩‍💻</p>
           </div> 
         </div>
       </section>
