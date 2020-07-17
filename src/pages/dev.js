@@ -13,7 +13,7 @@ const DevPage = ({data, location}) => {
     setSearchValue('');
   };
 
-  const post = data.allMarkdownRemark.edges;
+  const post = data.allMarkdownRemark.edges; 
 
   return (
       <Layout location={location}>
