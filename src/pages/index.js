@@ -11,9 +11,10 @@ const IndexPage = ({data, location}) => {
       <SEO title="Home"/>
       <section className="page-title-wrap">
           <div className='container'>
+            <div>
           <h1 className="page-title">
             <span style={{display: 'block'}}>Hello!</span>
-            <Typed strings={['I\'m Inkyung', 'I\'m a Web Developer']}
+            <Typed strings={['I\'m Inkyung', 'a Web Developer']}
                     typeSpeed={80}
                     backSpeed={80}
                     backDelay={900}
@@ -24,6 +25,7 @@ const IndexPage = ({data, location}) => {
           <div className="sub-txt">
             <p>웹 개발자 심인경입니다. <span role="img" aria-label="emoji">👩‍💻</span></p><br/>
           </div> 
+          </div>
         </div>
       </section>
  

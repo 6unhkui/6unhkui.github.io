@@ -13,6 +13,10 @@ main {
     .page-title {
       font-size: $font-x-x-large;
       margin-bottom: 1.2rem;
+
+      @include mobile {
+        font-size: $font-x-x-x-large;
+      }
       
       .emoji {
         margin-right: 14px;
