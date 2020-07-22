@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import PageTitle from "../components/pageTitle";
 import SEO from "../components/seo"
 import { kebabCase } from 'lodash';
 
@@ -26,8 +25,8 @@ const TagsPage = ({ data, location }) => {
               <div key={tag.fieldValue} className="tag">
                 <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
                   {'# ' + tag.fieldValue}
-                  <span className="tag-count">{' (' + tag.totalCount + ')'}</span>
                 </Link>
+                <span className="tag-count">{tag.totalCount}</span>
               </div>
             ))}
           </div>

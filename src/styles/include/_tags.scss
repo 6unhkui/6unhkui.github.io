@@ -12,19 +12,41 @@
 }
 
 .all-tags-wrap {
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        // border-top: 1px solid $border-color;
+    }
     .tag {
-        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
         padding: 1.2rem 0;
         font-weight: 500;
+        width: calc(50% - 10px);
+        font-weight: blod;
+
+        a {
+            font-weight: 500;
+        }
 
         &:last-child {
             border-bottom: 1px solid $border-color;
         }
 
         .tag-count {
-            margin-left: .2rem;
+            margin-left: .6rem;
+            font-size: $font-small;
+            // border: 1px solid lighten($primary-color, 40);
+            border: 1px solid $border-color;
+            // color: $primary-color;
             color: $gray-font-color;
-            font-weight: normal;
+            padding: .1rem .5rem;
+            border-radius: 20px;
+            // background: lighten($primary-color, $amount: 46);
+        }
+
+        @include mobile {
+            width: 100%;
         }
     }
 }

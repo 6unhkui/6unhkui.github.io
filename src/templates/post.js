@@ -5,7 +5,7 @@ import { Link, graphql } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import TableOfContents from "../components/tableOfContents";
-import PostCommet from "../components/PostCommet";
+import PostComment from "../components/PostComment";
 
 
 export default function PostTemplate({ data, pageContext, location }) {
@@ -65,7 +65,7 @@ export default function PostTemplate({ data, pageContext, location }) {
               </div>)}
           </div>
 
-          <PostCommet repo="6unhkui/6unhkui.github.io" />
+          <PostComment repo="6unhkui/6unhkui.github.io" />
           </article>
 
         </div>

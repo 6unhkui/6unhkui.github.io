@@ -40,6 +40,7 @@ const DevPage = ({data, location}) => {
                 else {
                   if(s.node.frontmatter.title.toUpperCase().indexOf(searchValue.trim().toUpperCase()) !== -1) return s;
                   else if(s.node.frontmatter.tags.findIndex(a => a.toUpperCase().indexOf(searchValue.trim().toUpperCase()) !== -1) !== -1) return s;
+                  return null;
                 }})
             }/>
           </div>

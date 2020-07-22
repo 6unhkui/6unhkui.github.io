@@ -17,7 +17,7 @@ export default function Swicher({ items, selectedItem = 'ALL', changeItem}) {
 
             {/** Select Box UI (Mobile) */}
             <div className="select-wrap">
-              <select name="category" onChange={(e) => {changeItem(e.target.value)}} defaultValue={selectedItem}>
+              <select name="category" defaultValue={selectedItem} onChange={(e) => {changeItem(e.target.value)}} >
                 <option value="ALL">ALL</option>
                 {items.map((v, i) => 
                     (<option value={v.fieldValue} key={i}>{v.fieldValue}</option>))}

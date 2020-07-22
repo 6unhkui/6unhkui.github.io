@@ -10,7 +10,7 @@ const Search = ({searchValue, setSearchValue}) => {
     return (
         <div className="search-wrap">
             <span className="ico-search">
-                <FontAwesomeIcon icon={"search"} style={{opacity: '.15' , width: '1.5rem', height:'1.5rem'}}/>
+                <FontAwesomeIcon icon={"search"} style={{opacity: '.15' , width: '1.2rem', height:'1.2rem'}}/>
             </span>
             <input type="text" 
                placeholder="검색어를 입력하세요."

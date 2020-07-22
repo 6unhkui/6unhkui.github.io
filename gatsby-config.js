@@ -12,10 +12,6 @@ module.exports = {
     keywords : ['Java', 'React', 'Spring Framework', 'Web Developer'],
     menuLinks:[
       {
-        name:`About`,
-        link:`/about`
-      },
-      {
         name:`Dev`,
         link:`/dev`
       },

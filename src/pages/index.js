@@ -12,8 +12,8 @@ const IndexPage = ({data, location}) => {
       <section className="page-title-wrap">
           <div className='container'>
           <h1 className="page-title">
-            {/* <span role="img" className="emoji">👋</span> */}
-            <Typed strings={['Hello!', 'I\'m Inkyung', 'a Web Developer']}
+            <span style={{display: 'block'}}>Hello!</span>
+            <Typed strings={['I\'m Inkyung', 'I\'m a Web Developer']}
                     typeSpeed={80}
                     backSpeed={80}
                     backDelay={900}
@@ -22,14 +22,14 @@ const IndexPage = ({data, location}) => {
                 />
           </h1>
           <div className="sub-txt">
-            <p>웹 개발자 심인경입니다. 👩‍💻</p>
+            <p>웹 개발자 심인경입니다. <span role="img" aria-label="emoji">👩‍💻</span></p><br/>
           </div> 
         </div>
       </section>
-
+ 
       <section className="posts index">
         <div className="container">
-          <h1 className="section-title">✏️ Recent Posts</h1>
+          <h1 className="section-title"><span role="img" aria-label="emoji">✏️ </span>Recent Posts</h1>
           <Posts posts={data.allMarkdownRemark.edges}/>
         </div>
       </section>
