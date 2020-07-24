@@ -5,7 +5,7 @@ import { Link, graphql } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import TableOfContents from "../components/tableOfContents";
-import PostComment from "../components/PostComment";
+import PostComment from "../components/postComment";
 
 
 export default function PostTemplate({ data, pageContext, location }) {

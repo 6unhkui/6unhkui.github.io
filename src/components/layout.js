@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import Header from "./header"
 import Footer from "./footer"
 import TopButton from './topButton'
+import DarkmodeToggle from "../components/darkmodeToggle";
 import '../utils/fontawesome'
 
 const Layout = ({ children, location, menu}) => {
@@ -30,6 +31,7 @@ const Layout = ({ children, location, menu}) => {
   return ( 
     <div className='wrapper'> 
       <TopButton scrollStepInPx="50" delayInMs="16.66"/>
+      <DarkmodeToggle/>
       <Header location={location} data={data} menu={menu}/>
       <main>{children}</main>
       <Footer data={data}/>

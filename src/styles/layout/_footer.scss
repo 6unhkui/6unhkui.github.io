@@ -1,6 +1,6 @@
 footer {
-    background-color: #fff;
-    border-top: 1px solid $border-color;
+    background-color: var(--color-bg);
+    border-top: 1px solid var(--color-border);
     position: relative;
     bottom: 0;
     width: 100%;

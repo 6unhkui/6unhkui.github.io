@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `i.log`,
+    title: `i.log ✨`,
     description: `기록하는 습관 📝`,
     author: `Inkyung`,
     email : ``,
@@ -9,18 +9,30 @@ module.exports = {
       github : `https://github.com/6unhkui`,
       linkedin : `inkyung`
     },
-    keywords : ['Java', 'React', 'Spring Framework', 'Web Developer'],
+    keywords : ['Java', 'Spring Framework', 'Javascript', 'React', 'Web Developer'],
     menuLinks:[
       {
-        name:`Dev`,
-        link:`/dev`
+        name:`CS`,
+        link:`/cs`
+      },
+      {
+        name:`Programming`,
+        link:`/programming`
+      },
+      {
+        name:`DevOps`,
+        link:`/devops`
       },
       {
         name:`Project`,
         link:`/project`
       },
       {
-        name:`Tags`,
+        name:`TIL`,
+        link:`/til`
+      },
+      {
+        name:`TAGS`,
         link:`/tags`
       }
     ]
@@ -49,8 +61,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `i.log`,
         start_url: `/`,
-        background_color: `#dba61a`,
-        theme_color: `#dba61a`,
+        background_color: `#7b22ec`,
+        theme_color: `#7b22ec`,
         display: `minimal-ui`,
         icon: `static/images/icon.png`, // This path is relative to the root of the site.
       },
@@ -62,6 +74,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
           plugins: [
+            'gatsby-remark-a11y-emoji',
             {
               resolve: `gatsby-remark-prismjs`,
               options: {
@@ -118,7 +131,8 @@ module.exports = {
       }
     },
     `gatsby-plugin-slug`,
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
+    'gatsby-plugin-dark-mode'
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

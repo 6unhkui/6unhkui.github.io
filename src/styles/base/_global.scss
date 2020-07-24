@@ -1,9 +1,31 @@
+body {
+  --color-bg: #{$color-white};
+  --color-bg-gray : #{$gray-bg};
+  --color-text: #{$color-black};
+  --color-text-gray : #{$gray-font-color};
+  --color-border: #{$border-color};
+  --color-point : #{$primary-color};
+}
+
+body.dark {
+  --color-bg: #{$bg-light};
+  --color-bg-gray : #{$gray-bg-light};
+  --color-text: #{$color-white};
+  --color-text-gray : #{$gray-font-color-light};
+  --color-border: #{$border-color-light};
+  --color-point : #{$primary-color-light};
+}
+
 html, body {
   margin: 0;
 	padding: 0;
   font-family: $font-family;
-  color : $default-font-color;
+  color : $color-black;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: all .2s;
 }
+
 
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button {
   margin: 0;
@@ -13,11 +35,12 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fiel
 
 a { 
   text-decoration: none; 
-  color : $default-font-color;
+  color : var(--color-text);
+  transition: color .2s;
 }
 
 a:hover { 
-  color : $primary-color;
+  color : var(--color-point);
 }
 
 p {
@@ -39,7 +62,7 @@ button {
 }
 
 ::selection {
-  background-color: $selection-color;
+  background-color: var(--color-point);
   color: #fff;
 }
 
@@ -50,6 +73,18 @@ div.wrapper {
 
 ul {
   padding-inline-start: 20px;
+}
+
+input {
+  &::placeholder {
+    color : lighten($gray-font-color, 15);
+  }
+}
+
+.dark input {
+  &::placeholder {
+    color : darken($gray-font-color, 40);
+  }
 }
 
 .container {
@@ -63,35 +98,97 @@ ul {
   color: darken($gray-font-color, 10);
 }
 
-.scroll {
-  background: $gradient-color;
-  box-shadow: 0px 5px 8px 0px rgba(34, 31, 36, 0.3);
+.floating {
   width: 2.5rem;
   height: 2.5rem;
   position: fixed;
-  bottom: 1.5rem;
   right: 1.5rem;
   border-radius: 50%;
   border: none;
   z-index: 1;
-  padding-top: .4rem;
   cursor: pointer;
-  transition: all .4s ease;
+  transition: all .4s;
+  box-shadow: 0px 6px 12px rgba(34, 31, 36, 0.1);
 
   &:hover {
-    box-shadow: 0 2px 0px rgba(34, 31, 36, 0.15);
-    opacity: .7;
+    box-shadow: 0px 5px 8px 0px rgba(34, 31, 36, 0.3);
+    margin-bottom: .3rem;
   }
 
-  .arrow-up {
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-    border: solid #fff;
-    border-width: 0 .2rem .2rem 0;
-    display: inline-block;
-    padding: .2rem;
+  &.scroll {
+    background: $gradient-color;
+    bottom: 1.5rem;
+  
+    .arrow-up {
+      transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
+      border: solid #fff;
+      border-width: 0 .2rem .2rem 0;
+      display: inline-block;
+      padding: .2rem;
+      position: relative;
+      top : .1rem;
+    }
+
+    &:hover {
+      .arrow-up {
+        opacity: .8;
+      }
+    }
+  }
+
+  &.darkmode {
+    bottom: 4.8rem;
+    background-color: #fff;
+    border: 1px solid $border-color;
+  
+    &.dark {
+      background-color: $color-black;
+      border : 0;
+    }
+  
+    img {
+      width: 1.3rem;
+      position: relative;
+      top: .6rem;
+      left: .6rem;
+    }
+
+    &:hover {
+      img {
+        opacity: .8;
+      }
+    }
+  }
+
+  @include mobile {
+    width: 3.2rem;
+    height: 3.2rem;
+    
+    &:hover {
+      margin-bottom: 0;
+    }
+
+    &.scroll {
+      .arrow-up {
+        border-width: 0 .28rem .28rem 0;
+        padding: .3rem;
+        top : .2rem;
+      }
+    }
+
+    &.darkmode  {
+      bottom: 5.4rem;
+      img {
+        width: 1.4rem;
+        top: .9rem;
+        left: .9rem;
+      }
+    }
+
   }
 }
+
 
 .container {
   @include desktop {

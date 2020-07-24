@@ -5,12 +5,12 @@
 
     & > div {
         position: fixed; 
-        border-left: 1px solid $border-color;
+        border-left: 1px solid var(--color-border);
         padding-left: 1rem;
         font-size: $font-small;
 
         .title {
-            color: $gray-font-color;
+            color: var(--color-text-gray);
             font-weight: 500;
             font-size: $font-small;
             letter-spacing: 0.1rem;
@@ -20,7 +20,10 @@
 
         .content-list {
             & > ul > li {
-                margin-bottom: .8rem;
+                &:not(:last-child) {
+                    margin-bottom: .8rem;
+                }
+
                 & > p, & > a {
                     font-weight: bold;
                 }
@@ -44,6 +47,25 @@
     }
 
     @include mobile {
-        display: none;
+        // display: none;
+        display: block;
+        float: initial;
+        position: relative;
+        margin-top: -2rem;
+        width: -webkit-fill-available;
+        padding: 1.5rem;
+        background-color: var(--color-bg-gray);
+        border-radius: 8px;
+
+        & > div {
+            position: relative;
+            padding: 0;
+            border: 0;
+
+            .title {
+                margin-top: 0;
+            }
+        }
+
     }
 }

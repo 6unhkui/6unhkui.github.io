@@ -1,7 +1,7 @@
 .search-wrap {
     // border-bottom: 1px solid darken($border-color, 20);
     // border-bottom: 1px solid $primary-color;
-    border-bottom: 1px solid $primary-color;
+    border-bottom: 1px solid var(--color-point);
     // border-bottom: 1px solid darken($border-color, 10);
     width: 50%;
     overflow: hidden;
@@ -9,6 +9,7 @@
     margin: 0 auto 3rem auto;
 
     input {
+        color: var(--color-text);
         padding: .5rem 1rem 0;
         width: 100%;
         height: 2.6rem;
@@ -23,10 +24,6 @@
         word-wrap: normal;
         position: relative;
         top: .2rem;
-
-        &::placeholder {
-            color : lighten($gray-font-color, 15);
-        }
     }
 
     .ico-search {

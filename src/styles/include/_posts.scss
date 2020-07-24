@@ -1,6 +1,6 @@
 section.posts {
-    background-color: $gray-bg;
-    padding-top : 3rem;;
+    background-color: var(--color-bg-gray);
+    padding-top : 3rem;
     padding-bottom : 2rem;
     transition: all .4s ease; 
 
@@ -10,8 +10,9 @@ section.posts {
     }
 
     article {
-        box-shadow: 0 6px 16px rgba(34, 31, 36, 0.09);
-        background-color: #fff;
+        // box-shadow: 0 6px 16px rgba(34, 31, 36, 0.09);
+        box-shadow: 0 1px 0px rgba(34, 31, 36, 0.15);
+        background-color: var(--color-bg);
         border-radius: 8px;
         flex: 1;
         margin-bottom: 1.6rem;
@@ -20,11 +21,13 @@ section.posts {
         margin-right: 1.7rem;
         margin-bottom: 1.7rem;
         overflow: hidden;
-        transition: all .4s ease;
+        transition: all .4s;
+        top : 0;
 
         &:hover {
-            box-shadow: 0 1px 0px rgba(34, 31, 36, 0.15);
-            opacity: .7;
+            box-shadow: 0 6px 16px rgba(34, 31, 36, 0.09);
+            opacity: .8;
+            top: -.3rem;
         }
 
         img {
@@ -37,9 +40,10 @@ section.posts {
         .post-info {
             padding: 1.2rem 1.6rem 1.6rem 1.6rem;
             min-height: 9rem;
+            width: -webkit-fill-available;
 
-            .category {
-                color : $primary-color;
+            .category, .date {
+                color : var(--color-point);
                 font-weight: 600;
                 font-size: $font-small;
                 letter-spacing: .1rem;
@@ -48,7 +52,7 @@ section.posts {
             .title {
                 margin: 8px 0 6px 0;
                 font-size: $font-medium;
-                color: $default-font-color;
+                color: var(--color-text);
                 text-overflow:ellipsis;
                 white-space:nowrap;
                 word-wrap:normal;
@@ -57,7 +61,7 @@ section.posts {
             }
     
             .summary {
-                color: $gray-font-color;
+                color: var(--color-text-gray);
                 line-height: 1.6rem;
                 width: 100%;
                 text-overflow:ellipsis;
@@ -81,10 +85,10 @@ section.posts {
                     padding: .3rem .5rem;
                     margin-right: .4rem;
                     font-size: $font-small;
-                    background-color: $gray-bg;;
+                    background-color: var(--color-bg-gray);
                     border-radius: 2px;
-                    transition: all 1s ease-in-out;
-                    -webkit-transition: all 1s ease-in-out;
+                    // transition: all 1s ease-in-out;
+                    // -webkit-transition: all 1s ease-in-out;
                     cursor: pointer;
         
                     a {
@@ -101,9 +105,50 @@ section.posts {
             }    
         }
     }
+
+    article.card {
+        .date {
+            display: none;
+        }
+    }
+
+
+    article.list {
+        width: 100%;
+        margin-right: 0;
+
+        a {
+            display: flex;
+        }
+
+        img {
+            display: none;
+        }
+
+        .post-info { 
+            min-height: auto;
+            position: relative;
+            display: flex;
+
+            .category,.summary {
+                display: none;
+            }
+
+            .date {
+                margin: 0;
+                flex-basis: 5.4rem;
+                top: .8rem;
+                position: relative;
+            }
+
+            .tags-wrap {
+                display: none;
+            }
+        }
+    }
     
     @include desktop {
-        article {
+        article.card {
             width: calc(33% - .95rem);
             &:nth-of-type(3n){
                 margin-right: 0;
@@ -118,7 +163,7 @@ section.posts {
     }
 
     @include tablet {
-        article {
+        article.card {
             width: calc(50% - .95rem);
             &:nth-of-type(2n){
                 margin-right: 0;
@@ -127,7 +172,9 @@ section.posts {
     }
 
     @include mobile {
-        article {
+        padding-top : 2rem;
+
+        article.card {
             .post-info {
                 min-height: fit-content;
             }

@@ -66,7 +66,7 @@ section.post-view {
     // Tags - s /////////////////////////
     .tags-wrap {
         margin-top: 2.6rem;
-        margin-bottom: .6rem;
+        line-height: 2rem;
        
         .tag {
             padding: .3rem .5rem;
@@ -99,6 +99,7 @@ section.post-view {
 
         @include mobile {
             width: 100%;
+            margin-top: -1.2rem;
         }
 
         .content {
@@ -107,7 +108,7 @@ section.post-view {
             }
   
             h1, h2, h3 {
-                border-bottom: 1px solid $border-color;
+                border-bottom: 1px solid var(--color-border);
                 padding-bottom: 10px;
             }
   
@@ -136,7 +137,7 @@ section.post-view {
             }
   
             blockquote {
-                border-left: 4px solid $primary-color;
+                border-left: 4px solid var(--color-point);
                 background: lighten($primary-color, 45);
                 margin: 1.5rem 0;
                 padding: .8rem 1.2rem;
@@ -149,15 +150,14 @@ section.post-view {
                 border-spacing: 0;
                 border-collapse: collapse;
                 margin : 1.2rem 0;
-                border: 1px solid $border-color;
+                border: 1px solid var(--color-border);
                 
                 thead {
                     display: table-header-group;
                     vertical-align: middle;
                     border-color: inherit;
                     tr {
-                        background-color: #fff;
-                        border-bottom: 1px solid $primary-color !important;
+                        border-bottom: 1px solid var(--color-point) !important;
                     }
                 }
 
@@ -169,14 +169,14 @@ section.post-view {
 
                 tr {
                     &:not(:last-child){
-                        border-bottom: 1px solid $border-color;
+                        border-bottom: 1px solid var(--color-border);
                     }
                 }
 
                 td, th {
                     padding: .8rem;
                     &:not(:last-child){
-                        border-right: 1px solid $border-color;
+                        border-right: 1px solid var(--color-border);
                     }
                 }
             }
@@ -235,7 +235,7 @@ section.post-view {
                 font-size: $font-small;
                 font-weight: bold;
                 text-transform: uppercase;
-                color : $gray-font-color;
+                color : var(--color-text-gray);
                 margin-bottom: .2rem;
                 letter-spacing: .1rem;
             }
@@ -258,6 +258,25 @@ section.post-view {
 
     .utterances {
         max-width: 100% !important;
-        margin-top : 2rem;
+        margin-top : 4rem;
+    }
+}
+
+
+// dark mode 
+.dark section.post-view {
+    .featured-image {
+        &::after {
+            background:rgba(0,0,0,0.6);
+        }
+    }
+    article {
+        a:not(.anchor-header){
+            border-bottom: 3px solid var(--color-point);
+        }
+
+        blockquote {
+            background: var(--color-bg-gray);
+        }
     }
 }

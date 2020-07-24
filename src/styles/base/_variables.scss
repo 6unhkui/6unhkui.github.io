@@ -3,14 +3,22 @@ $font-family : "-apple-system", "BlinkMacSystemFont", "Apple SD Gothic Neo", "In
 $font-family-logo : "Pacifico", Sans-Serif;
 
 // Color
-$default-font-color : #464646;
+$color-black : #464646;
+$color-white : #fff;
 $gray-font-color : #b1b2b3;
 $primary-color : #7b22ec;
-$secondary-color : #ffc600;
+// $secondary-color : #ffc600;
 $gray-bg : #f6f6f6;
 $border-color: #ebebeb;
 $selection-color: lighten($primary-color, 0);
 $gradient-color: linear-gradient(90deg, #7b22ec 0%, rgba(125,33,237,1) 50%, rgba(180,33,237,1) 100%);
+
+$bg-light : #1d1d1d;
+$gray-font-color-light : #b2b5b7;
+$gray-bg-light : #242424;
+$border-color-light: #424242;
+$primary-color-light : #ae6dff;
+
 
 // Font Size
 $font-x-x-x-large: 3rem;

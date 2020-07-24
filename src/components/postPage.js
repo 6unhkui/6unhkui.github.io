@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
-import Layout from "../components/layout"
-import Posts from "../components/posts";
-import SEO from "../components/seo"
-import Switcher from "../components/switcher";
-import Search from "../components/search";
+import Posts from "./posts";
+import Switcher from "./switcher";
+import Search from "./search";
 
-const DevPage = ({data, location}) => {
+export default function PostPage({data}) {
   const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [searchValue, setSearchValue] = useState('');
   const changeCategory = value => {
@@ -15,18 +13,12 @@ const DevPage = ({data, location}) => {
 
   const post = data.allMarkdownRemark.edges; 
 
-  return (
-      <Layout location={location}>
-        <SEO title="Development"/>
-
+  return ( 
         <section className="posts">
+          {post.length > 0 && <Switcher items={data.allMarkdownRemark.categories} selectedItem={selectedCategory} changeItem={changeCategory} />}
+          
           <div className="container">
-            {post.length > 0 && 
-              <>
-                <Switcher items={data.allMarkdownRemark.categories} selectedItem={selectedCategory} changeItem={changeCategory} />
-                <Search searchValue={searchValue} setSearchValue={setSearchValue} />
-              </>
-            }
+            {post.length > 0 && <Search searchValue={searchValue} setSearchValue={setSearchValue} />}
 
             <Posts posts={post.filter((s) => {
                 // 선택된 카테고리가 ALL일 경우, 모든 포스트를 보여주고
@@ -45,38 +37,5 @@ const DevPage = ({data, location}) => {
             }/>
           </div>
         </section>
-      </Layout>
   )
 }
-
-export default DevPage;
-
-export const pageQuery = graphql`
-query {
-    allMarkdownRemark(filter: { frontmatter: { menu: { eq: "DEV"} } }, sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            tags
-            category
-            featuredImage {
-              childImageSharp{
-                resize(width: 700) {
-                  src
-                }
-              }
-            }
-          }
-        }
-      }
-      categories : group(field: frontmatter___category) {
-        fieldValue
-      }
-    }
-}`

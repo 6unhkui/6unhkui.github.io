@@ -8,7 +8,7 @@ import Typed from 'react-typed';
 const IndexPage = ({data, location}) => {
   return (
     <Layout location={location}>
-      <SEO title="Home"/>
+      <SEO/>
       <section className="page-title-wrap">
           <div className='container'>
             <div>

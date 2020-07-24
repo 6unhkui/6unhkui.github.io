@@ -1,25 +1,28 @@
 main {
-  min-height: 30rem;
+  // min-height: 30rem;
   position: relative;
 
   .page-title-wrap {
-    margin-bottom: 5.4rem;
-    padding-top: 5rem;
+    margin-bottom: 4.5rem;
+    padding-top: 4.8rem;
 
     p {
-      color : darken($gray-font-color, 20);
+      color : var(--color-text-gray);
     }
 
     .page-title {
       font-size: $font-x-x-large;
       margin-bottom: 1.2rem;
-
-      @include mobile {
-        font-size: $font-x-x-x-large;
-      }
       
       .emoji {
-        margin-right: 14px;
+        margin-right: 10px;
+      }
+    }
+
+    @include mobile {
+      & {
+        margin-bottom: 3.5rem;
+        padding-top: 3.8rem;
       }
     }
   }

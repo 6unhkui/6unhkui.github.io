@@ -9,12 +9,18 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import Bg from "../../static/images/gradationBg.png";
 
 function SEO({ description, lang, meta, image: metaImage, title }) {
-  const { site } = useStaticQuery(
+  const { site, icon } = useStaticQuery(
     graphql`
       query {
+        icon : file(absolutePath: { regex: "/icon.png/" }) {
+          childImageSharp {
+            fixed(width: 300, height: 300) {
+              src
+            }
+          }
+        }
         site {
           siteMetadata {
             title
@@ -27,17 +33,18 @@ function SEO({ description, lang, meta, image: metaImage, title }) {
       }
     `
   )
-
-  const metaDescription = description || site.siteMetadata.description
-  const image = metaImage && metaImage.src ? `${site.siteMetadata.siteUrl}${metaImage.src}` : `${site.siteMetadata.siteUrl}${Bg}`;
   
+  const metaTitle = title ? title + ' | ' + site.siteMetadata.title : site.siteMetadata.title;
+  const metaDescription = description || site.siteMetadata.description
+  const image = metaImage && metaImage.src ? `${site.siteMetadata.siteUrl}${metaImage.src}` : `${icon.childImageSharp.fixed.src}`;
+
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={metaTitle}
+      titleTemplate={metaTitle}
       meta={[
         {
           name: `description`,
@@ -48,8 +55,12 @@ function SEO({ description, lang, meta, image: metaImage, title }) {
           content: site.siteMetadata.keywords.join(","),
         },
         {
+          property: "og:image",
+          content: icon.childImageSharp.fixed.src,
+        },
+        {
           property: `og:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           property: `og:description`,
@@ -69,7 +80,7 @@ function SEO({ description, lang, meta, image: metaImage, title }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           name: `twitter:description`,

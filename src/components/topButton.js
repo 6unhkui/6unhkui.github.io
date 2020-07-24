@@ -14,7 +14,7 @@ export default function TopButton(props){
     }
       
     return (
-        <button title='Back to top' className='scroll' 
+        <button title='Back to top' className='floating scroll' 
                 onClick={() => {setIntervalId(setInterval(scrollStep(), props.delayInMs));}}>
             <span className='arrow-up'></span>
         </button>

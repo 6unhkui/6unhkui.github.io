@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import SEO from "../components/seo"
+import PageTitle from "../components/pageTitle";
 import { kebabCase } from 'lodash';
 
 import Layout from '../components/layout';
@@ -11,13 +12,7 @@ const TagsPage = ({ data, location }) => {
     <Layout location={location}>
       <SEO title="Tags" />
       <div style={{paddingBottom : '6rem'}}>
-        <section className="page-title-wrap">
-          <div className='container'>
-            <h1 className="page-title">
-              Tags
-            </h1>
-          </div>
-        </section>
+        <PageTitle title='Tags'/>
 
         <section className="all-tags-wrap">
           <div className="container">

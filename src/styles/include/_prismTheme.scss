@@ -30,7 +30,7 @@
    overflow: auto;
    border: 1px solid lighten($primary-color, $amount: 40);
    border-radius: 4px;
-   background: lighten($primary-color, $amount: 46);
+   background: lighten($primary-color, $amount: 46); 
    margin: 1.5rem 0;
  }
  
@@ -268,3 +268,178 @@ pre.language-shell::before {
 	// background: #ffa621;
 }
 /* Language - e */
+
+
+// dark mode 
+.dark {
+  :not(pre) > code[class*="language-"] {
+    color : var(--color-point);
+    background: var(--color-bg-gray);
+    border : 1px solid var(--color-border);
+  }
+
+  pre > code[class*="language-"],
+  pre[class*="language-"] {
+    color : var(--color-text);
+  }
+
+  pre[class*="language-"]  {
+    background: var(--color-bg-gray);
+    border : 1px solid var(--color-border);
+  }
+
+ .token.comment,
+ .token.blockquote {
+   color: #858388;
+ }
+ 
+ .token.cdata {
+   color: #183691;
+ }
+ 
+ .token.doctype,
+ .token.punctuation,
+ .token.variable,
+ .token.macro.property {
+   color : var(--color-text);
+ }
+ 
+ .token.operator,
+ .token.important,
+ .token.keyword,
+ .token.rule,
+ .token.builtin {
+   color: #e64a92;
+ }
+ 
+ .token.string,
+ .token.url,
+ .token.regex,
+ .token.attr-value {
+   color: #5f87ff;
+ }
+ 
+ .token.property,
+ .token.number,
+ .token.boolean,
+ .token.entity,
+ .token.atrule,
+ .token.constant,
+ .token.symbol,
+ .token.command,
+ .token.code {
+   color: #0086b3;
+ }
+ 
+ .token.tag,
+ .token.selector,
+ .token.prolog {
+   color: #63a35c;
+ }
+ 
+ .token.function,
+ .token.namespace,
+ .token.pseudo-element,
+ .token.class,
+ .token.class-name,
+ .token.pseudo-class,
+ .token.id,
+ .token.url-reference .token.variable,
+ .token.attr-name {
+   color: #a781e0;
+ }
+ 
+ .token.entity {
+   cursor: help;
+ }
+ 
+ .token.title,
+ .token.title .token.punctuation {
+   font-weight: bold;
+   color: #1d3e81;
+ }
+ 
+ .token.list {
+   color: #ed6a43;
+ }
+ 
+ .token.inserted {
+   background-color: #eaffea;
+   color: #55a532;
+ }
+ 
+ .token.deleted {
+   background-color: #ffecec;
+   color: #bd2c00;
+ }
+ 
+ .token.bold {
+   font-weight: bold;
+ }
+ 
+ .token.italic {
+   font-style: italic;
+ }
+ 
+ 
+ /* JSON */
+ .language-json .token.property {
+   color: #183691;
+ }
+ 
+ .language-markup .token.tag .token.punctuation {
+   color: #333;
+ }
+ 
+ /* CSS */
+ code.language-css,
+ .language-css .token.function {
+   color: #0086b3;
+ }
+ 
+ /* YAML */
+ .language-yaml .token.atrule {
+   color: #63a35c;
+ }
+ 
+ code.language-yaml {
+   color: #183691;
+ }
+ 
+ /* Ruby */
+ .language-ruby .token.function {
+   color: #333;
+ }
+ 
+ /* Markdown */
+ .language-markdown .token.url {
+   color: #795da3;
+ }
+ 
+ /* Makefile */
+ .language-makefile .token.symbol {
+   color: #795da3;
+ }
+ 
+ .language-makefile .token.variable {
+   color: #183691;
+ }
+ 
+ .language-makefile .token.builtin {
+   color: #0086b3;
+ }
+ 
+ /* Bash */
+ .language-bash .token.keyword {
+   color: #0086b3;
+ }
+
+  code:not(.language-text) + .line-numbers-rows {
+    border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  
+    span:before {
+      color :rgba(255, 255, 255, 0.15) !important;
+    }
+  }
+
+}

@@ -5,7 +5,7 @@ export default function PagaTitle (props) {
         <section className="page-title-wrap">
             <div className='container'>
                 <h1 className="page-title">
-                    <span role="img" className="emoji">{props.emoji}</span>
+                    {props.emoji && <span role="img" className="emoji">{props.emoji}</span>}
                     {props.title}
                 </h1>
 
