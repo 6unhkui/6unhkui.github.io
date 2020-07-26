@@ -67,8 +67,6 @@ module.exports = {
         icon: `static/images/icon.png`, // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-antd',
-    `gatsby-plugin-styled-components`,
     `gatsby-remark-code-titles`,
     {
       resolve: `gatsby-transformer-remark`,

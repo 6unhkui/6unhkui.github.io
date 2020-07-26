@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import SEO from "../components/seo"
-import PageTitle from "../components/pageTitle";
+import PageTitle from "../components/page-title";
 import { kebabCase } from 'lodash';
 
 import Layout from '../components/layout';

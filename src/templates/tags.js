@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import Post from "../components/posts";
 import SEO from "../components/seo"
-import PageTitle from "../components/pageTitle";
+import PageTitle from "../components/page-title";
 
 const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext;

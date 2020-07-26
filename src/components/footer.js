@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "gatsby"
 import Github from '../../static/images/github.svg';
-import LinkedIn from '../../static/images/linkedin.svg';
+import LinkedIn from '../../static/images/linked-in.svg';
 
 export default function Footer({data}) {
     const site = data.site.siteMetadata;

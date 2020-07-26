@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { kebabCase } from 'lodash';
 import { Link } from "gatsby"
-import Thumbnail from "../../static/images/gradationBg.png";
+import Thumbnail from "../../static/images/gradation-bg.png";
 
 const showCount = 6;
 const Posts = ({posts, view = "card"}) => {

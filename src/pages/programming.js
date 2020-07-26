@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import PostPage from '../components/postPage';
+import PostPage from '../components/post-page';
 
 const ProgrammingPage = ({data, location}) => {
   return (

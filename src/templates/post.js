@@ -4,8 +4,8 @@ import { kebabCase } from 'lodash';
 import { Link, graphql } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import TableOfContents from "../components/tableOfContents";
-import PostComment from "../components/postComment";
+import TableOfContents from "../components/table-of-contents";
+import PostComment from "../components/post-comment";
 
 
 export default function PostTemplate({ data, pageContext, location }) {
@@ -35,17 +35,18 @@ export default function PostTemplate({ data, pageContext, location }) {
                   {tags.map((tag, i) => (
                     <span className='tag' key={i}><Link to={`/tags/${kebabCase(tag)}/`}>{'# ' + tag}</Link></span>
                   ))}
-            </div> 
+                  </div> 
                 </div>
               </div>
             </div>
 
           <div className="container">
           <TableOfContents items={post.tableOfContents}/>
-          <article>
-            <div className="content" dangerouslySetInnerHTML={{ __html: post.html }} />
 
-                      <hr className="end-line"/>
+          <article>
+          <div className="content" dangerouslySetInnerHTML={{ __html: post.html }} />
+
+          <hr className="end-line"/>
 
           <div className="navigation-wrap">
             {previous && (

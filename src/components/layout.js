@@ -3,8 +3,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import PropTypes from "prop-types"
 import Header from "./header"
 import Footer from "./footer"
-import TopButton from './topButton'
-import DarkmodeToggle from "../components/darkmodeToggle";
+import TopButton from './top-button'
+import DarkmodeToggle from "../components/darkmode-toggle";
 import '../utils/fontawesome'
 
 const Layout = ({ children, location, menu}) => {
