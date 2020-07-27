@@ -21,11 +21,11 @@ section.posts {
         margin-right: 1.7rem;
         margin-bottom: 1.7rem;
         overflow: hidden;
-        transition: all .4s;
+        transition: all .3s;
         top : 0;
 
         &:hover {
-            box-shadow: 0 6px 16px rgba(34, 31, 36, 0.09);
+            box-shadow: 0 8px 18px rgba(34, 31, 36, 0.12);
             opacity: .8;
             top: -.3rem;
         }

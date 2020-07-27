@@ -7,6 +7,7 @@ section.post-view {
         padding: 6rem 0;
         display: table-cell;
         vertical-align: middle;
+        color: #fff;
 
         .category {
             color : #fff;
@@ -14,10 +15,10 @@ section.post-view {
             letter-spacing: .1rem;
         }
 
-        color: #fff;
         .title {
             font-size: $font-x-x-x-large + .4rem;
-            margin: .4rem 0;
+            margin-top: .4rem;
+            margin-bottom: .8rem;
         }
 
         .meta-data {
@@ -65,8 +66,8 @@ section.post-view {
 
     // Tags - s /////////////////////////
     .tags-wrap {
-        margin-top: 2.6rem;
-        line-height: 2rem;
+        margin-top: 1.8rem;
+        line-height: 2.2rem;
        
         .tag {
             padding: .3rem .5rem;
@@ -77,6 +78,9 @@ section.post-view {
             transition: all 1s ease-in-out;
             -webkit-transition: all 1s ease-in-out;
             cursor: pointer;
+            line-height: initial;
+            display: inline-block;
+            
             a {
                 color : #fff;
             }
@@ -104,28 +108,34 @@ section.post-view {
 
         .content {
             h1, h2, h3, h4 {
-                margin : 3.4rem 0 .8rem 0;
+                margin-bottom: .8rem;
             }
   
             h1, h2, h3 {
                 border-bottom: 1px solid var(--color-border);
-                padding-bottom: 10px;
+                padding-bottom: .4rem;
             }
-  
+
             h1 {
-                font-size : $font-x-x-large;
-            }
-  
-            h2 {
+                margin-top: 4rem;
                 font-size : $font-x-large;
             }
-  
-            h3 {
-                font-size : $font-large;
+
+            h2, h3, h4 {
+                margin-top: 2.4rem;
+                margin-bottom: .8rem;
             }
-  
-            h4 {
+      
+            h2 {
                 font-size : $font-medium;
+            }
+      
+            h3 {
+                font-size : $font-medium - .2rem;
+            }
+      
+            h4 {
+                font-size : $font-medium - .4rem;
             }
   
             a:not(.anchor-header){
@@ -191,22 +201,6 @@ section.post-view {
             }
   
             @include mobile {
-                h1 {
-                    font-size : $font-x-large;
-                }
-          
-                h2 {
-                    font-size : $font-large;
-                }
-          
-                h3 {
-                  font-size : $font-medium;
-                }
-          
-                h4 {
-                    font-size : 1.2rem; 
-                }
-  
                 img { 
                     width: 90%;
                 }

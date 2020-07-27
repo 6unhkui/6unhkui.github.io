@@ -6,7 +6,7 @@ import PostPage from '../components/post-page';
 const ComputerSciencePage = ({data, location}) => {
   return (
       <Layout location={location}>
-        <SEO title="ComputerScience"/>
+        <SEO title="Computer Science"/>
         <PostPage data={data}/>
       </Layout>
   )

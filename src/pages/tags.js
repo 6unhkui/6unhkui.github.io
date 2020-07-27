@@ -11,7 +11,7 @@ const TagsPage = ({ data, location }) => {
   return (
     <Layout location={location}>
       <SEO title="Tags" />
-      <div style={{paddingBottom : '6rem'}}>
+      <div style={{paddingBottom : '5rem'}}>
         <PageTitle title='Tags'/>
 
         <section className="all-tags-wrap">
@@ -21,7 +21,7 @@ const TagsPage = ({ data, location }) => {
                 <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
                   {'# ' + tag.fieldValue}
                 </Link>
-                <span className="tag-count">{tag.totalCount}</span>
+                {/* <span className="tag-count">{tag.totalCount}</span> */}
               </div>
             ))}
           </div>
