@@ -24,6 +24,10 @@ module.exports = {
         link:`/devops`
       },
       {
+        name:`ETC`,
+        link:`/etc`
+      },
+      {
         name:`Project`,
         link:`/project`
       },
