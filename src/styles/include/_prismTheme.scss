@@ -28,21 +28,22 @@
  pre[class*="language-"] {
    padding: .8em;
    overflow: auto;
-   border: 1px solid lighten($primary-color, $amount: 40);
+   border: 1px solid var(--color-point-border);
    border-radius: 4px;
-   background: lighten($primary-color, $amount: 46); 
+  //  background: lighten($primary-color, $amount: 46); 
+   background-color: var(--color-point-bg);
    margin: 1.5rem 0;
  }
  
  /* Inline code */
  :not(pre) > code[class*="language-"] {
-	background-color: lighten($primary-color, 44);
+	background-color: var(--color-point-bg);
   padding: .2rem .4rem;
 	border-radius: 4px;
 	color: $primary-color;
 	margin: 0 .2rem;
 	font-size: $font-small;
-	border: 1px solid lighten($primary-color, 40);
+	border: 1px solid var(--color-point-border);
 }
  
  .token.comment,
@@ -223,7 +224,7 @@ code:not(.language-text) + .line-numbers-rows {
 }
 /* Line numbering - e */
 
-/* Language - s */
+// Language - s ////////////////////////////////////////
 pre[class*="language-"]{
 	padding: 2.2rem 1.5rem 1.5rem 1.5rem;
 	
@@ -267,15 +268,19 @@ pre.language-shell::before {
 	content: "shell";
 	// background: #ffa621;
 }
-/* Language - e */
+
+pre.language-markdown::before { 
+	content: "md";
+	// background: #ffa621;
+}
+// Language - e ////////////////////////////////////////
 
 
-// dark mode 
+// dark mode - s ////////////////////////////////////////
 .dark {
   :not(pre) > code[class*="language-"] {
     color : var(--color-point);
-    background: var(--color-bg-gray);
-    border : 1px solid var(--color-border);
+    // border : 1px solid var(--color-border);
   }
 
   pre > code[class*="language-"],
@@ -284,8 +289,8 @@ pre.language-shell::before {
   }
 
   pre[class*="language-"]  {
-    background: var(--color-bg-gray);
-    border : 1px solid var(--color-border);
+    // background: var(--color-bg-gray);
+    // border : 1px solid var(--color-border);
   }
 
  .token.comment,

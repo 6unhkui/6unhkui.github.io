@@ -31,8 +31,13 @@
         // -webkit-transition: all 1s ease-in-out;
         cursor: pointer;
 
-        a {
+        a, .tag-count{
             color : darken($gray-font-color, 20);
+        }
+
+        .tag-count {
+            margin-left: .3rem;
+            opacity: .4;
         }
 
         // .tag-count {
@@ -50,7 +55,7 @@
 
         &:hover {
             background: $gradient-color;
-            a {
+            a, .tag-count{
                 color : #fff;
             }
         } 

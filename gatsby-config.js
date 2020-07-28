@@ -31,10 +31,10 @@ module.exports = {
         name:`Project`,
         link:`/project`
       },
-      {
-        name:`TIL`,
-        link:`/til`
-      },
+      // {
+      //   name:`TIL`,
+      //   link:`/til`
+      // },
       {
         name:`TAGS`,
         link:`/tags`

@@ -23,7 +23,7 @@ const IndexPage = ({data, location}) => {
                 />
           </h1>
           <div className="sub-txt">
-            <p>웹 개발자 심인경입니다. <span role="img" aria-label="emoji">👩‍💻</span></p><br/>
+            <p>웹 개발자 심인경입니다. <span role="img" aria-label="emoji">👩‍💻</span></p>
           </div> 
           </div>
         </div>

@@ -5,6 +5,8 @@ body {
   --color-text-gray : #{$gray-font-color};
   --color-border: #{$border-color};
   --color-point : #{$primary-color};
+  --color-point-bg : #{$primary-color-bg};
+  --color-point-border : #{$primary-color-border};
 }
 
 body.dark {
@@ -14,6 +16,8 @@ body.dark {
   --color-text-gray : #{$gray-font-color-light};
   --color-border: #{$border-color-light};
   --color-point : #{$primary-color-light};
+  --color-point-bg : #{$primary-color-bg-light};
+  --color-point-border : #{$primary-color-border-light};
 }
 
 html, body {
@@ -143,7 +147,7 @@ input {
     border: 1px solid $border-color;
   
     &.dark {
-      background-color: $color-black;
+      background-color: lighten($gray-bg-light, 10);
       border : 0;
     }
   

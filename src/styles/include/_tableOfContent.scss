@@ -1,13 +1,13 @@
 .toc-wrap {
-    float: right;
     position: sticky;
-    width: 200px;
-
-    & > div {
-        position: fixed; 
-        border-left: 1px solid var(--color-border);
-        padding-left: 1rem;
-        font-size: $font-small;
+    top: calc(9.5rem);
+    overflow: auto;
+    float: right;
+    max-width: 11.4rem;
+    max-height: calc(100vh - 19rem);
+    border-left: 1px solid var(--color-border);
+    padding-left: 1rem;
+    font-size: $font-small;
 
         .title {
             color: var(--color-text-gray);
@@ -16,12 +16,19 @@
             letter-spacing: 0.1rem;
             text-transform: uppercase;
             margin-bottom: 1rem;
+            margin-top: 0;
         }
 
         .content-list {
+            line-height: 1.6rem;
+            
+            p {
+                margin: 0;
+            }
+
             & > ul > li {
                 &:not(:last-child) {
-                    margin-bottom: .8rem;
+                    margin-bottom: .2rem;
                 }
 
                 & > p, & > a {
@@ -36,14 +43,9 @@
     
                 li > ul {
                     margin-left: .8rem;
-                    margin-bottom: .4rem;
-                }
-    
-                p {
-                    margin: .4rem 0;
+                    // margin-bottom: .4rem;
                 }
             }  
-        }
     }
 
     @include mobile {
@@ -56,16 +58,16 @@
         padding: 1.5rem;
         background-color: var(--color-bg-gray);
         border-radius: 8px;
+        top: 0;
+        max-width: unset;
+        border: 0;
 
-        & > div {
-            position: relative;
-            padding: 0;
-            border: 0;
-
-            .title {
-                margin-top: 0;
-            }
+        .title {
+            margin-top: 0;
         }
 
+        .content-list {
+            line-height: 1.8rem;
+        }
     }
 }
