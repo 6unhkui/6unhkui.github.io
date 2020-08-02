@@ -5,27 +5,27 @@ import Moon from "../../static/images/moon.svg";
 
 
 export default function DarkmodeToggle() {
-    const [initialized, setInitialized] = useState(false);
+  const [init, setInit] = useState(false);
 
-    useEffect(() => {
-      if(!initialized && localStorage.getItem('theme') === null)
-        setInitialized(true);
-    }, []);
+  useEffect(() => {
+    if(!init && !localStorage.getItem('theme'))
+      setInit(true);
+  }, []);
 
-    return (
-        <ThemeToggler>
-          {({ theme, toggleTheme }) => {
-              if(initialized) {
-                toggleTheme('light');
-                theme = 'light';
-                setInitialized(false);
-              }
+  return (
+      <ThemeToggler>
+        {({ theme, toggleTheme }) => {
+            if(init) {
+              toggleTheme('light');
+              theme = 'light';
+              setInit(false);
+            }
 
-              return (
-                <div className={"floating darkmode " + theme} onClick={() => {toggleTheme(theme === 'dark' ? 'light' : 'dark')}}>
-                    <img src={(theme === 'dark' ? Moon : Sun)}/>
-                </div>
-          )}}
-        </ThemeToggler>
-    )
+            return (
+              <div className={"floating darkmode " + theme} onClick={() => {toggleTheme(theme === 'dark' ? 'light' : 'dark')}}>
+                  <img src={(theme === 'dark' ? Moon : Sun)}/>
+              </div>
+        )}}
+      </ThemeToggler>
+  )
 }

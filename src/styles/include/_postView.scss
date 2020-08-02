@@ -108,33 +108,35 @@ section.post-view {
         .content {
             h1, h2, h3, h4 {
                 margin-bottom: .8rem;
+
+                & +  h1, & +  h2, & +  h3, & +  h4{
+                    margin-top: 1.6rem;
+                }
             }
-  
+ 
             h1, h2, h3 {
                 border-bottom: 1px solid var(--color-border);
                 padding-bottom: .4rem;
             }
-
+            
             h1 {
                 font-size : $font-x-large;
-                margin-top: 4rem;
-            }
-
-            h2, h3, h4 {
-                margin-bottom: .8rem;
-                margin-top: 2.4rem;
+                margin-top: 5rem;
             }
       
             h2 {
                 font-size : $font-medium;
+                margin-top: 3.8rem;
             }
       
             h3 {
                 font-size : $font-medium - .2rem;
+                margin-top: 2.8rem;
             }
       
             h4 {
                 font-size : $font-medium - .4rem;
+                margin: 2rem 0 .4rem 0;
             }
   
             a:not(.anchor-header){
@@ -145,11 +147,18 @@ section.post-view {
                 padding-bottom: 4px;
             }
   
-            blockquote {
+            blockquote{
+                // color : var(--color-text-gray);
                 border-left: 4px solid var(--color-point);
-                background-color: var(--color-point-bg);
+                // background-color: var(--color-point-bg);
                 margin: 1.5rem 0;
-                padding: .8rem 1.2rem;
+                padding: .6rem 1.2rem;
+                padding: 0 1.2rem;
+                // font-weight: bold;
+
+                & > blockquote{
+                    margin: 0;
+                }
             }
 
             table {
@@ -190,8 +199,8 @@ section.post-view {
                 }
             }
 
-            ol {
-                margin-left: 1rem;
+            ol, ul {
+                padding: 0 1.8rem;
             }
   
             ul, li, p {
@@ -200,7 +209,39 @@ section.post-view {
             }
 
             hr {
-                margin: 1.6rem 0;
+                margin: 1.6rem 0; 
+            }
+
+            .footnote-ref {
+                margin: 0 .2rem 0 0;
+                color : var(--color-point);
+                border: 0 !important;
+                &:hover{
+                    opacity: .7;
+                }
+            }
+
+            .footnotes {
+                margin-top: 6rem;
+                hr {
+                    margin: 0;
+                }
+                ol {
+                    padding: 1.8rem;
+                }
+                li{
+                    color : var(--color-text-gray);
+                    p {
+                        display: inline-block;
+                    }
+                    a {
+                        border: 0 !important;
+                        color : var(--color-point);
+                        &:hover{
+                            opacity: .7;
+                        }
+                    }
+                }
             }
 
             & > *:first-child {

@@ -32,7 +32,7 @@
    border-radius: 4px;
   //  background: lighten($primary-color, $amount: 46); 
    background-color: var(--color-point-bg);
-   margin: 1.5rem 0;
+   margin: .6rem 0 1.4rem 0;
  }
  
  /* Inline code */
@@ -193,7 +193,11 @@
  }
 
 
-/* Line numbering - s */
+// Line numbering - s  ////////////////////////////////////////
+pre:not(.language-text).line-numbers{
+  padding-left: 2.8rem !important;
+}
+
 code.language-text + .line-numbers-rows{
   display: none;
 }
@@ -214,15 +218,19 @@ code:not(.language-text) + .line-numbers-rows {
 }
 
 @include mobile {
-  code + .line-numbers-rows{
+  pre:not(.language-text).line-numbers code + .line-numbers-rows{
     display: none;
   }
 
   pre {
     padding: 2.2rem 1.5rem 1.5rem 1.5rem !important;
   }
+
+  pre:not(.language-text).line-numbers{
+    padding-left: .8rem !important;
+  }
 }
-/* Line numbering - e */
+// Line numbering - e  ////////////////////////////////////////
 
 // Language - s ////////////////////////////////////////
 pre[class*="language-"]{
@@ -265,7 +273,7 @@ pre.language-java::before {
 }
 
 pre.language-shell::before {
-	content: "shell";
+	content: "sh";
 	// background: #ffa621;
 }
 
@@ -273,8 +281,41 @@ pre.language-markdown::before {
 	content: "md";
 	// background: #ffa621;
 }
+
+pre.language-diff::before { 
+	content: "diff";
+	background: #bbffc1;
+}
+
+pre.language-html::before { 
+	content: "html";
+	background: #ff7f24;
+}
+
+pre.language-css::before { 
+	content: "CSS";
+	background: #5cbbff;
+}
 // Language - e ////////////////////////////////////////
 
+// file name - s ////////////////////////////////////////
+.gatsby-code-title {
+  margin-top: .6rem;
+  font-size: .8rem;
+  margin-bottom: -0.7rem;
+  padding: .8rem 1rem;
+  border: 1px solid var(--color-point-border);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: var(--color-point-bg);
+  color: var(--color-text-gray);
+ }
+
+ .gatsby-code-title + div > pre[class*="language-"] {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+ }
+// file name - e ////////////////////////////////////////
 
 // dark mode - s ////////////////////////////////////////
 .dark {
@@ -437,6 +478,10 @@ pre.language-markdown::before {
  /* Bash */
  .language-bash .token.keyword {
    color: #0086b3;
+ }
+
+ .token.inserted {
+   background-color: #002100;
  }
 
   code:not(.language-text) + .line-numbers-rows {

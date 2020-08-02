@@ -7,8 +7,8 @@ const ProjectPage = ({data, location}) => {
   return (
       <Layout location={location}>
         <SEO title="Today I Learned"/>
-        <section className="posts">
-          <div className="container">
+        <section className="posts-wrap">
+          <div className="posts container">
             <Posts posts={data.allMarkdownRemark.edges} view="list"/>
           </div>
         </section>
@@ -20,7 +20,7 @@ export default ProjectPage;
 
 export const pageQuery = graphql`
 query {
-  allMarkdownRemark(filter: { frontmatter: { menu: { eq: "TIL"} } }, sort: { fields: [frontmatter___date], order: DESC }) {
+  allMarkdownRemark(filter: { frontmatter: { menu: { eq: "til"} } }, sort: { fields: [frontmatter___date], order: DESC }) {
     edges {
       node {
         excerpt

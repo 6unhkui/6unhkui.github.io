@@ -207,11 +207,15 @@ header {
         height: -webkit-fill-available;
         margin: -50px 0 0 -50px;
         margin-left: auto;
-        padding-top: 5rem;
+        // padding-top: 5rem;
         background-color: $primary-color;
         -webkit-font-smoothing: antialiased;
         transform-origin: 0% 0%;
         transform: translate(100%, 0);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
         .menu-list {
           margin: 0 auto;
@@ -229,6 +233,7 @@ header {
             a {
               color : #fff;
               opacity: .6;
+              line-height: 3.2rem;
 
               &:hover {
                 color : #fff;

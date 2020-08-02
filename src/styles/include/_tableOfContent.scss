@@ -41,7 +41,7 @@
                 margin: 0;
                 padding: 0;
     
-                li > ul {
+                li > p + ul {
                     margin-left: .8rem;
                     // margin-bottom: .4rem;
                 }
@@ -61,6 +61,7 @@
         top: 0;
         max-width: unset;
         border: 0;
+        max-height: none;
 
         .title {
             margin-top: 0;

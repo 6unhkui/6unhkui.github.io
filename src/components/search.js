@@ -8,6 +8,7 @@ const Search = ({searchValue, setSearchValue}) => {
      }, []);
 
     return (
+        <div className="container">
         <div className="search-wrap">
             <span className="ico-search">
                 <FontAwesomeIcon icon={"search"} style={{opacity: '.15' , width: '1.2rem', height:'1.2rem'}}/>
@@ -16,6 +17,7 @@ const Search = ({searchValue, setSearchValue}) => {
                placeholder="검색어를 입력하세요."
                ref={(ref) => {input = ref;}}
                value={searchValue} onChange={(e) => setSearchValue(e.target.value)}/>
+        </div>
         </div>
     )
 }

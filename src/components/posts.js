@@ -44,7 +44,7 @@ const Posts = ({posts, view = "card"}) => {
 
 
                     <div className="tags-wrap">
-                      {tags.map((tag, i) => (
+                      {tags && tags.map((tag, i) => (
                         <span className='tag' key={i}><Link to={`/tags/${kebabCase(tag)}/`}>{'# ' + tag}</Link></span>
                       ))}
                     </div> 

@@ -14,7 +14,7 @@ const Tags = ({ pageContext, data, location }) => {
       <div className="tags-page-wrap">
         <PageTitle title={'# ' + tag} subtxt={[`${data.allMarkdownRemark.totalCount} post${(data.allMarkdownRemark.totalCount === 1 ? '' : 's')}`]}/>
         
-        <section className="posts">
+        <section className="posts-wrap">
           <div className="container">
             <Post posts={data.allMarkdownRemark.edges}/>
           </div>

@@ -1,8 +1,8 @@
-section.posts {
+section.posts-wrap {
     background-color: var(--color-bg-gray);
     padding-top : 3rem;
     padding-bottom : 2rem;
-    transition: all .4s ease; 
+    transition: all .4s ease;
 
     .section-title {
         font-size: $font-large;
@@ -24,10 +24,14 @@ section.posts {
         transition: all .3s;
         top : 0;
 
+        &:first-child {
+            margin-top: 2rem;
+        }
+
         &:hover {
-            box-shadow: 0 8px 18px rgba(34, 31, 36, 0.12);
-            opacity: .8;
-            top: -.3rem;
+            // box-shadow: 0 8px 18px rgba(34, 31, 36, 0.12);
+            opacity: .7;
+            // top: -.3rem;
         }
 
         img {
@@ -175,6 +179,10 @@ section.posts {
         padding-top : 2rem;
 
         article.card {
+            &:first-child {
+                margin-top: 1rem;
+            }
+
             .post-info {
                 min-height: fit-content;
             }

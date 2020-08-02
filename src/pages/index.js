@@ -29,8 +29,8 @@ const IndexPage = ({data, location}) => {
         </div>
       </section>
  
-      <section className="posts index">
-        <div className="container">
+      <section className="posts-wrap index">
+        <div className="posts container">
           <h1 className="section-title"><span role="img" aria-label="emoji">✏️ </span>Recent Posts</h1>
           <Posts posts={data.allMarkdownRemark.edges}/>
         </div>
