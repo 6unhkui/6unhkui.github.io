@@ -16,7 +16,7 @@ export default ProgrammingPage;
 
 export const pageQuery = graphql`
 query {
-    allMarkdownRemark(filter: { frontmatter: { menu: { eq: "programming"} } }, sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(filter: {fields: {slug: {regex: "/programming/"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt

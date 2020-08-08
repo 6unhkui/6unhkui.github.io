@@ -86,25 +86,10 @@ section.posts-wrap {
         
                 .tag {
                     flex-shrink: 0;
-                    padding: .3rem .5rem;
-                    margin-right: .4rem;
-                    font-size: $font-small;
                     background-color: var(--color-bg-gray);
-                    border-radius: 2px;
-                    // transition: all 1s ease-in-out;
-                    // -webkit-transition: all 1s ease-in-out;
-                    cursor: pointer;
-        
                     a {
                         color : darken($gray-font-color, 20);
                     }
-        
-                    &:hover {
-                        background: $gradient-color;
-                        a {
-                            color : #fff;
-                        }
-                    } 
                 }
             }    
         }
@@ -140,9 +125,10 @@ section.posts-wrap {
 
             .date {
                 margin: 0;
-                flex-basis: 5.4rem;
+                flex-basis: 5rem;
                 top: .8rem;
                 position: relative;
+                margin-right: 10px;
             }
 
             .tags-wrap {

@@ -16,7 +16,7 @@ export default ComputerSciencePage;
 
 export const pageQuery = graphql`
 query {
-    allMarkdownRemark(filter: { frontmatter: { menu: { eq: "cs"} } }, sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(filter: {fields: {slug: {regex: "/cs/"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt

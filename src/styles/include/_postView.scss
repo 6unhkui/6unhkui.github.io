@@ -69,26 +69,11 @@ section.post-view {
         line-height: 2.2rem;
        
         .tag {
-            padding: .3rem .5rem;
-            margin-right: .4rem;
-            font-size: $font-small;
-            background-color: rgba(255, 255, 255, 0.25);
-            border-radius: 2px;
-            transition: all 1s ease-in-out;
-            -webkit-transition: all 1s ease-in-out;
-            cursor: pointer;
             line-height: initial;
             display: inline-block;
-            
+            background-color: rgba(255, 255, 255, 0.25);
             a {
-                color : #fff;
-            }
-
-            &:hover {
-                background: $gradient-color;
-                a {
-                    color : #fff;
-                }
+                color: #fff;
             }
         }
     }

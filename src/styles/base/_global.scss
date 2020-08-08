@@ -79,6 +79,11 @@ ul {
   padding-inline-start: 20px;
 }
 
+input[type="checkbox"] {
+  position: relative;
+  top: 2px;
+}
+
 input {
   &::placeholder {
     color : lighten($gray-font-color, 15);
@@ -182,7 +187,6 @@ input {
 
   }
 }
-
 
 .container {
   @include desktop {

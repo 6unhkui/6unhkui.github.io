@@ -16,7 +16,7 @@ export default DevOpsPage;
 
 export const pageQuery = graphql`
 query {
-    allMarkdownRemark(filter: { frontmatter: { menu: { eq: "devops"} } }, sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(filter: {fields: {slug: {regex: "/devops/"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt

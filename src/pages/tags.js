@@ -19,7 +19,7 @@ const TagsPage = ({ data, location }) => {
             {allTags.map(tag => (
               <div key={tag.fieldValue} className="tag">
                 <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                  {'# ' + tag.fieldValue}
+                  {tag.fieldValue}
                   <span className="tag-count">{'(' + tag.totalCount + ')'}</span>
                 </Link>
               </div>

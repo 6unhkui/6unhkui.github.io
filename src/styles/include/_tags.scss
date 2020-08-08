@@ -1,4 +1,10 @@
 .tags-page-wrap {
+    .page-title {
+        &:before {
+            content: "#";
+            margin-right: .5rem;
+        }
+    }
     .all-tags {
         a {
             text-decoration: underline;
@@ -12,46 +18,30 @@
 }
 
 .all-tags-wrap {
-    .container {
-        // display: flex;
-        // flex-wrap: wrap;
-        // justify-content: space-between;
-        // border-top: 1px solid $border-color;
-    }
-
     .tag {
         display: inline-block;
         margin-bottom: 1rem;
         padding: .3rem .5rem;
         margin-right: .8rem;
-        // font-size: $font-small;
         background-color: var(--color-bg-gray);
         border-radius: 2px;
-        // transition: all 1s ease-in-out;
-        // -webkit-transition: all 1s ease-in-out;
         cursor: pointer;
 
         a, .tag-count{
             color : darken($gray-font-color, 20);
         }
 
+        a {
+            &::before {
+                content: "#";
+                margin-right: .2rem;
+            }
+        }
+
         .tag-count {
             margin-left: .3rem;
             opacity: .4;
         }
-
-        // .tag-count {
-        //     margin-left: .4rem;
-        //     font-size: .8rem;
-        //     // background-color: var( --color-text-gray);
-        //     background-color:  var(--color-text-gray);
-        //     // opacity: .3;
-        //     padding: .1rem .4rem;
-        //     // color: #fff;
-        //     border-radius: 50%;
-        //     top: -2px;
-        //     position: relative;
-        // }
 
         &:hover {
             background: $gradient-color;
@@ -60,33 +50,29 @@
             }
         } 
     }
+}
 
 
-    // .tag {
-    //     border-bottom: 1px solid var(--color-border);
-    //     padding: 1.2rem 0;
-    //     font-weight: 500;
-    //     width: calc(50% - 10px);
-    //     font-weight: blod;
+.tags-wrap {
+    .tag {
+        padding: .3rem .5rem;
+        margin-right: .4rem;
+        font-size: $font-small;
+        border-radius: 2px;
+        cursor: pointer;
+        
+        a {
+            &:before {
+                content: "#";
+                margin-right: .2rem;
+            }
+        }
 
-    //     a {
-    //         font-weight: 500;
-    //     }
-
-    //     .tag-count {
-    //         margin-left: .6rem;
-    //         font-size: $font-small;
-    //         // border: 1px solid lighten($primary-color, 40);
-    //         border: 1px solid $border-color;
-    //         // color: $primary-color;
-    //         color: $gray-font-color;
-    //         padding: .1rem .5rem;
-    //         border-radius: 20px;
-    //         // background: lighten($primary-color, $amount: 46);
-    //     }
-
-    //     @include mobile {
-    //         width: 100%;
-    //     }
-    // }
+        &:hover {
+            background: $gradient-color;
+            a {
+                color : #fff !important;
+            }
+        }
+    }
 }

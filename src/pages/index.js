@@ -11,7 +11,7 @@ const IndexPage = ({data, location}) => {
       <SEO/>
       <section className="page-title-wrap">
           <div className='container'>
-            <div>
+          <div>
           <h1 className="page-title">
             <span style={{display: 'block'}}>Hello!</span>
             <Typed strings={['I\'m Inkyung', 'a Web Developer']}
@@ -43,7 +43,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
 query {
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 4) {
+    allMarkdownRemark(filter: {fields: {slug: {regex: "/^((?!/til/).)*$/"}}}, sort: { fields: [frontmatter___date], order: DESC }, limit: 4) {
       edges {
         node {
           excerpt

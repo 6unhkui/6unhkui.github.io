@@ -59,6 +59,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -108,7 +109,7 @@ module.exports = {
                 className: `anchor-header`,
                 maintainCase: false,
                 removeAccents: true,
-                elements: [`h2`, 'h3', `h4`], 
+                elements: [`h1`, `h2`, 'h3', `h4`], 
               }
             },
             {

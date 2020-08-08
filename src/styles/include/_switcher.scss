@@ -2,7 +2,6 @@
     padding: 3px;
     border: 1px solid darken($border-color, 10);
     border-radius: 30px;
-    
     width: fit-content;
     margin: 0 auto;
     margin-bottom: 1rem;
@@ -31,12 +30,15 @@
             font-weight: 500;
             background: $gradient-color;
             border : 1px solid var(--color-point);
+            box-shadow: 0 0.4rem 1rem 0 rgba(0, 0, 0, .15);
         }
     }
 
     @include mobile {
         border : 0;
-        margin: 0 0 1rem 0;
+        // margin: 0 0 1rem 0;
+        margin: 0;
+        padding-bottom: 1rem;
         display: flex;
         overflow-x: auto;
         width: auto;
@@ -70,47 +72,6 @@
     }
 }
 
-// .select-wrap {
-//     display: none;
-
-//     @include mobile { 
-//         // display: block;
-//         position: relative;
-//         width: 100%;
-//         border: 1px solid lighten($primary-color , 30);
-//         border-radius: 4px;
-//         z-index: 1;
-//         margin-bottom: 1rem;
-
-//         select {
-//             padding: 1em .8em;
-//             border: 0;
-//             width: 100%;
-//             filter: alpha(opacity=0);
-//             -webkit-appearance: none;
-//             font-size: $font-small;
-//             color: var(--color-point);
-//             background-color: var(--color-bg);
-//             font-weight: 600;
-//         }
-
-//         &::before {
-//             content: "";
-//             position: absolute;
-//             top: 50%;
-//             right: 1rem;
-//             width: 0;
-//             height: 0;
-//             margin-top: -.2rem;
-//             border-left: .3rem solid transparent;
-//             border-right: .3rem solid transparent;
-//             border-top: .4rem solid var(--color-point);
-//         }
-//     }
-// }
-
-
-
 // dark mode 
 .dark .switcher-wrap  {
     @include desktop {
@@ -127,7 +88,7 @@
 
     @include mobile {
         .switcher-option:not(.selected) {
-            border : 1px solid var(--color-bg);
+            border : 1px solid var(--color-border);
         }
     }
 }

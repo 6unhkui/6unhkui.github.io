@@ -3,7 +3,6 @@ import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import Sun from "../../static/images/sun.svg";
 import Moon from "../../static/images/moon.svg";
 
-
 export default function DarkmodeToggle() {
   const [init, setInit] = useState(false);
 

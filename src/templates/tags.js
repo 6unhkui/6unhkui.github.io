@@ -10,9 +10,9 @@ const Tags = ({ pageContext, data, location }) => {
 
   return (
     <Layout location={location}>
-      <SEO title={'# ' + tag}/>
+      <SEO title={tag}/>
       <div className="tags-page-wrap">
-        <PageTitle title={'# ' + tag} subtxt={[`${data.allMarkdownRemark.totalCount} post${(data.allMarkdownRemark.totalCount === 1 ? '' : 's')}`]}/>
+        <PageTitle title={tag} subtxt={[`${data.allMarkdownRemark.totalCount} post${(data.allMarkdownRemark.totalCount === 1 ? '' : 's')}`]}/>
         
         <section className="posts-wrap">
           <div className="container">

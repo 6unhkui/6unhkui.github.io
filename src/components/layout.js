@@ -7,7 +7,7 @@ import TopButton from './top-button'
 import DarkmodeToggle from "../components/darkmode-toggle";
 import '../utils/fontawesome'
 
-const Layout = ({ children, location, menu}) => {
+const Layout = ({ children, location}) => {
   const data = useStaticQuery(graphql`
   query {
     site {
@@ -32,7 +32,7 @@ const Layout = ({ children, location, menu}) => {
     <div className='wrapper'> 
       <TopButton scrollStepInPx="50" delayInMs="16.66"/>
       <DarkmodeToggle/>
-      <Header location={location} data={data} menu={menu}/>
+      <Header location={location} data={data}/>
       <main>{children}</main>
       <Footer data={data}/>
     </div>

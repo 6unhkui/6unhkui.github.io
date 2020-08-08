@@ -4,12 +4,13 @@ import Posts from "../components/posts";
 import SEO from "../components/seo"
 
 const ProjectPage = ({data, location}) => {
+  console.log(data)
   return (
       <Layout location={location}>
         <SEO title="Today I Learned"/>
         <section className="posts-wrap">
           <div className="posts container">
-            <Posts posts={data.allMarkdownRemark.edges} view="list"/>
+            <Posts view="list" posts={data.allMarkdownRemark.edges}/>
           </div>
         </section>
       </Layout>
@@ -20,7 +21,7 @@ export default ProjectPage;
 
 export const pageQuery = graphql`
 query {
-  allMarkdownRemark(filter: { frontmatter: { menu: { eq: "til"} } }, sort: { fields: [frontmatter___date], order: DESC }) {
+  allMarkdownRemark(filter: {fields: {slug: {regex: "/til/"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
     edges {
       node {
         excerpt
@@ -31,7 +32,6 @@ query {
           date(formatString: "MMMM DD")
           title
           tags
-          category
         }
       }
     }

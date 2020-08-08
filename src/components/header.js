@@ -2,10 +2,10 @@ import React, {useState} from "react"
 import { Link } from "gatsby"
 import Logo from "../../static/images/logo.svg";
 
-const Header = ({ data, location, menu}) => {
+const Header = ({ data, location }) => {
 const [showMenu, setShowMenu] = useState(false);
 const site = data.site.siteMetadata;
-const path = location.pathname.substr(location.pathname.lastIndexOf('/') + 1).toUpperCase();
+const path = location.pathname.substr(1).split("/")[0].toUpperCase();
 
 return (
   <header className={(showMenu ? 'open' : '')} >
@@ -28,10 +28,7 @@ return (
         <div className={"menu-list-wrap " + (showMenu ? 'open' : '')}>
           <div className="menu-list">
           {site.menuLinks.map(link => (
-            <h4 key={link.name} 
-                className={'menu' + (link.name.toUpperCase() == path
-                                    || (location.pathname == '/' && link.name.toUpperCase() == 'HOME') 
-                                    || menu && link.name.toUpperCase() == menu.toUpperCase() ? ' selected' : '')}>
+            <h4 key={link.name} className={'menu' + (link.name.toUpperCase() == path ? ' selected' : '')}>
               <Link to={link.link} onClick={() => setShowMenu(false)}>
                 {link.name}
               </Link>

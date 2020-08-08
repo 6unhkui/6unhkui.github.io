@@ -12,12 +12,12 @@ export default function PostTemplate({ data, pageContext, location }) {
   const post = data.markdownRemark;
   const { previous, next } = pageContext;
   const { author} = data.site.siteMetadata;
-  const {menu, category, title, date, tags, featuredImage} = post.frontmatter;
+  const {category, title, date, tags, featuredImage} = post.frontmatter;
 
   const image = featuredImage ? featuredImage.childImageSharp.original : null;
 
   return (
-    <Layout location={location} menu={menu}>
+    <Layout location={location}>
         <SEO
           title={post.frontmatter.title}
           description={post.excerpt}
@@ -28,12 +28,12 @@ export default function PostTemplate({ data, pageContext, location }) {
             <div className="featured-image" style={{backgroundImage : image ? `url(${image.src})` : ''}}>
               <div className="post-info-wrap">
                 <div className="post-info container">
-                  <span className="category">{category}</span>
-                  <h1 className="title">{title}</h1>
+                  {category && <span className="category">{category}</span>}
+                  {title && <h1 className="title">{title}</h1>}
                   <span className="meta-data">by <span className="writer">{author}</span>{' ∙ ' + date}</span>
                   <div className="tags-wrap">
                   {tags.map((tag, i) => (
-                    <span className='tag' key={i}><Link to={`/tags/${kebabCase(tag)}/`}>{'# ' + tag}</Link></span>
+                    <span className='tag' key={i}><Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link></span>
                   ))}
                   </div> 
                 </div>
@@ -91,7 +91,6 @@ export const pageQuery = graphql`
       html
       tableOfContents
       frontmatter {
-        menu
         title
         date(formatString: "MMMM DD, yyyy")
         category
