@@ -1,0 +1,25 @@
+---
+category : Docker
+title: 도커 기본 개념 및 명령어 정리
+date: "2020-07-27"
+tags : ["Docker"]
+featuredImage: thumbnail.png
+---
+> 🔒 작성중
+
+# 1. Docker란
+컨테이너 기술을 사용하여 애플리케이션의 실행 환경을 구축 및 운용하기 위한 오픈소스 가상화 플랫폼이다. <br/>
+애플리케이션의 실행에 필요한 것을 하나로 모아, Docker 이미지를 관리함으로서 애플리케이션의 이식성을 높일 수 있다.
+
+## 1.1. 컨테이너 기술
+
+<!-- # 컨테이너/이미지 지우기
+```
+sudo docker rm -f `sudo docker ps -a -q`
+sudo docker rmi -f `sudo docker images`
+```
+
+# MySQL 컨테이너 띄우기 -->
+
+# # Reference 
+- 완벽한 IT 인프라 구출을 위한 Docker
