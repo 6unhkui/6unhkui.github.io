@@ -1,31 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://6unhkui.github.io/programming/jpa-attribute-converter</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://6unhkui.github.io/project/gatsby-blog-start</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://6unhkui.github.io/programming/python-basic</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://6unhkui.github.io/project/gatsby-blog-feature</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://6unhkui.github.io/etc/markdown-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://6unhkui.github.io/devops/docker-mysql</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://6unhkui.github.io/project/spring-jpa-board-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://6unhkui.github.io/devops/docker-basic</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://6unhkui.github.io/devops/docker-mysql</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://6unhkui.github.io/programming/java-api</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://6unhkui.github.io/cs/infra-architecture-1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://6unhkui.github.io/tags/java/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://6unhkui.github.io/tags/jpa/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://6unhkui.github.io/tags/gatsby/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://6unhkui.github.io/tags/react/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://6unhkui.github.io/tags/blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://6unhkui.github.io/tags/python/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://6unhkui.github.io/tags/markdown/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://6unhkui.github.io/tags/docker/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://6unhkui.github.io/tags/mysql/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://6unhkui.github.io/tags/java/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://6unhkui.github.io/tags/spring-boot/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://6unhkui.github.io/tags/spring-data-jpa/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://6unhkui.github.io/tags/jpa/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://6unhkui.github.io/tags/thymeleaf/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://6unhkui.github.io/tags/그림으로공부하는it인프라구조/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://6unhkui.github.io/tags/book/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://6unhkui.github.io/tags/infra/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://6unhkui.github.io/tags/architecture/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://6unhkui.github.io/tags/network/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://6unhkui.github.io/tags/docker/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://6unhkui.github.io/tags/mysql/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://6unhkui.github.io/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://6unhkui.github.io/cs/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://6unhkui.github.io/devops/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
