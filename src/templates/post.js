@@ -3,24 +3,30 @@ import React from "react"
 import { kebabCase } from 'lodash';
 import { Link, graphql } from "gatsby"
 import SEO from "../components/seo"
-import Layout from "../components/layout"
-import TableOfContents from "../components/table-of-contents";
-import PostComment from "../components/post-comment";
+import Index from "../components/Layout"
+import TableOfContents from "../components/Post/tableOfContents";
+import PostComment from "../components/Post/postComment";
 
 
 export default function PostTemplate({ data, pageContext, location }) {
-  const post = data.markdownRemark;
   const { previous, next } = pageContext;
-  const { author} = data.site.siteMetadata;
-  const {category, title, date, tags, featuredImage} = post.frontmatter;
+  const {
+    site : {siteMetadata : { author }},
+    markdownRemark: {
+      excerpt,
+      html,
+      tableOfContents,
+      frontmatter : {category, title, date, tags, featuredImage}
+    }
+  } = data;
 
   const image = featuredImage ? featuredImage.childImageSharp.original : null;
 
   return (
-    <Layout location={location}>
+    <Index location={location}>
         <SEO
-          title={post.frontmatter.title}
-          description={post.excerpt}
+          title={title}
+          description={excerpt}
           image = {image}
         />
        
@@ -33,7 +39,9 @@ export default function PostTemplate({ data, pageContext, location }) {
                   <span className="meta-data">by <span className="writer">{author}</span>{' ∙ ' + date}</span>
                   <div className="tags-wrap">
                   {tags.map((tag, i) => (
-                    <span className='tag' key={i}><Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link></span>
+                    <span className='tag' key={i}>
+                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                    </span>
                   ))}
                   </div> 
                 </div>
@@ -41,10 +49,10 @@ export default function PostTemplate({ data, pageContext, location }) {
             </div>
 
           <div className="container">
-          <TableOfContents items={post.tableOfContents}/>
+          <TableOfContents items={tableOfContents}/>
 
           <article>
-          <div className="content" dangerouslySetInnerHTML={{ __html: post.html }} />
+          <div className="content" dangerouslySetInnerHTML={{ __html: html }} />
 
           <hr className="end-line"/>
 
@@ -71,7 +79,7 @@ export default function PostTemplate({ data, pageContext, location }) {
 
         </div>
       </section>
-    </Layout>
+    </Index>
   )
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function PagaTitle (props) {
+export default function PageTitle (props) {
     return (
         <section className="page-title-wrap">
             <div className='container'>

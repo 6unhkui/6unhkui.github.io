@@ -8,8 +8,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const postTemplate = path.resolve(`./src/templates/post.js`);
   const tagTemplate = path.resolve(`src/templates/tags.js`);
 
-  const result = await graphql(
-    `
+  const result = await graphql( `
       {
         allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: DESC }
@@ -29,8 +28,7 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-    `
-  )
+    `)
 
   if (result.errors) {
     throw result.errors

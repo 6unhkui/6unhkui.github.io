@@ -12,7 +12,7 @@ featuredImage: thumbnail.png
 - IDE : IntelliJ 2019.3
 
 # 1. 프로젝트 생성
-Spring에서 제공하는 [Spring initializr](https://start.spring.io/)에 접속하여 프로젝트를 생성한다.
+[Spring initializr](https://start.spring.io/)에 접속하여 프로젝트를 생성한다.
 
 ## 1.1. 프로젝트 설정
 - Build tool : Gradle

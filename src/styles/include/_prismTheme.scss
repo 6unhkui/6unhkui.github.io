@@ -267,6 +267,11 @@ pre.language-javascript::before {
 	background: #f7df1e;
 }
 
+pre.language-json::before {
+  content: "json";
+  //background: #f7df1e;
+}
+
 pre.language-java::before {
 	content: "java";
 	background: #ffa621;
@@ -307,6 +312,10 @@ pre.language-sql::before {
   content: "SQL";
   color : #fff;
   background: #3f51b5;
+}
+
+pre.language-less::before {
+  content: "LESS";
 }
 // Language - e ////////////////////////////////////////
 

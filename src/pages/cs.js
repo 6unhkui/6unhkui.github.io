@@ -1,22 +1,22 @@
 import React from 'react';
-import Layout from "../components/layout"
+import Index from "../components/Layout"
 import SEO from "../components/seo"
-import PostPage from '../components/post-page';
+import PostDetail from '../components/Post/postDetail';
 
 const ComputerSciencePage = ({data, location}) => {
   return (
-      <Layout location={location}>
+      <Index location={location}>
         <SEO title="Computer Science"/>
-        <PostPage data={data}/>
-      </Layout>
+        <PostDetail data={data}/>
+      </Index>
   )
 }
 
 export default ComputerSciencePage;
 
 export const pageQuery = graphql`
-query {
-    allMarkdownRemark(filter: {fields: {slug: {regex: "/cs/"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
+query($path: String! = "/cs/") {
+    allMarkdownRemark(filter: {fields: {slug: {regex: $path}}}, sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt
@@ -42,4 +42,4 @@ query {
         fieldValue
       }
     }
-}`
+}`;

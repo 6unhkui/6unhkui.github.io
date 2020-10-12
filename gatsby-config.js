@@ -13,7 +13,7 @@ module.exports = {
     menuLinks:[
       {
         name:`CS`,
-        link:`/cs`
+        link:`/cs`,
       },
       {
         name:`Programming`,
@@ -30,10 +30,6 @@ module.exports = {
       {
         name:`Project`,
         link:`/project`
-      },
-      {
-        name:`TIL`,
-        link:`/til`
       },
       {
         name:`TAGS`,
@@ -89,7 +85,7 @@ module.exports = {
                 inlineCodeMarker: null,
                 aliases: {},
                 noInlineHighlight: false,
-                showLineNumbers: true,
+                showLineNumbers: false,
               }
             },
             {
@@ -111,20 +107,6 @@ module.exports = {
                 removeAccents: true,
                 elements: [`h1`, `h2`, 'h3', `h4`], 
               }
-            },
-            {
-              resolve: "gatsby-remark-custom-blocks",
-                options: {
-                  blocks: {
-                    danger: {
-                      classes: "danger",
-                    },
-                   info: {
-                    classes: "info",
-                    title: "optional",
-                  },
-                },
-              },
             },
             {
               resolve: "gatsby-remark-external-links",

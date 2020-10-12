@@ -90,7 +90,7 @@ yarn add gatsby-plugin-dark-mode
 ```
 
 #### 3) 사용하기
-```javascript:title=components/darkmode-toggle.js
+```javascript:title=components/darkModeToggle.js
  import React from 'react';
  import { ThemeToggler } from 'gatsby-plugin-dark-mode'
  ...

@@ -1,15 +1,15 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/layout';
-import Post from "../components/posts";
+import Index from '../components/Layout';
+import Post from "../components/Post/posts";
 import SEO from "../components/seo"
-import PageTitle from "../components/page-title";
+import PageTitle from "../components/Layout/pageTitle";
 
 const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext;
 
   return (
-    <Layout location={location}>
+    <Index location={location}>
       <SEO title={tag}/>
       <div className="tags-page-wrap">
         <PageTitle title={tag} subtxt={[`${data.allMarkdownRemark.totalCount} post${(data.allMarkdownRemark.totalCount === 1 ? '' : 's')}`]}/>
@@ -20,7 +20,7 @@ const Tags = ({ pageContext, data, location }) => {
           </div>
         </section>
       </div>
-    </Layout>
+    </Index>
   );
 };
 

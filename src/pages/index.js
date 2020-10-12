@@ -1,14 +1,14 @@
 import React from "react"
 import {graphql } from "gatsby"
-import Layout from "../components/layout"
-import Posts from "../components/posts"
+import Index from "../components/Layout"
+import Posts from "../components/Post/posts"
 import SEO from "../components/seo"
 import Typed from 'react-typed';
 
-const IndexPage = ({data, location}) => {
+const HomePage = ({data, location}) => {
   return (
-    <Layout location={location}>
-      <SEO/>
+    <Index location={location}>
+      <SEO title={'index'}/>
       <section className="page-title-wrap">
           <div className='container'>
           <div>
@@ -23,23 +23,25 @@ const IndexPage = ({data, location}) => {
                 />
           </h1>
           <div className="sub-txt">
-            <p>웹 개발자 심인경입니다. <span role="img" aria-label="emoji">👩‍💻</span></p>
-          </div> 
+            <p>안녕하세요. 웹 개발자 심인경입니다. <span role="img" aria-label="emoji">👩‍💻</span></p>
+          </div>
           </div>
         </div>
       </section>
- 
+
       <section className="posts-wrap index">
         <div className="posts container">
-          <h1 className="section-title"><span role="img" aria-label="emoji">✏️ </span>Recent Posts</h1>
+          <h1 className="section-title">
+            <span role="img" aria-label="emoji">✏️ </span>Recent Posts
+          </h1>
           <Posts posts={data.allMarkdownRemark.edges}/>
         </div>
       </section>
-    </Layout>
+    </Index>
   );
 }
 
-export default IndexPage
+export default HomePage;
 
 export const pageQuery = graphql`
 query {
@@ -67,3 +69,4 @@ query {
       }
     }
 }`
+

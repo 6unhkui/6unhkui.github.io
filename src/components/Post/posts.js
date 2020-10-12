@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { kebabCase } from 'lodash';
 import { Link } from "gatsby"
-import Thumbnail from "../../static/images/gradation-bg.png";
+import Thumbnail from "../../../static/images/gradation-bg.png";
 
 const showCount = 6;
 const Posts = ({posts, view = "card"}) => {
@@ -9,6 +9,7 @@ const Posts = ({posts, view = "card"}) => {
   
   useEffect(() => {
     window.addEventListener('scroll', _infiniteScroll, true);
+    return window.removeEventListener('scroll', _infiniteScroll);
   }, []);
 
   function _infiniteScroll()  {

@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import SEO from "../components/seo"
-import PageTitle from "../components/page-title";
+import PageTitle from "../components/Layout/pageTitle";
 import { kebabCase } from 'lodash';
 
-import Layout from '../components/layout';
+import Index from '../components/Layout';
 const TagsPage = ({ data, location }) => {
   const allTags = data.allMarkdownRemark.group;
 
   return (
-    <Layout location={location}>
+    <Index location={location}>
       <SEO title="Tags" />
       <div style={{paddingBottom : '5rem'}}>
         <PageTitle title='Tags'/>
@@ -27,7 +27,7 @@ const TagsPage = ({ data, location }) => {
           </div>
         </section>
       </div>
-    </Layout>
+    </Index>
   );
 };
 

@@ -1,3 +1,4 @@
+@import './base/reset';
 @import './base/variables';
 @import './base/utility';
 @import './base/global';
@@ -9,6 +10,7 @@
 @import './include/postView';
 @import './include/tableOfContent';
 @import './include/tags';
+@import './include/floatingButton';
 @import './include/prismTheme.scss';
 
 @import './layout/header';

@@ -1,22 +1,22 @@
 import React from 'react';
-import Layout from "../components/layout"
+import Index from "../components/Layout"
 import SEO from "../components/seo"
-import PostPage from '../components/post-page';
+import PostDetail from '../components/Post/postDetail';
 
 const DevOpsPage = ({data, location}) => {
   return (
-      <Layout location={location}>
+      <Index location={location}>
         <SEO title="DevOps"/>
-        <PostPage data={data}/>
-      </Layout>
+        <PostDetail data={data}/>
+      </Index>
   )
 }
 
 export default DevOpsPage;
 
 export const pageQuery = graphql`
-query {
-    allMarkdownRemark(filter: {fields: {slug: {regex: "/devops/"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
+query($path: String! = "/devops/") {
+    allMarkdownRemark(filter: {fields: {slug: {regex: $path}}}, sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt
@@ -42,4 +42,4 @@ query {
         fieldValue
       }
     }
-}`
+}`;

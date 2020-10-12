@@ -1,7 +1,7 @@
 import React, {createRef, useLayoutEffect }from 'react';
 
 const src = 'https://utteranc.es/client.js';
-const PostCommet  = ({repo}) => {
+const PostComment = ({repo}) => {
     const containerRef = createRef();
 
     useLayoutEffect(() => {
@@ -29,4 +29,4 @@ const PostCommet  = ({repo}) => {
     )
 }
 
-export default PostCommet;
+export default PostComment;
