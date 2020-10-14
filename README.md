@@ -1,13 +1,13 @@
 
-# <center>My Development Blog ✍️</center>
-공부를 하면서 배운 내용을 기록하는 블로그입니다.<br/>
-React 기반 정적 페이지 생성 프레임워크인 Gatsby.js를 사용하여 만들었습니다.
+# i.log ✨
+개발을 하면서 공부한 내용을 기록하는 블로그입니다.<br/>
+이 블로그는 React 기반의 정적 페이지 생성 프레임워크인 `Gatsby.js`를 사용하여 만들었습니다.
 <br/><br/>
 ## 🔨 Project Stack
-- React.js
+- React
 - Gatsby.js
 - GraphQL
 - Sass
 <br/><br/>
-## 🔗 URL
+## 🔗 LINK
 https://6unhkui.github.io
