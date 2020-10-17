@@ -6,11 +6,21 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { Image } from "../models/FeaturedImage"
 
-function SEO({ description, lang, meta, image: metaImage, title }) {
+
+
+interface Props {
+  description? : string,
+  lang? : string,
+  meta? : object[],
+  image? : Image,
+  title : string
+}
+
+const SEO : React.FC<Props> = ({ description, lang = 'en', meta = [], image: metaImage, title }) =>   {
   const { site, icon } = useStaticQuery(
     graphql`
       query {
@@ -113,28 +123,9 @@ function SEO({ description, lang, meta, image: metaImage, title }) {
                 content: "summary",
               },
             ]
-      )
-      .concat(meta)}
+      )}
     />
   )
-}
-
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-  image: PropTypes.shape({
-    src: PropTypes.string.isRequired,
-    height: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired,
-  }),
 }
 
 export default SEO

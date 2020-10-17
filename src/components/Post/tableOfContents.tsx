@@ -1,8 +1,15 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-export default function TableOfContents({ items, currentHeaderUrl }) {
-    return items ? (
+
+interface Props {
+  items : string,
+  currentHeaderUrl? : string
+}
+
+const TableOfContents : React.FC<Props> = ({ items, currentHeaderUrl }) =>{
+  if(items) {
+    return (
       <div className="toc-wrap">
         <p className="title">
           <FontAwesomeIcon icon={"bookmark"} style={{marginRight : '8px', opacity : '.6'}}/>
@@ -12,5 +19,10 @@ export default function TableOfContents({ items, currentHeaderUrl }) {
              dangerouslySetInnerHTML={{ __html: items }}
         />
       </div>
-    ) : null;
-  }
+    )
+  }else return (
+    <></>
+  )
+}
+
+export default TableOfContents;

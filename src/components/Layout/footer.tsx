@@ -1,8 +1,14 @@
 import React from 'react';
 import Github from '../../../static/images/github.svg';
 import LinkedIn from '../../../static/images/linked-in.svg';
+import {SiteMetadata} from "../../models/SiteMetadata";
 
-export default function Footer({data}) {
+
+interface Props {
+    data : SiteMetadata;
+}
+
+const Footer : React.FC<Props> = ({data}) => {
     return (
         <footer>
             <div className="footer-wrap container">
@@ -19,3 +25,5 @@ export default function Footer({data}) {
         </footer>
     )
 }
+
+export default Footer;

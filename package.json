@@ -26,6 +26,7 @@
     "gatsby-plugin-sitemap": "^2.4.15",
     "gatsby-plugin-slug": "^1.1.0",
     "gatsby-plugin-styled-components": "^3.3.8",
+    "gatsby-plugin-typescript": "^2.4.21",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.3.14",
     "gatsby-transformer-remark": "^2.8.23",
@@ -54,7 +55,8 @@
     "gatsby-remark-sub-sup": "^1.0.0",
     "gatsby-remark-toc": "^1.2.0",
     "gh-pages": "^3.1.0",
-    "prettier": "2.0.5"
+    "prettier": "2.0.5",
+    "typescript": "^4.0.3"
   },
   "keywords": [
     "gatsby"

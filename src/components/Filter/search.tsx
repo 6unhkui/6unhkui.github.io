@@ -1,12 +1,17 @@
-import React, {useEffect} from 'react';
+import React, { useCallback } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Search = ({value, onChange}) => {
-  let input;
-  useEffect(()=> {
-    input.focus();
-  }, []);
 
+interface Props {
+  value : string;
+  onChange : (value:string) => void;
+}
+
+const Search : React.FC<Props> = ({value, onChange}) => {
+
+  const handleChange = useCallback(event => {
+    onChange(event.target.value)
+  },[]);
 
   return (
       <div className='search-wrap'>
@@ -14,9 +19,8 @@ const Search = ({value, onChange}) => {
           <input type="text"
                  placeholder="검색어를 입력하세요."
                  value={value}
-                 onChange={(e) => onChange(e.target.value)}
+                 onChange={handleChange}
                  className="search-input"
-                 ref={(ref) => {input = ref;}}
           />
       </div>
 

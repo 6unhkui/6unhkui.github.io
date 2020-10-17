@@ -2,9 +2,20 @@ import React, {useState, useEffect} from 'react';
 import { kebabCase } from 'lodash';
 import { Link } from "gatsby"
 import Thumbnail from "../../../static/images/gradation-bg.png";
+import { Edge } from "../../models/ListQuery"
+
+enum View {
+  CARD = 'card',
+  LIST = 'list'
+}
+
+interface Props {
+  posts : Edge[],
+  view? : View
+}
 
 const showCount = 6;
-const Posts = ({posts, view = "card"}) => {
+const Posts:React.FC<Props> = ({posts, view = "card"}) => {
   const [postsToShow, setPostsToShow] = useState(showCount);
   
   useEffect(() => {

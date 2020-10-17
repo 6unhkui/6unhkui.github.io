@@ -3,9 +3,15 @@ import { Link, graphql } from 'gatsby';
 import SEO from "../components/seo"
 import PageTitle from "../components/Layout/pageTitle";
 import { kebabCase } from 'lodash';
-
 import Index from '../components/Layout';
-const TagsPage = ({ data, location }) => {
+import { Query } from "../models/Tags"
+
+interface Props {
+  data : Query;
+  location: Location;
+}
+
+const TagsPage: React.FC<Props> = ({ data, location }) => {
   const allTags = data.allMarkdownRemark.group;
 
   return (

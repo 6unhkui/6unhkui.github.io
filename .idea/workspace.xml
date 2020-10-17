@@ -20,12 +20,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ba7bcdb-a3b8-44ad-a0bd-5a35f95dfaac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/content/blog/cs/network-1/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/custom.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/@types/alltypes.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/DetailQuery.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/FeaturedImage.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/ListQuery.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/PageContext.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/SiteMetadata.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Tags.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/blog/project/gatsby-blog-feature/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/blog/project/gatsby-blog-feature/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filter/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filter/search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filter/switcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filter/switcher.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FloatingButton/darkModeToggle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FloatingButton/darkModeToggle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FloatingButton/topButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FloatingButton/topButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/pageTitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/pageTitle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Post/postComment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Post/postComment.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Post/postDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Post/postDetail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Post/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Post/posts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Post/tableOfContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Post/tableOfContents.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/seo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/seo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/404.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/404.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/devops.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/devops.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/etc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/etc.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/programming.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/programming.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/tags.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/tags.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/post.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/tags.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/tags.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,15 +81,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Filter" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/Filter" />
       <recent name="$PROJECT_DIR$/content/blog/cs/network-1" />
     </key>
   </component>
@@ -60,6 +108,12 @@
       <updated>1602514038790</updated>
       <workItem from="1602514039805" duration="1457000" />
       <workItem from="1602544417930" duration="31000" />
+      <workItem from="1602727081112" duration="3442000" />
+      <workItem from="1602837031870" duration="1105000" />
+      <workItem from="1602957539865" duration="1871000" />
+      <workItem from="1602959438828" duration="3106000" />
+      <workItem from="1602962555862" duration="1465000" />
+      <workItem from="1602964034037" duration="1212000" />
     </task>
     <servers />
   </component>

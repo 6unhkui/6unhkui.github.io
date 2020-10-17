@@ -2,20 +2,27 @@ import React from 'react';
 import Index from "../components/Layout"
 import SEO from "../components/seo"
 import PostDetail from '../components/Post/postDetail';
+import { Query } from "../models/ListQuery"
+import { graphql } from "gatsby"
 
-const DevOpsPage = ({data, location}) => {
+
+interface Props {
+  data : Query;
+  location: Location;
+}
+const ComputerSciencePage: React.FC<Props> = ({data, location}) => {
   return (
       <Index location={location}>
-        <SEO title="DevOps"/>
+        <SEO title="Computer Science"/>
         <PostDetail data={data}/>
       </Index>
   )
 }
 
-export default DevOpsPage;
+export default ComputerSciencePage;
 
 export const pageQuery = graphql`
-query($path: String! = "/devops/") {
+query($path: String! = "/cs/") {
     allMarkdownRemark(filter: {fields: {slug: {regex: $path}}}, sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {

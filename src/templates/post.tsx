@@ -6,9 +6,16 @@ import SEO from "../components/seo"
 import Index from "../components/Layout"
 import TableOfContents from "../components/Post/tableOfContents";
 import PostComment from "../components/Post/postComment";
+import { PageContext } from "../models/PageContext"
+import { Query } from "../models/DetailQuery"
 
+interface Props {
+  data : Query,
+  pageContext : PageContext,
+  location : Location
+}
 
-export default function PostTemplate({ data, pageContext, location }) {
+const PostTemplate: React.FC<Props> = ({ data, pageContext, location }) => {
   const { previous, next } = pageContext;
   const {
     site : {siteMetadata : { author }},
@@ -20,7 +27,7 @@ export default function PostTemplate({ data, pageContext, location }) {
     }
   } = data;
 
-  const image = featuredImage ? featuredImage.childImageSharp.original : null;
+  const image = featuredImage ? featuredImage.childImageSharp.original : undefined;
 
   return (
     <Index location={location}>
@@ -82,6 +89,8 @@ export default function PostTemplate({ data, pageContext, location }) {
     </Index>
   )
 }
+
+export default PostTemplate;
 
 export const pageQuery = graphql`
   query($slug: String!) {

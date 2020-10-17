@@ -1,8 +1,15 @@
 import React, {useState} from "react"
 import { Link } from "gatsby"
 import Logo from "../../../static/images/logo.svg";
+import { SiteMetadata } from "../../models/SiteMetadata"
 
-const Header = ({ data, location }) => {
+
+interface Props {
+  data : SiteMetadata,
+  location : Location
+}
+
+const Header:React.FC<Props> = ({ data, location }) => {
 const [showMenu, setShowMenu] = useState(false);
 const path = location.pathname.substr(1).split("/")[0].toUpperCase();
 

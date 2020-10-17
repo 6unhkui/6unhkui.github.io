@@ -2,7 +2,10 @@ import React from "react"
 import Index from "../components/Layout"
 import SEO from "../components/seo"
 
-const NotFoundPage = ({location}) => (
+interface Props {
+  location: Location;
+}
+const NotFoundPage: React.FC<Props> = ({location}) => (
   <Index location={location}>
     <SEO title="404: Not found" />
     <section className="page-title-wrap">

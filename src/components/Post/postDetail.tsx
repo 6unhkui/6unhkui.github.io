@@ -1,21 +1,27 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 import Posts from "./posts";
 import Switcher from "../Filter/switcher";
 import Search from "../Filter/search"
+import { Query } from "../../models/ListQuery"
 
-export default function PostDetail({data}) {
-  const post = data.allMarkdownRemark.edges;
+interface Props {
+  data : Query
+}
+
+const PostDetail : React.FC<Props> = ({data}) => {
+  const {allMarkdownRemark : {edges}} = data;
   const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [searchValue, setSearchValue] = useState('');
-  const changeCategory = value => {
+
+  const changeCategory = useCallback( value => {
     setSelectedCategory(value);
     setSearchValue('');
-  };
+  }, []);
 
   return ( 
         <section className="posts-wrap">
           <div className="posts container">
-            {post.length > 0 &&
+            {edges.length > 0 &&
               <div className='filter-wrap' style={{marginBottom : '1.8rem'}}>
                 <Switcher items={data.allMarkdownRemark.categories}
                           selectedItem={selectedCategory}
@@ -24,7 +30,7 @@ export default function PostDetail({data}) {
               </div>
             }
 
-            <Posts posts={post.filter((s) => {
+            <Posts posts={edges.filter((s) => {
                 // 선택된 카테고리가 ALL일 경우, 모든 포스트를 보여주고
                 // ALL이 아닐 경우, 선택한 카테고리와 카테고리가 일치하는 포스트만 필터링
                 if(selectedCategory.toUpperCase() === 'ALL') return s;
@@ -43,3 +49,5 @@ export default function PostDetail({data}) {
         </section>
   )
 }
+
+export default PostDetail;

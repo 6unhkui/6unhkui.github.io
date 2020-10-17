@@ -4,8 +4,14 @@ import Index from "../components/Layout"
 import Posts from "../components/Post/posts"
 import SEO from "../components/seo"
 import Typed from 'react-typed';
+import { AllMarkdownRemark, Query } from "../models/ListQuery"
 
-const HomePage = ({data, location}) => {
+
+interface Props {
+  data : Query;
+  location: Location;
+}
+const HomePage : React.FC<Props> =  ({data, location}) => {
   return (
     <Index location={location}>
       <SEO title={'index'}/>

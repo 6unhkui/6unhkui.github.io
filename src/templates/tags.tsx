@@ -4,15 +4,31 @@ import Index from '../components/Layout';
 import Post from "../components/Post/posts";
 import SEO from "../components/seo"
 import PageTitle from "../components/Layout/pageTitle";
+import { Edge } from "../models/ListQuery"
 
-const Tags = ({ pageContext, data, location }) => {
+interface Props {
+  pageContext : {
+    tag : string
+  },
+  data : {
+    allMarkdownRemark : {
+      totalCount : number,
+      edges : Edge[],
+    }
+  },
+  location : Location
+}
+
+const Tags: React.FC<Props> = ({ pageContext, data, location }) => {
   const { tag } = pageContext;
 
   return (
     <Index location={location}>
       <SEO title={tag}/>
       <div className="tags-page-wrap">
-        <PageTitle title={tag} subtxt={[`${data.allMarkdownRemark.totalCount} post${(data.allMarkdownRemark.totalCount === 1 ? '' : 's')}`]}/>
+        <PageTitle title={tag}
+                   subTxt={[`${data.allMarkdownRemark.totalCount} 
+                   post${(data.allMarkdownRemark.totalCount === 1 ? '' : 's')}`]}/>
         
         <section className="posts-wrap">
           <div className="container">
