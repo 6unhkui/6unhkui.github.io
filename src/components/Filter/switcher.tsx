@@ -1,5 +1,5 @@
 import React, {useCallback} from "react"
-import { Category } from "../../models/ListQuery"
+import { Category } from "../../interfaces/PostList"
 
 
 interface Props {

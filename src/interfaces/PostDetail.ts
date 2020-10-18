@@ -1,5 +1,5 @@
 import { SiteMetadata } from "./SiteMetadata"
-import { Frontmatter } from "./ListQuery"
+import { Frontmatter } from "./PostList"
 
 export interface Query {
   site : Site,

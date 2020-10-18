@@ -8,7 +8,7 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import { Image } from "../models/FeaturedImage"
+import { Image } from "../interfaces/FeaturedImage"
 
 
 

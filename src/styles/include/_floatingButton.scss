@@ -38,7 +38,7 @@
     border: 1px solid $border-color;
 
     &.dark {
-      background-color: lighten($gray-bg-light, 10);
+      background-color: lighten($gray-bg-dark, 10);
       border : 0;
   }
 

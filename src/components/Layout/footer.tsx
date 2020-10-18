@@ -1,7 +1,7 @@
 import React from 'react';
 import Github from '../../../static/images/github.svg';
 import LinkedIn from '../../../static/images/linked-in.svg';
-import {SiteMetadata} from "../../models/SiteMetadata";
+import {SiteMetadata} from "../../interfaces/SiteMetadata";
 
 
 interface Props {

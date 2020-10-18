@@ -4,7 +4,7 @@ import Index from '../components/Layout';
 import Post from "../components/Post/posts";
 import SEO from "../components/seo"
 import PageTitle from "../components/Layout/pageTitle";
-import { Edge } from "../models/ListQuery"
+import { Edge } from "../interfaces/PostList"
 
 interface Props {
   pageContext : {

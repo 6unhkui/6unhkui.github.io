@@ -9,18 +9,18 @@ $gray-font-color : #b1b2b3;
 $primary-color : #7b22ec;
 $primary-color-bg : lighten($primary-color, 46); 
 $primary-color-border : lighten($primary-color, 40); 
-$gray-bg : #f6f7f9;
+$gray-bg : #f4f5f7;
 $border-color: #ebebeb;
 $selection-color: $primary-color;
 $gradient-color: linear-gradient(90deg, $primary-color 0%, rgba(125,33,237,1) 50%, rgba(180,33,237,1) 100%);
 
-$bg-light : #18171a;
-$gray-font-color-light : #b2b5b7;
-$gray-bg-light : lighten($bg-light, 3); 
-$border-color-light: #333333;
-$primary-color-light : lighten($primary-color, 18); 
-$primary-color-bg-light : darken($primary-color, 48);
-$primary-color-border-light : darken($primary-color, 30);
+$bg-dark : #181818;
+$gray-font-color-dark : #b2b5b7;
+$gray-bg-dark : #242424;
+$border-color-dark: #333333;
+$primary-color-dark : lighten($primary-color, 18); 
+$primary-color-bg-dark : darken($primary-color, 48);
+$primary-color-border-dark : darken($primary-color, 30);
 
 
 

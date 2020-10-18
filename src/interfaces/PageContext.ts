@@ -1,4 +1,4 @@
-import { Frontmatter } from "./ListQuery"
+import { Frontmatter } from "./PostList"
 
 export interface PageContext {
   slug: string,

@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import { Link } from "gatsby"
 import Logo from "../../../static/images/logo.svg";
-import { SiteMetadata } from "../../models/SiteMetadata"
+import { SiteMetadata } from "../../interfaces/SiteMetadata"
 
 
 interface Props {

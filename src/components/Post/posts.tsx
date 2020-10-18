@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { kebabCase } from 'lodash';
 import { Link } from "gatsby"
 import Thumbnail from "../../../static/images/gradation-bg.png";
-import { Edge } from "../../models/ListQuery"
+import { Edge } from "../../interfaces/PostList"
 
 enum View {
   CARD = 'card',

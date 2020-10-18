@@ -2,7 +2,7 @@ import React, {useState, useCallback} from 'react';
 import Posts from "./posts";
 import Switcher from "../Filter/switcher";
 import Search from "../Filter/search"
-import { Query } from "../../models/ListQuery"
+import { Query } from "../../interfaces/PostList"
 
 interface Props {
   data : Query

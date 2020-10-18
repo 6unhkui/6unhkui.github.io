@@ -6,8 +6,8 @@ import SEO from "../components/seo"
 import Index from "../components/Layout"
 import TableOfContents from "../components/Post/tableOfContents";
 import PostComment from "../components/Post/postComment";
-import { PageContext } from "../models/PageContext"
-import { Query } from "../models/DetailQuery"
+import { PageContext } from "../interfaces/PageContext"
+import { Query } from "../interfaces/PostDetail"
 
 interface Props {
   data : Query,

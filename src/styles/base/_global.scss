@@ -10,14 +10,14 @@ body {
 }
 
 body.dark {
-  --color-bg: #{$bg-light};
-  --color-bg-gray : #{$gray-bg-light};
+  --color-bg: #{$bg-dark};
+  --color-bg-gray : #{$gray-bg-dark};
   --color-text: #{$color-white};
-  --color-text-gray : #{$gray-font-color-light};
-  --color-border: #{$border-color-light};
-  --color-point : #{$primary-color-light};
-  --color-point-bg : #{$primary-color-bg-light};
-  --color-point-border : #{$primary-color-border-light};
+  --color-text-gray : #{$gray-font-color-dark};
+  --color-border: #{$border-color-dark};
+  --color-point : #{$primary-color-dark};
+  --color-point-bg : #{$primary-color-bg-dark};
+  --color-point-border : #{$primary-color-border-dark};
 }
 
 html, body {

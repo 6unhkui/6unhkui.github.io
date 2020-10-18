@@ -2,7 +2,7 @@ import React from 'react';
 import Index from "../components/Layout"
 import SEO from "../components/seo"
 import PostDetail from "../components/Post/postDetail"
-import { Query } from "../models/ListQuery"
+import { Query } from "../interfaces/PostList"
 import { graphql } from "gatsby"
 
 interface Props {

@@ -20,43 +20,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ba7bcdb-a3b8-44ad-a0bd-5a35f95dfaac" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/custom.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/@types/alltypes.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/DetailQuery.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/FeaturedImage.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/ListQuery.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/PageContext.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/SiteMetadata.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Tags.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/blog/project/gatsby-blog-feature/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/content/blog/project/gatsby-blog-feature/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-node.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Filter/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filter/search.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Filter/switcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filter/switcher.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FloatingButton/darkModeToggle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FloatingButton/darkModeToggle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FloatingButton/topButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FloatingButton/topButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/pageTitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/pageTitle.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Post/postComment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Post/postComment.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Post/postDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Post/postDetail.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Post/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Post/posts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Post/tableOfContents.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Post/tableOfContents.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/seo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/seo.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/404.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/404.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/devops.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/devops.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/etc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/etc.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/programming.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/programming.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/tags.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/tags.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/post.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/templates/tags.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/tags.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Filter/switcher.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Filter/switcher.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Post/postDetail.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Post/postDetail.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Post/posts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Post/posts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/seo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/seo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/DetailQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/DetailQuery.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/FeaturedImage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/FeaturedImage.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ListQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/ListQuery.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/PageContext.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/PageContext.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/SiteMetadata.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/SiteMetadata.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Tags.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/interfaces/Tags.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/devops.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/devops.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/etc.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/etc.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/programming.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/programming.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/project.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/project.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/tags.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/tags.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/base/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/base/_global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/base/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/base/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/include/_floatingButton.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/include/_floatingButton.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/post.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/post.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/tags.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/tags.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +102,9 @@
       <workItem from="1602957539865" duration="1871000" />
       <workItem from="1602959438828" duration="3106000" />
       <workItem from="1602962555862" duration="1465000" />
-      <workItem from="1602964034037" duration="1212000" />
+      <workItem from="1602964034037" duration="1887000" />
+      <workItem from="1602967248799" duration="453000" />
+      <workItem from="1603005784205" duration="336000" />
     </task>
     <servers />
   </component>

@@ -4,7 +4,7 @@ import SEO from "../components/seo"
 import PageTitle from "../components/Layout/pageTitle";
 import { kebabCase } from 'lodash';
 import Index from '../components/Layout';
-import { Query } from "../models/Tags"
+import { Query } from "../interfaces/Tags"
 
 interface Props {
   data : Query;
