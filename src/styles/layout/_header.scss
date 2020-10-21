@@ -30,6 +30,10 @@ header {
     }
   }
 
+  .hamburger-btn {
+    display: none;
+  }
+
   // Navigation Area ///////////////////////
   nav.menu-wrap {
     // flex: 1;
@@ -119,86 +123,19 @@ header {
       text-align: center;
       z-index: 1;
       opacity: 1;
-      // transition: opacity 0.5s;
+    }
+
+    .hamburger-btn {
+      display: block;
+      z-index: 1000;
+      position: fixed;
+      right: 1rem;
+      top: 26px;
     }
 
     nav.menu-wrap {
       .social-wrap {
         display: none;
-      }
-
-      .menu-toggle-wrap{
-        display: block;
-        flex:1;
-        position: absolute;
-        z-index: 100;
-        top: 2rem;
-        right: 1rem;
-        -moz-transform: translate(0, -50%);
-        -o-transform: translate(0, -50%);
-        -ms-transform: translate(0, -50%);
-        -webkit-transform: translate(0, -50%);
-        transform: translate(0, -50%);
-        cursor: pointer;
-        font-size: 15px;
-        line-height: 20px;
-    
-        .menu-toggle {
-          transition: all 0.3s;
-          &:hover {
-            opacity: .8;
-          }
-
-          .menu-ico {
-            float: right;
-            position: relative;
-            width: 24px;
-            height: 20px;
-            margin-left: 8px;
-    
-            span, span:before, span:after {
-              content: '';
-              position: absolute;
-              top: 8px;
-              left: 0;
-              width: 100%;
-              height: 3px;
-              -webkit-transition: all 0.1s;
-              -moz-transition: all 0.1s;
-              -ms-transition: all 0.1s;
-              -o-transition: all 0.1s;
-              transition: all 0.1s;
-              background: var(--color-text);
-            }
-  
-            span:before {
-              top: -8px;
-            }
-          }
-        }
-
-        &.open {
-          position: fixed;
-
-          span {
-            background-color: transparent !important;
-
-            &::before {
-              -webkit-transform: rotate(45deg);
-              transform: rotate(45deg);
-              top : 0 !important;
-              background-color: #fff !important;
-            }
-
-            &::after {
-              -webkit-transform: rotate(-45deg);
-              transform: rotate(-45deg);
-              top : 0 !important;
-              background-color: #fff !important;
-            }
-          }
-
-        }
       }
 
       .menu-list-wrap {

@@ -17,6 +17,7 @@
     "gatsby-image": "^2.4.9",
     "gatsby-plugin-antd": "^2.2.0",
     "gatsby-plugin-dark-mode": "^1.1.2",
+    "gatsby-plugin-feed": "^2.5.18",
     "gatsby-plugin-fontawesome-css": "^1.0.0",
     "gatsby-plugin-manifest": "^2.4.14",
     "gatsby-plugin-offline": "^3.2.13",
@@ -38,10 +39,13 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-hamburger-menu": "^1.2.1",
     "react-helmet": "^6.1.0",
     "react-typed": "^1.2.0"
   },
   "devDependencies": {
+    "@types/react-hamburger-menu": "^0.0.3",
+    "@types/react-helmet": "^6.1.0",
     "gatsby-remark-a11y-emoji": "^1.1.0",
     "gatsby-remark-autolink-headers": "^2.3.11",
     "gatsby-remark-code-titles": "^1.1.0",
