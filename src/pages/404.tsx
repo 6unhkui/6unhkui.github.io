@@ -7,7 +7,7 @@ interface Props {
 }
 const NotFoundPage: React.FC<Props> = ({location}) => (
   <Index location={location}>
-    <SEO title="404: Not found" />
+    <SEO title="404: Not found"/>
     <section className="page-title-wrap">
       <div className='container'>
         <h1 className="page-title">NOT FOUND</h1>

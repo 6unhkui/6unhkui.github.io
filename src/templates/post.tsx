@@ -35,6 +35,7 @@ const PostTemplate: React.FC<Props> = ({ data, pageContext, location }) => {
           title={title}
           description={excerpt}
           image = {image}
+          article={true}
         />
        
         <section className="post-view">

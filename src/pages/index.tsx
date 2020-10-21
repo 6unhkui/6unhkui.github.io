@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import {graphql } from "gatsby"
 import Index from "../components/Layout"
 import Posts from "../components/Post/posts"
@@ -12,9 +12,10 @@ interface Props {
   location: Location;
 }
 const HomePage : React.FC<Props> =  ({data, location}) => {
+  
   return (
     <Index location={location}>
-      <SEO title={'index'}/>
+      <SEO/>
       <section className="page-title-wrap">
           <div className='container'>
           <div>

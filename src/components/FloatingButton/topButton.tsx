@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 
 interface Props {
-    scrollStepInPx : string,
+    scrollStepInPx? : string,
     delayInMs : number;
 }
 
