@@ -1,5 +1,6 @@
 import React, {useCallback} from "react"
 import { Category } from "../../interfaces/PostList"
+import propTypes from 'prop-types';
 
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
   onChange : (category:string) => void;
 }
 
-const Switcher: React.FC<Props> = ({ items, selectedItem = 'ALL', onChange}) => {
+const Switcher: React.FC<Props> = ({ items, selectedItem, onChange}) => {
 
     const handleChange = useCallback(event => {
       onChange(event.target.dataset.category)
@@ -21,7 +22,8 @@ const Switcher: React.FC<Props> = ({ items, selectedItem = 'ALL', onChange}) => 
              onClick={handleChange}>ALL</div>
         {items.map((v, i) =>
           (<div key={i}
-                className={'switcher-option ' + (selectedItem.toUpperCase() === `${v.fieldValue.toUpperCase()}` ? 'selected' : '')}
+                className={'switcher-option ' + 
+                          (selectedItem.toUpperCase() === `${v.fieldValue.toUpperCase()}` ? 'selected' : '')}
                 data-category={v.fieldValue}
                 onClick={handleChange}>
             {v.fieldValue}
@@ -31,3 +33,7 @@ const Switcher: React.FC<Props> = ({ items, selectedItem = 'ALL', onChange}) => 
 }
 
 export default Switcher;
+
+Switcher.defaultProps = {
+  selectedItem : 'ALL'
+}

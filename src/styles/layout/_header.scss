@@ -128,9 +128,14 @@ header {
     .hamburger-btn {
       display: block;
       z-index: 1000;
-      position: fixed;
       right: 1rem;
-      top: 26px;
+      top: 20px;
+      position: absolute;
+
+      &.open {
+        top: 26px;
+        position: fixed;
+      }
     }
 
     nav.menu-wrap {
@@ -203,5 +208,11 @@ header {
 .dark header {
   .logo {
     filter: invert(1);
+  }
+
+  .hamburger-btn {
+    span {
+      background-color: #fff !important;
+    }
   }
 }

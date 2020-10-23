@@ -8,7 +8,7 @@ interface Props {
 
 const TopButton: React.FC<Props> = ({ scrollStepInPx, delayInMs }) => {
     const [intervalId, setIntervalId] = useState(0);
-    const scrollStep:Function = () => {
+    const scrollStep = () => {
         if (window.pageYOffset === 0) {
             clearInterval(intervalId);
         }
@@ -21,9 +21,7 @@ const TopButton: React.FC<Props> = ({ scrollStepInPx, delayInMs }) => {
       
     return (
         <button title='Back to top' className='floating scroll'
-                onClick={() => {
-                    // @ts-ignore
-                    setIntervalId(setInterval(scrollStep(), delayInMs));}}>
+                onClick={() => {setIntervalId(setInterval(scrollStep(), delayInMs))}}>
             <span className='arrow-up'></span>
         </button>
     )

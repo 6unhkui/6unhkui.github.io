@@ -22,8 +22,8 @@ const DevOpsPage: React.FC<Props> = ({data, location}) => {
 export default DevOpsPage;
 
 export const pageQuery = graphql`
-query($path: String! = "/devops/") {
-    allMarkdownRemark(filter: {fields: {slug: {regex: $path}}}, sort: { fields: [frontmatter___date], order: DESC }) {
+query {
+    allMarkdownRemark(filter: {fields: {slug: {regex: "/^\/devops\//"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt

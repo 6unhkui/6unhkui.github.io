@@ -21,8 +21,8 @@ const EtcPage: React.FC<Props> = ({data, location}) => {
 export default EtcPage;
 
 export const pageQuery = graphql`
-query($path: String! = "/etc/") {
-    allMarkdownRemark(filter: {fields: {slug: {regex: $path}}}, sort: { fields: [frontmatter___date], order: DESC }) {
+query {
+    allMarkdownRemark(filter: {fields: {slug: {regex: "/^\/etc\//"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt

@@ -11,6 +11,7 @@ interface Props {
   location: Location;
 }
 const ComputerSciencePage: React.FC<Props> = ({data, location}) => {
+  console.log(data)
   return (
       <Index location={location}>
         <SEO title="Computer Science"/>
@@ -22,8 +23,8 @@ const ComputerSciencePage: React.FC<Props> = ({data, location}) => {
 export default ComputerSciencePage;
 
 export const pageQuery = graphql`
-query($path: String! = "/cs/") {
-    allMarkdownRemark(filter: {fields: {slug: {regex: $path}}}, sort: { fields: [frontmatter___date], order: DESC }) {
+query {
+    allMarkdownRemark(filter: {fields: {slug: {regex: "/^\/cs\//"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt

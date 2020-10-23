@@ -21,8 +21,8 @@ const ProgrammingPage: React.FC<Props> = ({data, location}) => {
 export default ProgrammingPage;
 
 export const pageQuery = graphql`
-query($path: String! = "/programming/") {
-    allMarkdownRemark(filter: {fields: {slug: {regex: $path}}}, sort: { fields: [frontmatter___date], order: DESC }) {
+query {
+    allMarkdownRemark(filter: {fields: {slug: {regex: "/^\/programming\//"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt

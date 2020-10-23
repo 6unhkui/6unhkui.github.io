@@ -22,8 +22,8 @@ export default ProjectPage;
 
 
 export const pageQuery = graphql`
-query($path: String! = "/project/") {
-    allMarkdownRemark(filter: {fields: {slug: {regex: $path}}}, sort: { fields: [frontmatter___date], order: DESC }) {
+query {
+    allMarkdownRemark(filter: {fields: {slug: {regex: "/^\/project\//"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           excerpt

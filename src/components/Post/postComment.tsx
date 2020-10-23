@@ -5,6 +5,7 @@ interface Props {
 }
 
 const src = 'https://utteranc.es/client.js';
+
 const PostComment: React.FC<Props> = ({repo}) => {
     const containerRef :RefObject<any> = createRef();
 
