@@ -1,10 +1,10 @@
 import React, {useEffect} from "react"
 import {graphql } from "gatsby"
 import Index from "../components/Layout"
-import Posts from "../components/Post/posts"
 import SEO from "../components/seo"
 import Typed from 'react-typed';
 import { AllMarkdownRemark, Query } from "../interfaces/PostList"
+import PostSingle from "../components/Post/postSingle"
 
 
 interface Props {
@@ -12,6 +12,7 @@ interface Props {
   location: Location;
 }
 const HomePage : React.FC<Props> =  ({data, location}) => {
+  const {allMarkdownRemark : {edges: posts}} = data;
   
   return (
     <Index location={location}>
@@ -27,10 +28,11 @@ const HomePage : React.FC<Props> =  ({data, location}) => {
                     backDelay={900}
                     showCursor
                     loop
-                />
+            />
           </h1>
           <div className="sub-txt">
             <p>안녕하세요. 웹 개발자 심인경입니다. <span role="img" aria-label="emoji">👩‍💻</span></p>
+            <p>공부한 내용을 정리해서 올리고 있습니다.</p>
           </div>
           </div>
         </div>
@@ -39,9 +41,10 @@ const HomePage : React.FC<Props> =  ({data, location}) => {
       <section className="posts-wrap index">
         <div className="posts container">
           <h1 className="section-title">
-            <span role="img" aria-label="emoji">✏️ </span>Recent Posts
+            <span role="img" aria-label="emoji">✏️ </span>
+            Recent Posts
           </h1>
-          <Posts posts={data.allMarkdownRemark.edges}/>
+          {posts.map(post => <PostSingle data={post}/>)}
         </div>
       </section>
     </Index>

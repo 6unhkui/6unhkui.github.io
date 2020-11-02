@@ -1,23 +1,41 @@
-import React, {useState, useEffect} from 'react';
-import { kebabCase } from 'lodash';
-import { Link } from "gatsby"
-import Thumbnail from "../../../static/images/gradation-bg.png";
-import { Edge } from "../../interfaces/PostList"
-import propTypes from 'prop-types';
-
-
-type View = 'card' | 'list'
+import React, {useEffect, useState, useCallback} from 'react';
+import Switcher from "../Filter/switcher";
+import Search from "../Filter/search"
+import { Query } from "../../interfaces/PostList"
+import PostSingle from './postSingle';
 
 interface Props {
-  posts : Edge[],
-  view? : View
+  data : Query
 }
 
 const showCount = 6;
 
-const Posts:React.FC<Props> = ({posts, view}) => {
+const Posts : React.FC<Props> = ({data}) => {
+  const {allMarkdownRemark : {edges, categories}} = data;
+  const [posts, setPosts] = useState(edges);
   const [postsToShow, setPostsToShow] = useState(showCount);
-  
+  const [searchValue, setSearchValue] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('ALL');
+  const categoryItems = useState(() => {
+    const arr = categories.slice();
+    arr.unshift({fieldValue : 'ALL'});
+    return arr;
+  })[0];
+
+  useEffect(() => {
+    setPosts(edges.filter(post => {
+      const {node : {frontmatter : {category}}} = post;
+      // 선택된 카테고리가 ALL 이거나, 선택된 카테고리와 리스트의 카테고리가 일치할 경우 true
+      return selectedCategory.toUpperCase() === 'ALL' || category.toUpperCase() === selectedCategory.toUpperCase()
+    }).filter(post => {
+      const {node : {frontmatter : {title, tags}}} = post;
+      // 검색어가 없거나, 제목 혹은 태그가 일치할 경우 true
+      return searchValue.trim().length === 0 ||
+             title.toUpperCase().includes(searchValue.trim().toUpperCase()) || 
+             tags.find(a => a.toUpperCase().includes(searchValue.trim().toUpperCase()));
+    }))
+  }, [searchValue, selectedCategory])
+
   useEffect(() => {
     window.addEventListener('scroll', _infiniteScroll, true);
     return window.removeEventListener('scroll', _infiniteScroll);
@@ -33,45 +51,30 @@ const Posts:React.FC<Props> = ({posts, view}) => {
     }
   }
 
-  if(posts.length > 0) {
-    return (
-      <>
-      {posts.slice(0, postsToShow).map((post, i) => {
-        const {title, date, category, tags, featuredImage} = post.node.frontmatter;
-        return (
-          <article key={i} className={view}>
-            <Link to={post.node.fields.slug}>
-              <img src={featuredImage ? featuredImage.childImageSharp.resize.src : Thumbnail} />
+  const changeCategory = useCallback(value => {
+    setSelectedCategory(value);
+    setSearchValue('');
+  }, []);
 
-              <div className="post-info">
-                <p className="date">{date}</p>
-                <span className="category">{category}</span>
-                <h1 className="title">
-                  {title}
-                </h1>
-   
-                <p className="summary" dangerouslySetInnerHTML={{__html: post.node.excerpt,}}/> 
+  return ( 
+        <section className="posts-wrap">
+          <div className="posts container">
+            {edges.length > 0 &&
+              <div className='filter-wrap' style={{marginBottom : '1.8rem'}}>
+                <Switcher items={categoryItems}
+                          selectedItem={selectedCategory}
+                          onChange={changeCategory}/>
+                <Search onChange={setSearchValue} value={searchValue}/>
+              </div>
+            }
 
-
-                <div className="tags-wrap">
-                  {tags?.map((tag, i) => (
-                    <span className='tag' key={i}><Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link></span>
-                  ))}
-                </div> 
-                </div>
-            </Link>
-          </article>
-      )})
-      }
-      </>
-    )
-  }else {
-    return <div className="empty">게시글이 존재하지 않습니다.</div>
-  }
-};
+            {posts.length > 0 ? 
+              posts.slice(0, postsToShow).map(post => <PostSingle data={post}/>)
+              : <div className="empty">게시글이 존재하지 않습니다.</div>
+            }
+          </div>
+        </section>
+  )
+}
 
 export default Posts;
-
-Posts.defaultProps = {
-  view : 'card'
-}

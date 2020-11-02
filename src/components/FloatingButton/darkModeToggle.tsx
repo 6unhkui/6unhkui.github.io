@@ -5,7 +5,7 @@ import Moon from "../../../static/images/moon.svg";
 
 interface Props {
   theme : string;
-  toggleTheme : (theme:string) => void;
+  toggleTheme : (theme: string) => void;
 }
 
 const DarkModeToggle = () => {

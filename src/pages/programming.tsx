@@ -1,7 +1,7 @@
 import React from 'react';
 import Index from "../components/Layout"
 import SEO from "../components/seo"
-import PostDetail from '../components/Post/postDetail';
+import Posts from '../components/Post/posts';
 import { graphql } from "gatsby"
 import { Query } from "../interfaces/PostList"
 
@@ -13,7 +13,7 @@ const ProgrammingPage: React.FC<Props> = ({data, location}) => {
   return (
       <Index location={location}>
         <SEO title="Programming"/>
-        <PostDetail data={data}/>
+        <Posts data={data}/>
       </Index>
   )
 }

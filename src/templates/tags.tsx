@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Index from '../components/Layout';
-import Post from "../components/Post/posts";
 import SEO from "../components/seo"
 import PageTitle from "../components/Layout/pageTitle";
 import { Edge } from "../interfaces/PostList"
+import PostSingle from '../components/Post/postSingle';
 
 interface Props {
   pageContext : {
@@ -21,6 +21,7 @@ interface Props {
 
 const Tags: React.FC<Props> = ({ pageContext, data, location }) => {
   const { tag } = pageContext;
+  const {allMarkdownRemark : {edges: posts}} = data;
 
   return (
     <Index location={location}>
@@ -32,7 +33,7 @@ const Tags: React.FC<Props> = ({ pageContext, data, location }) => {
         
         <section className="posts-wrap">
           <div className="container">
-            <Post posts={data.allMarkdownRemark.edges}/>
+          {posts.map(post => <PostSingle data={post}/>)}
           </div>
         </section>
       </div>
