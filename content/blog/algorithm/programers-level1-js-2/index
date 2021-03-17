@@ -1,0 +1,193 @@
+---
+category : Coding Test
+title: "[JS] Level1 문제 풀기 - 2"
+date: "2020-07-22"
+tags : ["Programers", "Coding Test", "Javascript"]
+featuredImage: thumbnail.png
+---
+
+# 수박수박수박수박수박수?
+길이가 n이고, 수박수박수박수....와 같은 패턴을 유지하는 문자열을 리턴하는 함수, solution을 완성하세요. 
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12922)
+
+### 나의 풀이
+```javascript
+function solution(n) {
+  return Array.from({length : n}, (_, i) => {
+    if(i % 2) return '박';
+    return '수';
+  }).join('')
+}
+```
+> 작성중!
+
+# 문자열을 정수로 바꾸기
+문자열 s를 숫자로 변환한 결과를 반환하는 함수, solution을 완성하세요.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12925)
+
+### 나의 풀이
+```javascript
+function solution(s) {
+    return +(s);
+}
+```
+> 작성중!
+
+# 내적
+길이가 같은 두 1차원 정수 배열 a, b가 매개변수로 주어집니다. a와 b의 내적을 return 하도록 solution 함수를 완성해주세요.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/70128)
+
+### 나의 풀이
+```javascript
+function solution(a, b) {
+  return a.reduce((prev, cur, i) => prev + (cur * b[i]), 0);
+}
+```
+> 작성중!
+
+# 약수의 합
+정수 n을 입력받아 n의 약수를 모두 더한 값을 리턴하는 함수, solution을 완성해주세요.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12928)
+
+### 나의 풀이
+```javascript
+function solution(n) {
+  const arr = [];
+  for(let i=1; i<=n/2; i++){
+    if(n % i === 0) {
+      arr.push(i)
+    }
+  }
+  arr.push(n);
+  return arr.reduce((prev,cur) => prev + cur, 0)
+}
+```
+> 작성중!
+
+
+# 이상한 문자 만들기
+문자열 s는 한 개 이상의 단어로 구성되어 있습니다. 각 단어는 하나 이상의 공백문자로 구분되어 있습니다. 각 단어의 짝수번째 알파벳은 대문자로, 홀수번째 알파벳은 소문자로 바꾼 문자열을 리턴하는 함수, solution을 완성하세요.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12930)
+
+### 나의 풀이
+```javascript
+function solution(s) {
+  return s.split(" ").map(word => {
+    return word.split("").map((v, i) => i % 2 ? v.toLowerCase() : v.toUpperCase()).join("")
+  }).join(" ")
+}
+```
+> 작성중!
+
+
+# 자릿수 더하기
+자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12931)
+
+### 나의 풀이
+```javascript
+function solution(n) {
+  return (n).toString().split('').reduce((prev, cur) => {
+    prev += +cur;
+    return prev;
+  }, 0)
+}
+```
+> 작성중!
+
+
+# 자연수 뒤집어 배열로 만들기
+자연수 n을 뒤집어 각 자리 숫자를 원소로 가지는 배열 형태로 리턴해주세요. 예를들어 n이 12345이면 [5,4,3,2,1]을 리턴합니다.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12932)
+
+### 나의 풀이
+```javascript
+function solution(n) {
+    return (n).toString().split('').reverse().map(v => +v);;
+}
+```
+> 작성중!
+
+# 정수 내림차순으로 배치하기
+함수 solution은 정수 n을 매개변수로 입력받습니다. n의 각 자릿수를 큰것부터 작은 순으로 정렬한 새로운 정수를 리턴해주세요. 예를들어 n이 118372면 873211을 리턴하면 됩니다.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12933)
+
+### 나의 풀이
+```javascript
+function solution(n) {
+  return +(n).toString().split('').sort((a, b) => +b - +a).join('');
+}
+```
+> 작성중!
+
+
+# 정수 제곱근 판별
+임의의 양의 정수 n에 대해, n이 어떤 양의 정수 x의 제곱인지 아닌지 판단하려 합니다.
+n이 양의 정수 x의 제곱이라면 x+1의 제곱을 리턴하고, n이 양의 정수 x의 제곱이 아니라면 -1을 리턴하는 함수를 완성하세요.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12934)
+
+### 나의 풀이
+```javascript
+function solution(n) {
+  return Number.isInteger(Math.sqrt(n)) ? (Math.sqrt(n) + 1) ** 2 : -1;
+}
+```
+> 작성중!
+
+
+# 제일 작은 수 제거하기
+정수를 저장한 배열, arr 에서 가장 작은 수를 제거한 배열을 리턴하는 함수, solution을 완성해주세요. 단, 리턴하려는 배열이 빈 배열인 경우엔 배열에 -1을 채워 리턴하세요. 예를들어 arr이 [4,3,2,1]인 경우는 [4,3,2]를 리턴 하고, [10]면 [-1]을 리턴 합니다.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12935)
+
+### 나의 풀이
+```javascript
+function solution(arr) {
+  const min = Math.min(...arr);
+  arr = arr.filter(v => v !== min);
+
+  return arr.length ? arr : [-1];
+}
+```
+> 작성중!
+
+# 짝수와 홀수
+정수 num이 짝수일 경우 Even을 반환하고 홀수인 경우 Odd를 반환하는 함수, solution을 완성해주세요.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12937)
+
+### 나의 풀이
+```javascript
+function solution(num) {
+    return num % 2 ? 'Odd' : 'Even';
+}
+```
+> 작성중!
+
+
+# 최대공약수와 최소공배수
+두 수를 입력받아 두 수의 최대공약수와 최소공배수를 반환하는 함수, solution을 완성해 보세요. 배열의 맨 앞에 최대공약수, 그다음 최소공배수를 넣어 반환하면 됩니다.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12940)
+
+### 나의 풀이
+```javascript
+function solution(n, m) {
+  const gcdFunc = (a, b) => {if(b == 0) {return a} else return gcdFunc(b, a % b)};
+    
+  const gcd = gcdFunc(n, m);
+  const lcd = (n * m) / gcd;
+
+  return [gcd, lcd];
+}
+```
+> 작성중!

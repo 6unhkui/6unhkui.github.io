@@ -1,0 +1,211 @@
+---
+category : Coding Test
+title: "[JS] Level2 문제 풀기"
+date: "2020-07-22"
+tags : ["Programers", "Coding Test", "Javascript"]
+featuredImage: thumbnail.png
+---
+
+# 프린터
+### 문제 설명
+일반적인 프린터는 인쇄 요청이 들어온 순서대로 인쇄합니다. 그렇기 때문에 중요한 문서가 나중에 인쇄될 수 있습니다. 이런 문제를 보완하기 위해 중요도가 높은 문서를 먼저 인쇄하는 프린터를 개발했습니다. 이 새롭게 개발한 프린터는 아래와 같은 방식으로 인쇄 작업을 수행합니다.
+```
+1. 인쇄 대기목록의 가장 앞에 있는 문서(J)를 대기목록에서 꺼냅니다.
+2. 나머지 인쇄 대기목록에서 J보다 중요도가 높은 문서가 한 개라도 존재하면 J를 대기목록의 가장 마지막에 넣습니다.
+3. 그렇지 않으면 J를 인쇄합니다.
+```
+예를 들어, 4개의 문서(A, B, C, D)가 순서대로 인쇄 대기목록에 있고 중요도가 2 1 3 2 라면 C D A B 순으로 인쇄하게 됩니다.
+
+내가 인쇄를 요청한 문서가 몇 번째로 인쇄되는지 알고 싶습니다. 위의 예에서 C는 1번째로, A는 3번째로 인쇄됩니다.
+
+현재 대기목록에 있는 문서의 중요도가 순서대로 담긴 배열 priorities와 내가 인쇄를 요청한 문서가 현재 대기목록의 어떤 위치에 있는지를 알려주는 location이 매개변수로 주어질 때, 내가 인쇄를 요청한 문서가 몇 번째로 인쇄되는지 return 하도록 solution 함수를 작성해주세요.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/42587)
+
+### 나의 풀이
+```javascript
+function solution(priorities, location) {
+  const queue = priorities.map((val, i) => ({
+    isTarget : (location === i),
+    val
+  }))
+
+  let isSuccess = false;
+  let cnt = 0;
+  while(!isSuccess) {
+    const cur = queue.shift();
+    if(queue.some(v => v.val > cur.val)) {
+      queue.push(cur);
+    }else {
+      ++cnt;
+      if(cur.isTarget) {
+        isSuccess = true;
+      }
+    }
+  }
+
+  return cnt;
+}
+```
+> 작성중!
+
+# 기능 개발
+### 문제 설명
+프로그래머스 팀에서는 기능 개선 작업을 수행 중입니다. 각 기능은 진도가 100%일 때 서비스에 반영할 수 있습니다.
+
+또, 각 기능의 개발속도는 모두 다르기 때문에 뒤에 있는 기능이 앞에 있는 기능보다 먼저 개발될 수 있고, 이때 뒤에 있는 기능은 앞에 있는 기능이 배포될 때 함께 배포됩니다.
+
+먼저 배포되어야 하는 순서대로 작업의 진도가 적힌 정수 배열 progresses와 각 작업의 개발 속도가 적힌 정수 배열 speeds가 주어질 때 각 배포마다 몇 개의 기능이 배포되는지를 return 하도록 solution 함수를 완성하세요.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/42586)
+
+### 나의 풀이
+```javascript
+function solution(progresses, speeds) {
+  const days = progresses.reduce((prev, cur, i) => {
+    let count = 0;
+    let progress = cur;
+    while(progress < 100) {
+      progress += speeds[i];
+      ++count;
+    }
+
+    if(count < prev[i -1]) {
+      prev.push(prev[i -1])
+    }else {
+      prev.push(count);
+    }
+
+    return prev;
+  }, [])
+
+  return Object.values(days.reduce((t, a) => { 
+    t[a] = (t[a] || 0) + 1;
+    return t 
+  }, {}))
+}
+```
+> 작성중!
+
+
+# 올바른 괄호
+### 문제 설명
+괄호가 바르게 짝지어졌다는 것은 '(' 문자로 열렸으면 반드시 짝지어서 ')' 문자로 닫혀야 한다는 뜻입니다. 예를 들어
+
+- ()() 또는 (())() 는 올바른 괄호입니다.
+- )()( 또는 (()( 는 올바르지 않은 괄호입니다.
+
+'(' 또는 ')' 로만 이루어진 문자열 s가 주어졌을 때, 문자열 s가 올바른 괄호이면 true를 return 하고,
+올바르지 않은 괄호이면 false를 return 하는 solution 함수를 완성해 주세요.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12954)
+
+### 나의 풀이
+```javascript
+function solution(s) {
+  const stack = [];
+
+  for (let i = 0; i < s.length; i++) {
+    const cur = s[i];
+    if (cur === "(") {
+      stack.push(cur);
+    } else {
+      if(!stack.pop()) {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0;
+}
+```
+
+(와 )을 stack에 
+
+
+# 다음 큰 숫자
+### 문제 설명
+자연수 n이 주어졌을 때, n의 다음 큰 숫자는 다음과 같이 정의 합니다.
+```
+- 조건 1. n의 다음 큰 숫자는 n보다 큰 자연수 입니다.
+- 조건 2. n의 다음 큰 숫자와 n은 2진수로 변환했을 때 1의 갯수가 같습니다.
+- 조건 3. n의 다음 큰 숫자는 조건 1, 2를 만족하는 수 중 가장 작은 수 입니다.
+```
+예를 들어서 78(1001110)의 다음 큰 숫자는 83(1010011)입니다.
+
+자연수 n이 매개변수로 주어질 때, n의 다음 큰 숫자를 return 하는 solution 함수를 완성해주세요.
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12911)
+
+### 나의 풀이
+```javascript
+let cnt = 0;
+function solution(n) {
+  cnt = (n.toString(2)).match(/1/g).length;
+  return nextVal(n+1);
+}
+
+function nextVal(v) {
+  const {length} = (v.toString(2)).match(/1/g);
+  return length === cnt ? v : nextVal(v + 1);
+}
+```
+> 작성중!
+
+
+# 최댓값과 최솟값
+### 문제 설명
+문자열 s에는 공백으로 구분된 숫자들이 저장되어 있습니다.<br/>
+str에 나타나는 숫자 중 최소값과 최대값을 찾아 이를 (최소값) (최대값)형태의 문자열을 반환하는 함수, solution을 완성하세요.<br/>
+예를들어 s가 1 2 3 4라면 1 4를 리턴하고, -1 -2 -3 -4라면 -4 -1을 리턴하면 됩니다.<br/>
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12954)
+
+### 나의 풀이
+```javascript
+function solution(s) {
+  const arr = s.split(' ').map(v => +v);
+  return `${Math.min(...arr)} ${Math.max(...arr)}`;
+}
+```
+
+Array.from 메서드를 이용해 크기가 n인 유사 배열 객체를 생성하고, 두번째 인수로 x의 배수의 값을 반환하는 콜백 함수를 전달함
+
+
+# 최솟값 만들기
+### 문제 설명
+길이가 같은 배열 A, B 두개가 있습니다. 각 배열은 자연수로 이루어져 있습니다.
+배열 A, B에서 각각 한 개의 숫자를 뽑아 두 수를 곱합니다. 이러한 과정을 배열의 길이만큼 반복하며, 두 수를 곱한 값을 누적하여 더합니다. 이때 최종적으로 누적된 값이 최소가 되도록 만드는 것이 목표입니다. (단, 각 배열에서 k번째 숫자를 뽑았다면 다음에 k번째 숫자는 다시 뽑을 수 없습니다.)
+
+예를 들어 A = [1, 4, 2] , B = [5, 4, 4] 라면
+```
+A에서 첫번째 숫자인 1, B에서 두번째 숫자인 5를 뽑아 곱하여 더합니다. (누적된 값 : 0 + 5(1x5) = 5)
+A에서 두번째 숫자인 4, B에서 세번째 숫자인 4를 뽑아 곱하여 더합니다. (누적된 값 : 5 + 16(4x4) = 21)
+A에서 세번째 숫자인 2, B에서 첫번째 숫자인 4를 뽑아 곱하여 더합니다. (누적된 값 : 21 + 8(2x4) = 29)
+```
+즉, 이 경우가 최소가 되므로 29를 return 합니다.
+
+배열 A, B가 주어질 때 최종적으로 누적된 최솟값을 return 하는 solution 함수를 완성해 주세요.
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12941)
+
+### 나의 풀이
+```javascript
+function solution(A,B){
+  const a = [...A].sort((a, b) => a - b);
+  const b = [...B].sort((a, b) => b - a);
+
+  return a.reduce((prev, cur, i) => prev + (cur*b[i]), 0);
+}
+```
+> 작성중!
+
+
+# JadenCase 문자열 만들기
+JadenCase란 모든 단어의 첫 문자가 대문자이고, 그 외의 알파벳은 소문자인 문자열입니다. 문자열 s가 주어졌을 때, s를 JadenCase로 바꾼 문자열을 리턴하는 함수, solution을 완성해주세요.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/68644)
+
+### 나의 풀이
+```javascript
+function solution(s) {
+  return s.toLowerCase().split(' ').map(v => v.replace(/^[A-Z]/i, v.charAt(0).toUpperCase())).join(' ');
+}
+```

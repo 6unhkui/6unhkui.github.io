@@ -1,28 +1,27 @@
 // Typography
-$font-family : "-apple-system", "BlinkMacSystemFont", "Apple SD Gothic Neo", "Inter", "Noto Sans KR", "Segoe UI", Sans-Serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$font-family-logo : "Pacifico", Sans-Serif;
+$font-family: "-apple-system", "BlinkMacSystemFont", "Apple SD Gothic Neo", "Inter", "Noto Sans KR", "Segoe UI", Sans-Serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-logo: "Pacifico", Sans-Serif;
 
 // Color
-$color-black : #373737;
-$color-white : #fff;
-$gray-font-color : #b1b2b3;
-$primary-color : #7b22ec;
-$primary-color-bg : lighten($primary-color, 46); 
-$primary-color-border : lighten($primary-color, 40); 
-$gray-bg : #f4f5f7;
+$color-black: #373737;
+$color-white: #fff;
+$gray-font-color: #b1b2b3;
+$primary-color: #7b22ec;
+$primary-color-bg: lighten($primary-color, 46);
+$primary-color-border: lighten($primary-color, 40);
+$gray-bg: #f4f5f7;
 $border-color: #ebebeb;
 $selection-color: $primary-color;
-$gradient-color: linear-gradient(90deg, $primary-color 0%, rgba(125,33,237,1) 50%, rgba(180,33,237,1) 100%);
+$gradient-color: linear-gradient(90deg, $primary-color 0%, rgba(125, 33, 237, 1) 50%, rgba(180, 33, 237, 1) 100%);
 
-$bg-dark : #181818;
-$gray-font-color-dark : #b2b5b7;
-$gray-bg-dark : #242424;
+$bg-dark: #181818;
+$gray-font-color-dark: #b2b5b7;
+$gray-bg-dark: #242424;
 $border-color-dark: #333333;
-$primary-color-dark : lighten($primary-color, 18); 
-$primary-color-bg-dark : darken($primary-color, 48);
-$primary-color-border-dark : darken($primary-color, 30);
-
-
+$primary-color-dark: lighten($primary-color, 18);
+$primary-color-bg-dark: darken($primary-color, 48);
+$primary-color-border-dark: darken($primary-color, 30);
 
 // Font Size
 $font-x-x-x-large: 3rem;
@@ -35,4 +34,4 @@ $font-small: 0.8rem;
 // Breakpoints
 $breakpoint-mobile: 335px;
 $breakpoint-tablet: 758px;
-$breakpoint-desktop: 1024px;
+$breakpoint-desktop: 1200px;

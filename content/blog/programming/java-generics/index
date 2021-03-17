@@ -1,0 +1,53 @@
+---
+category : Java
+title: "제너릭(Generics)"
+date: "2020-07-06"
+tags : ["Java"]
+featuredImage: thumbnail.png
+---
+
+# 제네릭
+제네릭이란 클래스를 정의하는데 있어 자료형을 정하지 않은 채 틀만 만들어 놓고 그 자료형은 외부에서 사용 할때 결정 짓도록 하는 프로그래밍 방식이다.<br/>
+만약 클래스의 멤버 변수가 여러 자료형을 참조 할 수 있도록 Object 클래스로 선언을 해둔다고 가정하자.<br/>
+이때 다시 원래 자료형으로 형변환하는 과정을 매번 거쳐야하고, 잘못된 데이터를 넣어도 컴파일의 오류 발견 가능성을 낮추기 때문에 코드의 안전성이 떨어진다.
+
+## 제네릭 클래스 정의하기
+#### AS-IS
+많은 것을 불필요하게 허용하는 클래스이다. 목적을 갖고 제한하는 것이 좋다.
+```java
+class Box {
+    private Object ob;
+
+    private void set(Object o) { 
+        ob = o;
+    }
+
+    private Object get() {
+        return ob;
+    }
+}
+```
+
+#### TO-BE
+제네릭을 사용함으로서 인스턴스 생성 시 자료형을 결정 할 수 있다.
+```java
+class Box<T> {
+    private T ob;
+
+    private void set(T o) { 
+        ob = o;
+    }
+
+    private T get() {
+        return ob;
+    }
+}
+```
+여기서 여러 자료형으로 바꾸어 사용할 meterial 변수의 자료형을 T라고 썼다.<br/>
+T는 타입 매개변수(Type Parameter)라고 부른다. 나중에 클래스를 사용할 때 T 위치에 실제 사용할 자료형을 지정한다.
+
+## 제네릭 클래스 사용하기
+```java
+Box<String> box = new Box<String>();
+Box<String> box = new Box<String>();
+```

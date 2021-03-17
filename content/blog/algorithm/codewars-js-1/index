@@ -1,0 +1,45 @@
+---
+category : Coding Test
+title: "[JS] Codewars 문제 풀기 - 1"
+date: "2020-07-22"
+tags : ["Codewars", "Coding Test", "Javascript"]
+featuredImage: thumbnail.png
+---
+## Find the next perfect square!
+![Find the next perfect square!](01.png)
+<br/>
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/68644)
+
+### 나의 풀이
+```javascript
+function findNextSquare(sq) {
+  // Return the next square if sq is a perfect square, -1 otherwise
+  return Number.isInteger(Math.sqrt(sq)) ? (Math.sqrt(sq) + 1) ** 2 : -1;
+}
+``` 
+
+  
+## Printer Errors
+![Printer Errors](02.png)
+<br/>
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/68644)
+
+### 나의 풀이
+```javascript
+function printerError(s) {
+    const match = s.match(/[^a-m]/g);
+    return `${match ? match.length : 0}/${s.length}`
+}
+```
+ 
+## Get the Middle Character
+
+### 나의 풀이
+```javascript
+function getMiddle(s) {
+  const middle = s.length / 2;
+  return Number.isInteger(middle) ? s[middle -1] + s[middle] : s[Math.floor(middle)]
+}
+```

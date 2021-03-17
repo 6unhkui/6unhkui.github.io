@@ -1,119 +1,130 @@
 body {
-  --color-bg: #{$color-white};
-  --color-bg-gray : #{$gray-bg};
-  --color-text: #{$color-black};
-  --color-text-gray : #{$gray-font-color};
-  --color-border: #{$border-color};
-  --color-point : #{$primary-color};
-  --color-point-bg : #{$primary-color-bg};
-  --color-point-border : #{$primary-color-border};
+    --color-bg: #{$color-white};
+    --color-bg-gray: #{$gray-bg};
+    --color-text: #{$color-black};
+    --color-text-gray: #{$gray-font-color};
+    --color-border: #{$border-color};
+    --color-point: #{$primary-color};
+    --color-point-bg: #{$primary-color-bg};
+    --color-point-border: #{$primary-color-border};
 }
 
 body.dark {
-  --color-bg: #{$bg-dark};
-  --color-bg-gray : #{$gray-bg-dark};
-  --color-text: #{$color-white};
-  --color-text-gray : #{$gray-font-color-dark};
-  --color-border: #{$border-color-dark};
-  --color-point : #{$primary-color-dark};
-  --color-point-bg : #{$primary-color-bg-dark};
-  --color-point-border : #{$primary-color-border-dark};
+    --color-bg: #{$bg-dark};
+    --color-bg-gray: #{$gray-bg-dark};
+    --color-text: #{$color-white};
+    --color-text-gray: #{$gray-font-color-dark};
+    --color-border: #{$border-color-dark};
+    --color-point: #{$primary-color-dark};
+    --color-point-bg: #{$primary-color-bg-dark};
+    --color-point-border: #{$primary-color-border-dark};
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: $font-family;
-  //color : $color-black;
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  transition: all .2s;
-  //font-size: 15px;
+body {
+    @include mobile {
+        font-size: 15px;
+    }
 }
 
-a { 
-  text-decoration: none; 
-  color : var(--color-text);
-  transition: color .2s;
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $font-family;
+    //color : $color-black;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: all 0.2s;
+    //font-size: 15px;
 }
 
-a:hover { 
-  color : var(--color-point);
+a {
+    text-decoration: none;
+    color: var(--color-text);
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--color-point);
 }
 
 p {
-  margin: .6rem 0;
+    line-height: 1.8rem;
 }
 
-h1, h2, h3, h4 {
-  margin: 0;
+h1,
+h2,
+h3,
+h4 {
+    margin: 0;
 }
 
 hr {
-  border : 1px solid $gray-bg;
+    border: 1px solid $gray-bg;
 }
 
 button {
-  border: 0 none;
-  background-color: transparent;
-  cursor: pointer;
+    border: 0 none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 ::selection {
-  background-color: var(--color-point);
-  color: #fff;
+    background-color: var(--color-point);
+    color: #fff;
 }
 
-div.wrapper {
-  position: relative;
-  min-height: 100%;
+main.wrapper {
+    position: relative;
+    min-height: 100%;
 }
 
-ul {
-  padding-inline-start: 20px;
+ul,
+li {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
 }
 
 input[type="checkbox"] {
-  position: relative;
-  top: 2px;
+    position: relative;
+    top: 2px;
 }
 
 input {
-  &::placeholder {
-    color : lighten($gray-font-color, 15);
-  }
+    &::placeholder {
+        color: lighten($gray-font-color, 15);
+    }
 }
 
 .dark input {
-  &::placeholder {
-    color : darken($gray-font-color, 40);
-  }
+    &::placeholder {
+        color: darken($gray-font-color, 40);
+    }
 }
-
 
 .empty {
-  text-align: center;
-  height: 30rem;
-  line-height: 30rem;
-  color: darken($gray-font-color, 10);
+    text-align: center;
+    height: 30rem;
+    line-height: 30rem;
+    color: darken($gray-font-color, 10);
 }
 
-
 .container {
-  @include contentWrap;
+    @include contentWrap;
 
-  @include desktop {
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
+    @include desktop {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
 
-  @include tablet {
-    padding-right: 1.4rem;
-    padding-left: 1.4rem;
-  }
+    @include tablet {
+        padding-right: 1.4rem;
+        padding-left: 1.4rem;
+    }
 
-  @include mobile {
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
+    @include mobile {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
 }

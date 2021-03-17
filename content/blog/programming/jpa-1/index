@@ -1,0 +1,14 @@
+---
+category : JPA
+title: JPA 소개
+date: "2020-08-09"
+tags : ["Java", "JPA"]
+featuredImage: thumbnail.png
+---
+
+# JPA (Java Persistence API)
+자바 진영의 ORM 기술 표준으로 애플리케이션과 JDBC 사이에서 동작한다.
+
+
+### ORM
+Object-Relational Mapping의 약자로 객체 관계 매핑. 객체는 객체대로 설계하고 RDB는 RDB로 설계하고 그 사이의 매핑은 ORM Framework가 맡는다. 대중적인 언어들은 대부분 ORM 기술이 존재함.

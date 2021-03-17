@@ -1,0 +1,151 @@
+---
+category : Coding Test
+title: "[JS] Level1 문제 풀기 - 3"
+date: "2020-07-22"
+tags : ["Programers", "Coding Test", "Javascript"]
+featuredImage: thumbnail.png
+---
+
+# 콜라츠 추측
+1937년 Collatz란 사람에 의해 제기된 이 추측은, 주어진 수가 1이 될때까지 다음 작업을 반복하면, 모든 수를 1로 만들 수 있다는 추측입니다. 작업은 다음과 같습니다.
+```
+1-1. 입력된 수가 짝수라면 2로 나눕니다. 
+1-2. 입력된 수가 홀수라면 3을 곱하고 1을 더합니다.
+2. 결과로 나온 수에 같은 작업을 1이 될 때까지 반복합니다.
+```
+예를 들어, 입력된 수가 6이라면 6→3→10→5→16→8→4→2→1 이 되어 총 8번 만에 1이 됩니다. 위 작업을 몇 번이나 반복해야하는지 반환하는 함수, solution을 완성해 주세요. 단, 작업을 500번을 반복해도 1이 되지 않는다면 –1을 반환해 주세요.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12943)
+
+### 나의 풀이
+```javascript
+function solution(num) {
+  let i = 0;
+  while (num !== 1 && i < 500) {
+    if (num % 2) {
+      num = num * 3 + 1;
+    } else {
+      num = num / 2;
+    }
+    ++i;
+  }
+
+  return i === 500 ? -1 : i;
+}
+```
+> 작성중!
+
+
+# 평균 구하기
+정수를 담고 있는 배열 arr의 평균값을 return하는 함수, solution을 완성해보세요.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12944)
+
+### 나의 풀이
+```javascript
+function solution(arr) {
+  return arr.reduce((prev, cur, i) => {
+    if (i === arr.length - 1) {
+      return (prev + cur) / arr.length;
+    } else {
+      return prev + cur;
+    }
+  }, 0);
+}
+```
+> 작성중!
+
+# 하샤드 수
+양의 정수 x가 하샤드 수이려면 x의 자릿수의 합으로 x가 나누어져야 합니다. 예를 들어 18의 자릿수 합은 1+8=9이고, 18은 9로 나누어 떨어지므로 18은 하샤드 수입니다. 자연수 x를 입력받아 x가 하샤드 수인지 아닌지 검사하는 함수, solution을 완성해주세요.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12947)
+
+### 나의 풀이
+```javascript
+function solution(x) {
+  let sum = (x).toString().split('').reduce((prev,cur) => +prev + +cur, 0);
+  return x % sum === 0 ? true : false;
+}
+```
+> 작성중!
+
+
+# 휴대폰 번호 가리기
+프로그래머스 모바일은 개인정보 보호를 위해 고지서를 보낼 때 고객들의 전화번호의 일부를 가립니다.
+전화번호가 문자열 phone_number로 주어졌을 때, 전화번호의 뒷 4자리를 제외한 나머지 숫자를 전부 *으로 가린 문자열을 리턴하는 함수, solution을 완성해주세요.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12954)
+
+### 나의 풀이
+```javascript
+function solution(phone_number) {
+  return '*'.repeat(phone_number.length).replace(/\*{4}$/, phone_number.slice(-4))
+}
+```
+'*' 문자를 phone\_number 길이 만큼 반복 시킨 문자열을 생성하고,
+끝에 4자리를 실제 phone_number 값으로 변경 시키도록 코드를 작성했습니다.
+
+### 다른 사람 풀이
+```javascript
+function solution(phone_number) {
+  return s.replace(/\d(?=\d{4})/g, "*");
+}
+```
+
+
+# 행렬의 덧셈
+행렬의 덧셈은 행과 열의 크기가 같은 두 행렬의 같은 행, 같은 열의 값을 서로 더한 결과가 됩니다. 2개의 행렬 arr1과 arr2를 입력받아, 행렬 덧셈의 결과를 반환하는 함수, solution을 완성해주세요.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12950)
+
+### 나의 풀이
+```javascript
+function solution(arr1, arr2) {
+  return arr1.map((a, ai) => a.map((b, bi) => b + arr2[ai][bi]));
+}
+```
+> 작성중!
+
+
+# x만큼 간격이 있는 n개의 숫자
+함수 solution은 정수 x와 자연수 n을 입력 받아, x부터 시작해 x씩 증가하는 숫자를 n개 지니는 리스트를 리턴해야 합니다.<br/>
+다음 제한 조건을 보고, 조건을 만족하는 함수, solution을 완성해주세요.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12954)
+
+### 나의 풀이
+```javascript
+function solution(x, n) {
+    return Array.from({length : n}, (_, k) => x * (k + 1));
+}
+```
+
+사이즈가 n인 배열을 생성하고 fill 메서드를 사용해 값을 채워도 되지만 fill 메서드는 모든 요소가 하나의 값으로만 채워지기 때문에 map 함수를 추가로 사용해야 합니다.<br/>
+Array.from 메서드는 유사 배열 객체를 전달받아 배열로 변환해주는 Array 빌트인 객체의 정적 메서드입니다.<br/>
+Array.from 메서드를 이용해 첫번째 인수로 유사 배열 객체를 객체를 전달하고, n의 배수 값을 반환하는 콜백 함수를 전달하여 배열을 채우도록 코드를 작성했습니다.
+
+
+# 직사각형 별찍기
+이 문제에는 표준 입력으로 두 개의 정수 n과 m이 주어집니다.
+별(*) 문자를 이용해 가로의 길이가 n, 세로의 길이가 m인 직사각형 형태를 출력해보세요.
+
+[문제 자세히 보기 →](https://programmers.co.kr/learn/courses/30/lessons/12969)
+
+### 나의 풀이
+```javascript
+process.stdin.setEncoding('utf8');
+process.stdin.on('data', data => {
+    const n = data.split(" ");
+    const a = Number(n[0]), b = Number(n[1]);
+    
+    let str = '';
+    for(let i = 1; i <= b; i++) {
+        for(let j=1; j <= a; j++){
+        str += '*';
+        }
+        str += '\n'
+    }
+    console.log(str.trim());
+});
+```
+> 작성중!

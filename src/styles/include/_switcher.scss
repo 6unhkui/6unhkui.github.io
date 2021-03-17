@@ -1,5 +1,5 @@
 .switcher-wrap {
-    border : 0;
+    border: 0;
     margin: 0;
     display: flex;
     overflow-x: auto;
@@ -14,9 +14,9 @@
     .switcher-option {
         display: inline-block;
         font-size: $font-small;
-        letter-spacing: .1rem;
+        letter-spacing: 0.1rem;
         line-height: 2rem;
-        padding: .2rem 1rem;
+        padding: 0.2rem 1rem;
         border-radius: 30px;
         cursor: pointer;
         color: darken($gray-font-color, 15);
@@ -24,35 +24,35 @@
         border: 1px solid var(--color-border);
         flex-shrink: 0;
         position: relative;
-        top : 0;
-        transition: all .4s;
+        top: 0;
+        transition: all 0.4s;
 
         &:last-child {
             margin-right: 1rem;
         }
 
         &:not(:last-child) {
-            margin-right: .4rem;
+            margin-right: 0.4rem;
         }
 
         &:hover {
-            opacity: .6;
+            opacity: 0.6;
         }
-        
+
         &.selected {
             background: $primary-color;
             color: #fff;
             font-weight: 500;
             background: $gradient-color;
-            border : 1px solid var(--color-point);
-            box-shadow: 0 0.4rem 1rem 0 rgba(0, 0, 0, .15);
+            border: 1px solid var(--color-point);
+            box-shadow: 0 0.4rem 1rem 0 rgba(0, 0, 0, 0.15);
         }
     }
 }
 
-// dark mode 
-.dark .switcher-wrap  {
+// dark mode
+.dark .switcher-wrap {
     .switcher-option:not(.selected) {
-        border : 1px solid var(--color-border);
+        border: 1px solid var(--color-border);
     }
 }

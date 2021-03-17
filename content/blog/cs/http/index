@@ -1,0 +1,10 @@
+---
+category : IT
+title: "HTTP"
+date: "2020-07-22"
+tags : ["IT"]
+featuredImage: thumbnail.png
+---
+
+# HTTP
+HTTP는 서버와 클라이언트가 텍스트, 이미지, 동영상 등의 데이터를 주고 받을 때 사용하는 프로토콜이다.

@@ -1,0 +1,49 @@
+---
+category : Front-End
+title: PWA 코드랩
+date: "2020-07-29"
+tags : ["javascript", "PWA"]
+featuredImage: thumbnail.png
+---
+> 2019.6.18 조은님이 주최하는 [만들면서 이해하는 PWA 코드랩]에 참석하여 배운 내용을 간략히 정리하였습니다.
+>
+
+
+```java
+@Scheduled(cron="${scheduler-job-cron}")
+	public void scheduler() {
+		log.info("=======================================================");
+		log.info("[Scheduler : " + new Date() + "] : 부고 게시판 스케쥴러 테스트 진행중");
+		log.info("=======================================================");
+}
+```
+
+- 용어 정리
+    1. cron ? cron은 유닉스 사용자로 하여금 특정한 명령이나 스크립트를 지정한 시간/날짜에 자동으로 실행하게 해주는 프로그램의 이름이다. 
+
+        이는 주기적으로 시스템 백업 스크립트를 실행하는 등 시스템 관리자에 의해 많이 사용되며, 그 외에도 특정한 작업을 스케줄링하기 위해 사용될 수 있다. 
+
+    2. 배치 ? 일괄처리로 대량의 작업을 하는 것. 
+    3. 잡(job) ? 스케쥴링이 될 배치
+    4. cron expression ? 스케쥴러 계열의 표현식. 
+        - 크론 표현식 참고 게시물 : [https://gs.saro.me/dev?tn=548](https://gs.saro.me/dev?tn=548)
+
+- 시간은 applictaion.yml 파일로 빼둠
+
+    ```yaml
+    # Scheduler Job Batch Cron Expression
+    scheduler-job-cron : '0 0 1 * * ?'
+    ```
+
+    @SpringBootApplication
+@EnableAspectJAutoProxy
+@EnableScheduling
+@ComponentScan(value = {"ucware.messenger.ucweb"})
+@Slf4j
+public class UcwebApplication {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext ctx = SpringApplication.run(UcwebApplication.class, args);
+	}
+}
+

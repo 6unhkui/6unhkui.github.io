@@ -1,52 +1,53 @@
-import React from 'react';
-import Index from "../components/Layout"
-import SEO from "../components/seo"
-import Posts from '../components/Post/posts';
-import { Query } from "../interfaces/PostList"
-import { graphql } from "gatsby"
-
+import React from "react";
+import Index from "../components/Layout";
+import SEO from "../components/seo";
+import Posts from "../components/Post/posts";
+import { Query } from "../interfaces/PostList";
+import { graphql } from "gatsby";
 
 interface Props {
-  data : Query;
-  location: Location;
+    data: Query;
+    location: Location;
 }
-const DevOpsPage: React.FC<Props> = ({data, location}) => {
-  return (
-      <Index location={location}>
-        <SEO title="DevOps"/>
-        <Posts data={data}/>
-      </Index>
-  )
-}
+const DevOpsPage: React.FC<Props> = ({ data, location }) => (
+    <Index location={location}>
+        <SEO title="DevOps" />
+        <Posts data={data} />
+    </Index>
+);
 
 export default DevOpsPage;
 
 export const pageQuery = graphql`
-query {
-    allMarkdownRemark(filter: {fields: {slug: {regex: "/^\/devops\//"}}}, sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            tags
-            category
-            featuredImage {
-              childImageSharp{
-                resize(width: 700) {
-                  src
+    query {
+        allMarkdownRemark(
+            filter: { fields: { slug: { regex: "/^/devops//" } } }
+            sort: { fields: [frontmatter___date], order: DESC }
+        ) {
+            edges {
+                node {
+                    excerpt(format: PLAIN, truncate: true, pruneLength: 50)
+                    fields {
+                        slug
+                    }
+                    frontmatter {
+                        date(formatString: "MMMM DD, YYYY")
+                        title
+                        tags
+                        category
+                        featuredImage {
+                            childImageSharp {
+                                resize(width: 700) {
+                                    src
+                                }
+                            }
+                        }
+                    }
                 }
-              }
             }
-          }
+            categories: group(field: frontmatter___category) {
+                fieldValue
+            }
         }
-      }
-      categories : group(field: frontmatter___category) {
-        fieldValue
-      }
     }
-}`;
+`;

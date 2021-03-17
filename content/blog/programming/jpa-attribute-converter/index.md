@@ -74,5 +74,5 @@ public class User extends BaseEntity {
 }
 ```
 
-# 참고
+# Reference
 - [Baeldung](https://www.baeldung.com/jpa-persisting-enums-in-jpa)

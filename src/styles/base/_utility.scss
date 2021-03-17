@@ -1,22 +1,22 @@
 @mixin contentWrap {
-    max-width : 1100px;
+    max-width: $breakpoint-desktop;
     margin: 0 auto;
-};
+}
 
 @mixin mobile {
     @media (max-width: #{$breakpoint-tablet - 1px}) {
-      @content;
+        @content;
     }
 }
-  
+
 @mixin tablet {
     @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - 1px}) {
-      @content;
+        @content;
     }
 }
-  
+
 @mixin desktop {
     @media (min-width: #{$breakpoint-desktop}) {
-      @content;
+        @content;
     }
 }

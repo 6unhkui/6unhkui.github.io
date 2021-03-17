@@ -1,0 +1,104 @@
+---
+category: Project
+title: Study With Us
+date: "2021-03-05"
+tags: ["Project"]
+featuredImage: thumbnail.png
+---
+
+# 🔍 Overview
+
+![메인](https://user-images.githubusercontent.com/41765537/110615240-905e0f80-81d6-11eb-843f-60de4cbf6937.gif)
+<br/><br/>
+Study With Us는 자기 개발을 위해 공부하는 사람들이 모여 정보를 공유하고, 함께 의지를 다지기 위해 만든 커뮤니티 사이트입니다.<br/><br/>
+
+# 💻 Dev Environment
+
+-   OS : Mac OS, CentOS 7
+-   Tool : Visual Studio Code, IntelliJ, Git
+
+# 🔧 Tech Stack
+
+### Front-End
+
+-   HTML5, CSS3, Javascript (ES6+)
+-   React
+-   Redux & Redux Saga
+-   Less, css-in-js (styled-components)
+-   UI Library : Ant Design UI
+-   Web Server : Nginx
+
+### Back-End
+
+-   Java 8
+-   Spring Boot 2.2
+-   Spring Security
+-   Spring Data JPA & Querydsl
+-   Build Tool : Gradle
+-   Embedded Server : Tomcat
+-   Database : Mysql, Redis
+-   Logging : Logback
+-   API Document : Swagger UI
+
+# 🗂 Folder Structure
+
+프로젝트 디렉토리 구조는 리포지토리에 정리해두었습니다. 아래 링크에서 확인할 수 있습니다.
+
+-   [Front-End](https://github.com/6unhkui/study-with-us-front)
+-   [Back-End](https://github.com/6unhkui/study-with-us-back)
+
+# 🗄️ Database ERD
+
+![erd](https://user-images.githubusercontent.com/41765537/111193812-ed562d00-85fd-11eb-89e3-cefbca409e7c.png)
+
+[이미지 자세히 보기](https://user-images.githubusercontent.com/41765537/111193812-ed562d00-85fd-11eb-89e3-cefbca409e7c.png)
+
+# Features
+
+### 회원가입, 로그인 & 소셜 로그인
+
+![회원가입](https://user-images.githubusercontent.com/41765537/110615269-96ec8700-81d6-11eb-8ffe-4bf0ca5d3945.gif)
+![소셜로그인](https://user-images.githubusercontent.com/41765537/110615258-95bb5a00-81d6-11eb-8db4-30f41ce4842f.gif)
+
+### 나의 스터디방
+
+![나의스터디방](https://user-images.githubusercontent.com/41765537/110619162-d026f600-81da-11eb-9735-2b6fe5d0e618.gif)
+
+### 스터디룸 생성 및 관리
+
+![스터디룸만들기](https://user-images.githubusercontent.com/41765537/109998252-629b4580-7d54-11eb-8fda-3e761f3d460d.gif)
+![스터디룸관리](https://user-images.githubusercontent.com/41765537/110084371-37a40680-7dd3-11eb-95e6-1c5396d9a97b.gif)
+
+### 출석 체크, 멤버 별 출석 현황 (그래프)
+
+![출석체크](https://user-images.githubusercontent.com/41765537/110615264-9653f080-81d6-11eb-8f06-04c26b65b757.gif)
+
+### 게시글, 댓글 & 대댓글 CRUD
+
+![게시글작성](https://user-images.githubusercontent.com/41765537/110084334-2eb33500-7dd3-11eb-857e-d8a574fced4f.gif)
+![댓글대댓글](https://user-images.githubusercontent.com/41765537/110084364-3541ac80-7dd3-11eb-9d7c-3ebbc27ddafa.gif)
+
+### 채팅
+
+![채팅](https://user-images.githubusercontent.com/41765537/109997497-99249080-7d53-11eb-80a2-acf285ce0a61.gif)<br/>
+Redis Pub/Sub을 통해 구현
+
+### 새글 피드
+
+![새글피드](https://user-images.githubusercontent.com/41765537/110615252-948a2d00-81d6-11eb-8afa-993ce45fac5e.gif)
+
+### 카테고리 별 스터디룸 찾기
+
+![카테고리별스터디룸찾기](https://user-images.githubusercontent.com/41765537/110084375-38d53380-7dd3-11eb-81a6-52994d23b866.gif)
+
+### 마이페이지
+
+![마이페이지](https://user-images.githubusercontent.com/41765537/110620359-4546fb00-81dc-11eb-9925-863d69046c18.gif)
+
+### 다국어 지원 (영어, 한국어)
+
+![다국어](https://user-images.githubusercontent.com/41765537/110620373-47a95500-81dc-11eb-9347-63b0cb4b3022.gif)
+
+### 모바일 뷰
+
+![메인-모바일](https://user-images.githubusercontent.com/41765537/110615219-863c1100-81d6-11eb-9cf8-b88d30688ef3.gif)

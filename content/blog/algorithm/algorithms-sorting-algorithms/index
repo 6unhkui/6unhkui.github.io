@@ -1,0 +1,25 @@
+---
+category : Algorithm
+title: "정렬 알고리즘"
+date: "2020-07-22"
+tags : ["Java"]
+featuredImage: thumbnail.png
+---
+```javascript
+function bubbleSort(data) {
+  const arr = data.slice(); 
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    let isSwap = false;
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j] > arr[j + 1]) {
+        arr.splice(j, 2, arr[j + 1], arr[j]);
+        isSwap = true;
+      }
+    }
+    if (!isSwap) break;
+  }
+
+  return arr;
+}
+```

@@ -1,0 +1,48 @@
+---
+category : Database
+title: "Redis"
+date: "2020-07-22"
+tags : ["Database", "Redis"]
+featuredImage: thumbnail.png
+---
+
+# Redis 서버란?
+- in-memory Database
+- 다양한 데이터 타입을 지원함
+- key-value 모델의 No SQL (JSON)
+
+# 디스크 기반 저장소 vs 메모리 기반 저장소
+- 속도 : 디스크 기반 저장소 < 메모리 기반 저장소
+- 데이터 내구성 : 디스크 기반 저장소 > 메모리 기반 저장소
+
+# 특징
+1. 디스크 기반 저장소 보다 대략 10배정도 빠르다.
+2. Data Expire 기능으로 데이터의 만료 시간을 정할 수 있다.
+
+# Redis 설치
+### 설치
+```shell
+sudo apt install redis-tools
+sudo apt install redis-server
+```
+
+### 시작/중지
+```shell
+# 시작
+service redis-server start
+
+# 중지
+service redis-server stop
+```
+
+### 클라이언트 접속
+```shell
+redis-cli
+```
+
+# 지원 데이터 타입
+## key-value
+
+### 명령어
+#### 데이터 넣기
+#### 데이터 가져오기

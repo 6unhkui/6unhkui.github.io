@@ -1,0 +1,25 @@
+---
+category : Front-End
+title: Client Side Rendering과 Server Side Rendering
+date: "2020-08-09"
+tags : ["Front-End"]
+featuredImage: thumbnail.png
+---
+# 🤔 Redering
+렌더링이란 html, css, js로 작성된 문서를 해석해서 브라우저에 시각적으로 출력하는 것을 의미한다. <br/>
+
+
+검색 엔진 봇이 크롤링을 하기 위해서는
+
+SPA(Signle Page Application)이 등장하기 이전 우리나라 개발 생태계에서는 JSP를 많이 사용했다.<br/>
+JSP도
+ 
+React 프로젝트의 경우 클라이언트 사이드 렌더링(CSR)으로 처리된다. 서버사이드 렌더링(SSR)이 필요할 경우 추가적인 개발을 진행해야 한다.<br/>
+이에 대한 해결책으로 직접 SSR에 대한 환경을 구현하거나, Next.js를 사용한다.<br/>
+# Redering의 종류
+## SSR (Server Side Rendering)
+
+
+
+
+# Ref

@@ -1,0 +1,25 @@
+---
+category: Javascript
+title: "프로퍼티 어트리뷰트"
+date: "2020-12-05"
+tags: ["Javascript", "Book"]
+featuredImage: thumbnail.png
+---
+
+> [모던 자바스크립트 Deep Dive](http://www.yes24.com/Product/Goods/92742567)를 읽고 학습한 내용을 간략하게 정리한 글입니다.<br/>
+> 자바스크립트 기본 개념과 동작 원리를 잘 다루고 있는 책입니다. 상세한 내용은 책을 참고해주세요.
+
+# 내부 슬롯과 내부 메서드
+
+내부 슬롯과 내부 메서드는 자바스크립트 엔진의 구현 알고리즘을 설명하기 위해<br/>
+ECMAScript 사양에서 사용되는 의사(pseudo) 프로퍼티와 의사(pseudo) 메서드이다.<br/>
+내부 슬롯과 내부 메서드는 자바스크립트 엔진의 내부 로직이므로 직접 접근하거나 호출하는 방법을 제공하지 않지만<br/>
+일부 내부 슬롯과 내부 메서드에 한해 간접적으로 접근 할 수 있는 수단을 제공한다.<br/>
+ex) 모든 객체는 [[Prototype]]이란 내부 슬롯을 갖으며, **proto**으로 접근 할 수 있다.
+
+```javascript
+const o = {};
+
+console.log(o.__proto__);
+// {constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+```

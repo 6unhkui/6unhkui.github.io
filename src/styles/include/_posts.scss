@@ -1,8 +1,8 @@
 section.posts-wrap {
     background-color: var(--color-bg-gray);
-    padding-top : 3rem;
-    padding-bottom : 2rem;
-    transition: all .4s ease;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    transition: all 0.4s ease;
 
     .section-title {
         font-size: $font-large;
@@ -25,8 +25,8 @@ section.posts-wrap {
         display: inline-block;
         margin-right: 1.7rem;
         overflow: hidden;
-        transition: all .3s;
-        top : 0;
+        transition: all 0.3s;
+        top: 0;
 
         &:first-child {
             margin-top: 2rem;
@@ -34,7 +34,7 @@ section.posts-wrap {
 
         &:hover {
             // box-shadow: 0 8px 18px rgba(34, 31, 36, 0.12);
-            opacity: .7;
+            opacity: 0.7;
             // top: -.3rem;
         }
 
@@ -47,34 +47,35 @@ section.posts-wrap {
 
         .post-info {
             padding: 1.2rem 1.6rem 1.6rem 1.6rem;
-            min-height: 8.4rem;
+            min-height: 8.2rem;
             width: -webkit-fill-available;
 
-            .category, .date {
-                color : var(--color-point);
+            .category,
+            .date {
+                color: var(--color-point);
                 font-weight: 600;
                 font-size: $font-small;
-                letter-spacing: .1rem;
+                letter-spacing: 0.1rem;
             }
 
             .title {
                 margin: 8px 0 6px 0;
                 font-size: $font-medium;
                 color: var(--color-text);
-                text-overflow:ellipsis;
-                white-space:nowrap;
-                word-wrap:normal;
-                width:100%;
-                overflow:hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                word-wrap: normal;
+                width: 100%;
+                overflow: hidden;
             }
-    
+
             .summary {
                 color: var(--color-text-gray);
                 line-height: 1.6rem;
                 width: 100%;
-                text-overflow:ellipsis;
-                white-space:nowrap;
-                word-wrap:normal;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                word-wrap: normal;
                 overflow: hidden;
             }
 
@@ -82,19 +83,20 @@ section.posts-wrap {
                 margin-top: 1rem;
                 display: flex;
                 overflow-x: auto;
-                
+
                 &::-webkit-scrollbar {
                     display: none; /* Chrome, Safari, Opera*/
                 }
-        
+
                 .tag {
                     flex-shrink: 0;
                     background-color: var(--color-bg-gray);
-                    a {
-                        color : darken($gray-font-color, 20);
-                    }
+                    color: darken($gray-font-color, 20);
+                    // a {
+                    //     color: darken($gray-font-color, 20);
+                    // }
                 }
-            }    
+            }
         }
     }
 
@@ -103,7 +105,6 @@ section.posts-wrap {
             display: none;
         }
     }
-
 
     article.list {
         width: 100%;
@@ -117,19 +118,20 @@ section.posts-wrap {
             display: none;
         }
 
-        .post-info { 
+        .post-info {
             min-height: auto;
             position: relative;
             display: flex;
 
-            .category,.summary {
+            .category,
+            .summary {
                 display: none;
             }
 
             .date {
                 margin: 0;
                 flex-basis: 5rem;
-                top: .8rem;
+                top: 0.8rem;
                 position: relative;
                 margin-right: 10px;
             }
@@ -139,15 +141,15 @@ section.posts-wrap {
             }
         }
     }
-    
+
     @include desktop {
         article.card {
-            width: calc(33% - .95rem);
-            &:nth-of-type(3n){
+            width: calc(33% - 0.95rem);
+            &:nth-of-type(3n) {
                 margin-right: 0;
             }
         }
-    
+
         &.index {
             .container article:nth-child(5) {
                 display: none;
@@ -157,19 +159,19 @@ section.posts-wrap {
 
     @include tablet {
         article.card {
-            width: calc(50% - .95rem);
-            &:nth-of-type(2n){
+            width: calc(50% - 0.95rem);
+            &:nth-of-type(2n) {
                 margin-right: 0;
             }
         }
     }
 
     @include mobile {
-        padding-top : 2rem;
+        padding-top: 2rem;
 
         .filter-wrap {
             display: block;
-            //align-items: center;
+            margin-bottom: 1rem;
         }
 
         article.card {

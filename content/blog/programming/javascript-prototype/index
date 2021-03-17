@@ -1,0 +1,73 @@
+---
+category : Javascript
+title: "프로토타입"
+date: "2020-12-05"
+tags : ["Javascript", "Book"]
+featuredImage: thumbnail.png
+---
+
+> [모던 자바스크립트 Deep Dive](http://www.yes24.com/Product/Goods/92742567)를 읽고 학습한 내용을 간략하게 정리한 글입니다.<br/>
+> 자바스크립트 기본 개념과 동작 원리를 잘 다루고 있는 책입니다. 상세한 내용은 책을 참고해주세요.
+
+# 객체 지향 프로그래밍 
+객체 지향 프로그래밍에서 객체란 객체의 상태를 나타내는 데이터와 상태 데이터를 조작할 수 있는 동작을 하나의 논리적인 단위로 묶은 복합적인 자료구조다.<br/>
+각 객체는 고유한 기능을 갖는 독립적인 부품으로 볼 수 있지만, 자신의 고유한 기능을 수행 함으로서 **다른 객체와 관계성**을 가질 수 있으며
+다른 객체와 메시지를 주고받거나 데이터를 처리할 수도 있다. 또 **다른 객체의 상태 데이터나 동작을 상속받아 사용**하기도 한다.
+
+
+# 상속과 프로토타입
+자바스크립트는 프로토타입을 기반으로 상속을 구현하여 불필요한 중복을 제거한다.<br/>
+프로토타입은 어떤 객체의 상위 객체 역할을 하는 객체로서, 하위 객체에게 공유 프로퍼티(+ 메서드)를 제공한다. <br/>
+생성자 함수로 인스턴스를 생성할 때, 모든 인스턴스가 동일한 메서드를 사용한다면 이를 중복 소유할 때 메모리를 불필요하게 낭비하게 된다.<br/>
+생성자 함수로 생성된 모든 인스턴스가 공통적으로 사용할 프로퍼티나 메서드를 프로토타입에 미리 구현해놓으면<br/>
+인스턴스가 상위(부모) 객체인 프로토타입을 공유하여 사용 할 수 있다.
+```javascript
+function Animal(name) {
+    this.name = name;
+}
+
+Animal.prototype.sayHello = function() {
+    return `Hello, ${this.name}`
+}
+
+const cat = new Animal('cat');
+const dog = new Animal('dog');
+
+console.log(cat.sayHello === dog.sayHello); // true
+console.log(cat.sayHello()); // 'Hello, cat'
+console.log(dog.sayHello()); // 'Hello, dog'
+```
+
+![ex_screenshot](./prototype.png)
+
+
+
+모든 객체는 [[Prototype]] 내부 슬롯을 가지며, [[Prototype]] 내부 슬롯에 프로토타입 객체의 참조 값을 저장한다.<br/>
+이 내부 슬롯은 ``__proto__`` 접근자 프로퍼티를 통해 참조할 수 있다.
+```javascript
+const obj = {};
+// 객체 리터럴로 생성한 객체도 생성자 
+
+console.log(obj.__proto__ === Object.prototype); // true
+```
+
+## prototype 프로퍼티와 __proto__ 접근자 프로퍼티
+prototype 프로퍼티는 생성자 함수로 호출 할 수 있는 함수 객체 즉 constructor만이 가지고 있는 프로퍼티다
+- constructor : [[Construct]] 내부 슬롯을 가진 생성자로 호출될 수 있는 함수로서, 함수 선언문, 함수 표현식, 클래스가 
+prototype 프로퍼티에 바인딩 된 객체가 생성자 함수를 통해 생성한 인스턴스의 [[Prototype]] 내부 슬롯에 저장되는 참조 값이며,
+
+
+
+이러한 프로토타입은 생성자 함수를 통해 생성된 각각의 객체(인스턴스)가 공유할 프로퍼티(또는 메서드)를 정의하기 위해 사용된다.
+생성자 함수를 통해 생성된 인스턴스에게 공유할 프로토타입 객체를 생성하기 위해서는
+생성자함수.prototype 프로퍼티에 접근하여 정의한다.
+```javascript
+function Person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+}
+
+Person.prototype.fullName = function() {
+    return `${this.firstName} ${this.lastName}`
+}
+```

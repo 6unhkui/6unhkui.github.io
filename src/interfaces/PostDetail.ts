@@ -1,20 +1,20 @@
-import { SiteMetadata } from "./SiteMetadata"
-import { Frontmatter } from "./PostList"
+import { SiteMetadata } from "./SiteMetadata";
+import { Frontmatter } from "./PostList";
 
 export interface Query {
-  site : Site,
-  markdownRemark : MarkdownRemark
+    site: Site;
+    markdownRemark: MarkdownRemark;
 }
 
 interface Site {
-  siteMetadata : SiteMetadata
+    siteMetadata: SiteMetadata;
 }
 
 interface MarkdownRemark {
-  fields : string[],
-  id : string,
-  excerpt : string,
-  html : string,
-  tableOfContents : string,
-  frontmatter : Frontmatter
+    fields: string[];
+    id: string;
+    excerpt: string;
+    html: string;
+    tableOfContents: string;
+    frontmatter: Frontmatter;
 }

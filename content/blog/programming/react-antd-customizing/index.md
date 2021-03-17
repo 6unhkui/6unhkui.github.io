@@ -2,7 +2,7 @@
 category : React
 title: CRA 프로젝트에서 Ant Design 커스터마이징하기
 date: "2020-09-07"
-tags : ["React", "Antd"]
+tags : ["React", "UI Library"]
 featuredImage: thumbnail.png
 ---
 UI 라이브러리로 Ant Design을 사용하던 중, primary color를 프로젝트에 맞게 변경하는 작업이 필요했다.<br/>

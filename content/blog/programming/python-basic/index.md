@@ -5,7 +5,6 @@ date: "2020-07-29"
 tags : ["Python"]
 featuredImage: thumbnail.png
 ---
-> 🔒 작성중
 
 # 변수
 ```python

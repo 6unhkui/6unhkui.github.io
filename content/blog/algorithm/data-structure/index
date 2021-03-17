@@ -1,0 +1,12 @@
+---
+category : Data Structure
+title: "자료구조 정리"
+date: "2020-07-22"
+tags : ["Data Structure"]
+featuredImage: thumbnail.png
+---
+
+# Stack
+스택은 LIFO(Last In, First Out) 또는 FILO(First In, Last Out) 데이터 관리 방식을 따른다
+
+## Stack in Javascript

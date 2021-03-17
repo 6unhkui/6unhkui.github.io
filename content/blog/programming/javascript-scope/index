@@ -1,0 +1,12 @@
+---
+category : Javascript
+title: "스코프, 스코프 체인, 렉시컬 환경"
+date: "2020-10-27"
+tags : ["Javascript", "Book"]
+featuredImage: thumbnail.png
+---
+
+> [모던 자바스크립트 Deep Dive](http://www.yes24.com/Product/Goods/92742567)를 읽고 학습한 내용을 간략하게 정리한 글입니다.<br/>
+> 자바스크립트 기본 개념과 동작 원리를 잘 다루고 있는 책입니다. 상세한 내용은 책을 참고해주세요.
+
+# 스코프
