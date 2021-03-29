@@ -1,16 +1,14 @@
 import React from "react";
-import Github from "../../../static/images/github.svg";
-import LinkedIn from "../../../static/images/linked-in.svg";
-import { SiteMetadata } from "../../interfaces/SiteMetadata";
+import Github from "static/images/github.svg";
+import LinkedIn from "static/images/linked-in.svg";
+import { SiteSiteMetadata } from "graphql-types";
 
-interface Props {
-    data: SiteMetadata;
+interface FooterProps {
+    data: SiteSiteMetadata;
 }
 
-const Footer: React.FC<Props> = React.memo(({ data }) => {
-    const {
-        social: { github }
-    } = data;
+const Footer: React.FC<FooterProps> = React.memo(({ data }) => {
+    const github = data.social?.github || "";
 
     return (
         <footer>

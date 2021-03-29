@@ -1,20 +1,20 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { useLocation } from "@reach/router";
-import { useStaticQuery, graphql } from "gatsby";
-import { Image } from "../interfaces/FeaturedImage";
+import { useStaticQuery } from "gatsby";
 import { configs } from "../../config";
+import { graphql } from "gatsby";
 
-interface Props {
+interface SEOProps {
     title?: string;
     description?: string;
-    image?: Image;
+    imageSrc?: string;
     article?: boolean;
 }
 
-const SEO = ({ title, description, image, article = false }: Props) => {
+const SEO = ({ title, description, imageSrc, article = false }: SEOProps) => {
     const { pathname } = useLocation();
-    const { site, icon } = useStaticQuery(query);
+    const { site, icon } = useStaticQuery(pageQuery);
     const { defaultTitle, defaultDescription, siteUrl, author } = site.siteMetadata;
 
     const defaultImage = icon.childImageSharp.fixed.src;
@@ -22,7 +22,7 @@ const SEO = ({ title, description, image, article = false }: Props) => {
     const seo = {
         title: title ? `${title} | ${defaultTitle}` : defaultTitle,
         description: description || defaultDescription,
-        image: `${siteUrl}${image?.src || defaultImage}`,
+        image: `${siteUrl}${imageSrc || defaultImage}`,
         url: `${siteUrl}${pathname}`
     };
 
@@ -46,8 +46,8 @@ const SEO = ({ title, description, image, article = false }: Props) => {
 };
 export default SEO;
 
-const query = graphql`
-    query SEO {
+const pageQuery = graphql`
+    query SEOQuery {
         icon: file(absolutePath: { regex: "/icon.png/" }) {
             childImageSharp {
                 fixed(width: 300, height: 300) {

@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
     siteMetadata: {
         title: `i.log ✨`,
@@ -46,15 +48,45 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/content/blog`,
+                path: path.join(__dirname, "content/blog"),
                 name: `blog`
             }
         },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/static/images`,
+                path: path.join(__dirname, "static/images"),
                 name: `images`
+            }
+        },
+        {
+            resolve: "gatsby-plugin-root-import",
+            options: {
+                static: path.join(__dirname, "static"),
+                src: path.join(__dirname, "src"),
+                components: path.join(__dirname, "src/components"),
+                hooks: path.join(__dirname, "src/hooks"),
+                utils: path.join(__dirname, "src/utils"),
+                graphqlTypes: path.join(__dirname, "src/graphqlTypes/index.ts")
+            }
+        },
+        {
+            // GraphQL Code Generator
+            resolve: `gatsby-plugin-graphql-codegen`,
+            options: {
+                // codegen: false, // If you want it to work, change it to true.
+                // fileName: `./src/graphqlTypes/index.ts`, // it should not be placed into src, since this will create an infinite loop
+                documentPaths: ["./src/**/*.{ts,tsx,graphql}", "./node_modules/gatsby-*/**/*.js", "./gatsby-node.js"],
+                options: {
+                    codegenPlugins: [
+                        {
+                            resolve: "typescript",
+                            options: {
+                                namingConvention: `lower-case#lowerCase`
+                            }
+                        }
+                    ]
+                }
             }
         },
         `gatsby-plugin-react-helmet`,

@@ -1,14 +1,9 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
-import LogoImg from "../../../static/images/logo.svg";
-import { SiteMetadata } from "../../interfaces/SiteMetadata";
+import LogoImg from "static/images/logo.svg";
 import HamburgerMenu from "react-hamburger-menu";
 import BodyClassName from "react-body-classname";
-
-interface Props {
-    data: SiteMetadata;
-    location: Location;
-}
+import { SiteSiteMetadata } from "../../graphql-types";
 
 const Logo = React.memo(({ title }: { title: string }) => {
     return (
@@ -20,17 +15,22 @@ const Logo = React.memo(({ title }: { title: string }) => {
     );
 });
 
-const Header: React.FC<Props> = React.memo(({ data, location }) => {
+interface HeaderProps {
+    data: SiteSiteMetadata;
+    location: Location;
+}
+
+const Header: React.FC<HeaderProps> = React.memo(({ data, location }) => {
     const { title, menuLinks } = data;
     const [openMenu, setOpenMenu] = useState(false);
     const path = location.pathname.substr(1).split("/")[0].toUpperCase();
 
-    const renderMenu = () => (
+    const menuItems = () => (
         <ul>
-            {menuLinks.map(link => (
-                <li key={link.name} className={"menu " + (link.name.toUpperCase() === path ? "active" : "")}>
-                    <Link to={link.link} onClick={setOpenMenu.bind(null, false)}>
-                        {link.name}
+            {menuLinks?.map((link, i) => (
+                <li key={i} className={"menu " + (link?.name?.toUpperCase() === path ? "active" : "")}>
+                    <Link to={link?.link || ""} onClick={setOpenMenu.bind(null, false)}>
+                        {link?.name}
                     </Link>
                 </li>
             ))}
@@ -41,7 +41,7 @@ const Header: React.FC<Props> = React.memo(({ data, location }) => {
         <BodyClassName className={openMenu ? "open" : ""}>
             <header>
                 <div className="header-wrap container">
-                    <Logo title={title} />
+                    <Logo title={title || ""} />
 
                     <div className={"hamburger-btn " + (openMenu ? "open" : "")}>
                         <HamburgerMenu
@@ -56,10 +56,10 @@ const Header: React.FC<Props> = React.memo(({ data, location }) => {
                         />
                     </div>
 
-                    <nav className="menu-wrap">{renderMenu()}</nav>
+                    <nav className="menu-wrap">{menuItems()}</nav>
                 </div>
 
-                <div className="sidebar">{renderMenu()}</div>
+                <div className="sidebar">{menuItems()}</div>
             </header>
         </BodyClassName>
     );

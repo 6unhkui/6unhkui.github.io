@@ -1,12 +1,12 @@
 import React, { createRef, RefObject, useLayoutEffect } from "react";
 
-interface Props {
+const src = "https://utteranc.es/client.js";
+
+interface PostCommentProps {
     repo: string;
 }
 
-const src = "https://utteranc.es/client.js";
-
-const PostComment: React.FC<Props> = ({ repo }) => {
+const PostComment: React.FC<PostCommentProps> = ({ repo }) => {
     const containerRef: RefObject<any> = createRef();
 
     useLayoutEffect(() => {

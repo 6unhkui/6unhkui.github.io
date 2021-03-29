@@ -1,30 +1,30 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
-import SEO from "../components/seo";
-import PageTitle from "../components/Layout/pageTitle";
+import SEO from "components/SEO";
+import PageTitle from "components/PageTitle";
 import { kebabCase } from "lodash";
-import Index from "../components/Layout";
-import { Query } from "../interfaces/Tags";
+import Layout from "components/Layout/Layout";
+import { TagsPageQuery } from "graphql-types";
 
-interface Props {
-    data: Query;
+interface TagsPageProps {
+    data: TagsPageQuery;
     location: Location;
 }
 
-const TagsPage: React.FC<Props> = ({ data, location }) => {
+const TagsPage: React.FC<TagsPageProps> = ({ data, location }) => {
     const allTags = data.allMarkdownRemark.group;
 
     return (
-        <Index location={location}>
+        <Layout location={location}>
             <SEO title="Tags" />
             <div style={{ paddingBottom: "5rem" }}>
                 <PageTitle title="Tags" />
 
                 <section className="all-tags-wrap">
                     <div className="container">
-                        {allTags.map(tag => (
-                            <div key={tag.fieldValue} className="tag">
-                                <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+                        {allTags.map((tag, i) => (
+                            <div key={i} className="tag">
+                                <Link to={`/tags/${kebabCase(tag.fieldValue || "")}/`}>
                                     {tag.fieldValue}
                                     <span className="tag-count">{`(${tag.totalCount})`}</span>
                                 </Link>
@@ -33,14 +33,14 @@ const TagsPage: React.FC<Props> = ({ data, location }) => {
                     </div>
                 </section>
             </div>
-        </Index>
+        </Layout>
     );
 };
 
 export default TagsPage;
 
 export const pageQuery = graphql`
-    query {
+    query TagsPage {
         allMarkdownRemark(limit: 2000) {
             group(field: frontmatter___tags) {
                 fieldValue

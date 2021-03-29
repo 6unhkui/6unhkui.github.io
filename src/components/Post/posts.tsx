@@ -1,23 +1,23 @@
 import React, { useEffect, useState, useCallback } from "react";
-import Switcher from "../Filter/switcher";
-import Search from "../Filter/search";
-import { Query } from "../../interfaces/PostList";
-import PostSingle from "./postSingle";
-import InfinitiScroll from "../../utils/infiniteScroll";
+import Switcher from "components/Filter/Switcher";
+import Search from "components/Filter/Search";
+import PostCard from "./PostCard";
+import infinitiScroll from "utils/infiniteScroll";
+import { MarkdownRemark, PostsInfoFragment } from "graphql-types";
+import { graphql } from "gatsby";
 
-interface Props {
-    data: Query;
-}
+const SHOW_COUNT = 6;
+
 enum Category {
     All = "ALL"
 }
 
-const SHOW_COUNT = 6;
+interface PostsProps {
+    data: PostsInfoFragment;
+}
 
-const Posts: React.FC<Props> = ({ data }) => {
-    const {
-        allMarkdownRemark: { edges: allPosts, categories }
-    } = data;
+const Posts: React.FC<PostsProps> = ({ data }) => {
+    const { edges: allPosts, categories } = data;
     const [posts, setPosts] = useState(allPosts);
     const [postsToShow, setPostsToShow] = useState(SHOW_COUNT);
     const [searchValue, setSearchValue] = useState("");
@@ -30,7 +30,7 @@ const Posts: React.FC<Props> = ({ data }) => {
     }, [searchValue, selectedCategory]);
 
     useEffect(() => {
-        const _infiniteScroll = InfinitiScroll.bind(null, () => setPostsToShow(state => state + SHOW_COUNT));
+        const _infiniteScroll = infinitiScroll.bind(null, () => setPostsToShow(state => state + SHOW_COUNT));
 
         document.addEventListener("scroll", _infiniteScroll, false);
         return () => {
@@ -41,27 +41,22 @@ const Posts: React.FC<Props> = ({ data }) => {
     function filterPosts() {
         return allPosts
             .filter(post => {
-                const {
-                    node: {
-                        frontmatter: { category }
-                    }
-                } = post;
+                const category = post.node.frontmatter?.category || "";
+
                 // 선택된 카테고리가 ALL 이거나, 선택된 카테고리와 리스트의 카테고리가 일치할 경우 true
                 return (
                     selectedCategory.toUpperCase() === Category.All || category.toUpperCase() === selectedCategory.toUpperCase()
                 );
             })
             .filter(post => {
-                const {
-                    node: {
-                        frontmatter: { title, tags }
-                    }
-                } = post;
+                const title = post.node.frontmatter?.title || "";
+                const tags = post.node.frontmatter?.tags || [];
+
                 // 검색어가 없거나, 제목 혹은 태그가 일치할 경우 true
                 return (
                     searchValue.length === 0 ||
                     title.toUpperCase().includes(searchValue.toUpperCase()) ||
-                    tags.some(tag => tag.toUpperCase().includes(searchValue.toUpperCase()))
+                    tags.some(tag => tag?.toUpperCase().includes(searchValue.toUpperCase()))
                 );
             });
     }
@@ -85,13 +80,9 @@ const Posts: React.FC<Props> = ({ data }) => {
                     </div>
                 )}
 
-                <div
-                    style={{
-                        margin: 0
-                    }}
-                >
+                <div style={{ margin: 0 }}>
                     {posts.length > 0 ? (
-                        posts.slice(0, postsToShow).map((post, i) => <PostSingle data={post} key={i} />)
+                        posts.slice(0, postsToShow).map((post, i) => <PostCard data={post.node as MarkdownRemark} key={i} />)
                     ) : (
                         <div className="empty">게시글이 존재하지 않습니다.</div>
                     )}
@@ -102,3 +93,32 @@ const Posts: React.FC<Props> = ({ data }) => {
 };
 
 export default Posts;
+
+export const query = graphql`
+    fragment PostsInfo on MarkdownRemarkConnection {
+        edges {
+            node {
+                excerpt(format: PLAIN, truncate: true, pruneLength: 50)
+                fields {
+                    slug
+                }
+                frontmatter {
+                    date(formatString: "MMMM DD, YYYY")
+                    title
+                    tags
+                    category
+                    featuredImage {
+                        childImageSharp {
+                            resize(width: 700) {
+                                src
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        categories: group(field: frontmatter___category) {
+            fieldValue
+        }
+    }
+`;

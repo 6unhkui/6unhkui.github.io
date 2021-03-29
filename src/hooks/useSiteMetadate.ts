@@ -1,29 +1,27 @@
 import { useStaticQuery, graphql } from "gatsby";
-import { SiteMetadata } from "../interfaces/SiteMetadata";
+import { SiteSiteMetadata } from "graphql-types";
 
-export const useSiteMetadata = (): SiteMetadata => {
+export const useSiteMetadata = (): SiteSiteMetadata => {
     const {
         site: { siteMetadata }
-    } = useStaticQuery(
-        graphql`
-            query SiteMetaData {
-                site {
-                    siteMetadata {
-                        title
-                        description
-                        author
-                        social {
-                            github
-                            linkedin
-                        }
-                        menuLinks {
-                            name
-                            link
-                        }
+    } = useStaticQuery(graphql`
+        query Site {
+            site {
+                siteMetadata {
+                    title
+                    description
+                    author
+                    social {
+                        github
+                        linkedin
+                    }
+                    menuLinks {
+                        name
+                        link
                     }
                 }
             }
-        `
-    );
+        }
+    `);
     return siteMetadata;
 };

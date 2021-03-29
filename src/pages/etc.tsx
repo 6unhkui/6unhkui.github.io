@@ -1,53 +1,30 @@
 import React from "react";
-import Index from "../components/Layout";
-import SEO from "../components/seo";
-import Posts from "../components/Post/posts";
-import { Query } from "../interfaces/PostList";
+import Layout from "components/Layout/Layout";
+import SEO from "components/SEO";
+import Posts from "components/Post/Posts";
 import { graphql } from "gatsby";
+import { EtcPageQuery } from "graphql-types";
 
-interface Props {
-    data: Query;
+interface EtcPageProps {
+    data: EtcPageQuery;
     location: Location;
 }
-const EtcPage: React.FC<Props> = ({ data, location }) => (
-    <Index location={location}>
-        <SEO title="ComputerScience" />
-        <Posts data={data} />
-    </Index>
+const EtcPage: React.FC<EtcPageProps> = ({ data, location }) => (
+    <Layout location={location}>
+        <SEO title="Etc" />
+        <Posts data={data.allMarkdownRemark} />
+    </Layout>
 );
 
 export default EtcPage;
 
 export const pageQuery = graphql`
-    query {
+    query EtcPage {
         allMarkdownRemark(
             filter: { fields: { slug: { regex: "/^/etc//" } } }
             sort: { fields: [frontmatter___date], order: DESC }
         ) {
-            edges {
-                node {
-                    excerpt(format: PLAIN, truncate: true, pruneLength: 50)
-                    fields {
-                        slug
-                    }
-                    frontmatter {
-                        date(formatString: "MMMM DD, YYYY")
-                        title
-                        tags
-                        category
-                        featuredImage {
-                            childImageSharp {
-                                resize(width: 700) {
-                                    src
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            categories: group(field: frontmatter___category) {
-                fieldValue
-            }
+            ...PostsInfo
         }
     }
 `;

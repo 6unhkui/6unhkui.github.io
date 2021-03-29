@@ -1,53 +1,30 @@
 import React from "react";
-import Index from "../components/Layout";
-import SEO from "../components/seo";
-import Posts from "../components/Post/posts";
+import Layout from "components/Layout/Layout";
+import SEO from "components/SEO";
+import Posts from "components/Post/Posts";
 import { graphql } from "gatsby";
-import { Query } from "../interfaces/PostList";
+import { ProgrammingPageQuery } from "graphql-types";
 
-interface Props {
-    data: Query;
+interface ProgrammingPageProps {
+    data: ProgrammingPageQuery;
     location: Location;
 }
-const ProgrammingPage: React.FC<Props> = ({ data, location }) => (
-    <Index location={location}>
+const ProgrammingPage: React.FC<ProgrammingPageProps> = ({ data, location }) => (
+    <Layout location={location}>
         <SEO title="Programming" />
-        <Posts data={data} />
-    </Index>
+        <Posts data={data.allMarkdownRemark} />
+    </Layout>
 );
 
 export default ProgrammingPage;
 
 export const pageQuery = graphql`
-    query {
+    query ProgrammingPage {
         allMarkdownRemark(
             filter: { fields: { slug: { regex: "/^/programming//" } } }
             sort: { fields: [frontmatter___date], order: DESC }
         ) {
-            edges {
-                node {
-                    excerpt(format: PLAIN, truncate: true, pruneLength: 50)
-                    fields {
-                        slug
-                    }
-                    frontmatter {
-                        date(formatString: "MMMM DD, YYYY")
-                        title
-                        tags
-                        category
-                        featuredImage {
-                            childImageSharp {
-                                resize(width: 700) {
-                                    src
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            categories: group(field: frontmatter___category) {
-                fieldValue
-            }
+            ...PostsInfo
         }
     }
 `;

@@ -1,12 +1,36 @@
 {
     "compilerOptions": {
-        "module": "Commonjs",
-        "target": "es5",
+        "baseUrl": "./src",
+        "paths": {
+            "static": ["./static/*"],
+            "src": ["./src/*"],
+            "components": ["./src/components/*"],
+            "hooks": ["./src/hooks/*"],
+            "utils": ["./src/utils/*"],
+            "graphql-types": ["../graphql-types.ts"]
+        },
+        "outDir": "./public",
+        "target": "esnext",
+        "module": "esnext",
+        "lib": ["dom", "dom.iterable", "es6", "es2017", "esnext.asynciterable"],
+        "types": ["node"],
+        "moduleResolution": "node",
         "sourceMap": true,
+        "strict": true,
+        "alwaysStrict": true,
+        "removeComments": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
         "allowJs": true,
-        "jsx": "react",
-        "noImplicitAny": true,
-        "esModuleInterop": true
+        "jsx": "preserve"
     },
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules"],
+    "include": ["./src/**/*.tsx", "./src/**/*.ts"]
 }

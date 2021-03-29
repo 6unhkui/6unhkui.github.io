@@ -1,14 +1,13 @@
+import { MarkdownRemarkGroupConnection } from "graphql-types";
 import React, { useCallback } from "react";
-import { Category } from "../../interfaces/PostList";
-import propTypes from "prop-types";
 
-interface Props {
-    items: Category[];
+interface SwitcherProps {
+    items: Pick<MarkdownRemarkGroupConnection, "fieldValue">[];
     selectedItem: string;
     onChange: (category: string) => void;
 }
 
-const Switcher: React.FC<Props> = React.memo(({ items, selectedItem = "ALL", onChange }) => {
+const Switcher: React.FC<SwitcherProps> = React.memo(({ items, selectedItem = "ALL", onChange }) => {
     const handleChange = useCallback(event => {
         onChange(event.target.dataset.category);
     }, []);
@@ -19,7 +18,7 @@ const Switcher: React.FC<Props> = React.memo(({ items, selectedItem = "ALL", onC
                 <div
                     key={i}
                     className={
-                        "switcher-option " + (selectedItem.toUpperCase() === item.fieldValue.toUpperCase() ? "selected" : "")
+                        "switcher-option " + (selectedItem.toUpperCase() === item?.fieldValue?.toUpperCase() ? "selected" : "")
                     }
                     data-category={item.fieldValue}
                     onClick={handleChange}

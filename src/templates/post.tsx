@@ -1,43 +1,31 @@
-// markdown-template.js
 import React, { useState, useEffect } from "react";
 import { kebabCase } from "lodash";
 import { Link, graphql } from "gatsby";
-import SEO from "../components/seo";
-import Index from "../components/Layout";
-import TableOfContents from "../components/Post/tableOfContents";
-import PostComment from "../components/Post/postComment";
-import { PageContext } from "../interfaces/PageContext";
-import { Query } from "../interfaces/PostDetail";
-
-interface Props {
-    data: Query;
-    pageContext: PageContext;
-    location: Location;
-}
+import SEO from "components/SEO";
+import Layout from "components/Layout/Layout";
+import TableOfContents from "components/Post/TableOfContents";
+import PostComment from "components/Post/PostComment";
+import { PostSinglePageQuery, SitePageContext } from "graphql-types";
 
 const HEADER_OFFSET_Y = 100;
 
-const PostTemplate: React.FC<Props> = ({ data, pageContext, location }) => {
-    const [currentHeaderUrl, setCurrentHeaderUrl] = useState(undefined);
-    const { previous, next } = pageContext;
-    const {
-        site: {
-            siteMetadata: { author }
-        },
-        markdownRemark: {
-            excerpt,
-            html,
-            tableOfContents,
-            frontmatter: { category, title, date, tags, featuredImage }
-        }
-    } = data;
+interface PostSingleProps {
+    data: NonNullable<PostSinglePageQuery>;
+    pageContext: SitePageContext;
+    location: Location;
+}
 
-    const image = featuredImage ? featuredImage.childImageSharp.original : undefined;
+const PostSingle: React.FC<PostSingleProps> = ({ data, pageContext, location }) => {
+    const [currentHeaderUrl, setCurrentHeaderUrl] = useState<string | undefined>(undefined);
+    const { previous, next } = pageContext;
+    data.markdownRemark?.excerpt;
+
+    const thumbnailSrc = data.markdownRemark?.frontmatter?.featuredImage?.childImageSharp?.original?.src;
 
     const handleScroll = () => {
         let aboveHeaderUrl; // 화면 바로 위에 위치한 header
         const currentOffsetY = window.pageYOffset;
-        const headerElements: NodeListOf<Element> = document.querySelectorAll(".anchor-header");
+        const headerElements: NodeListOf<HTMLLinkElement> = document.querySelectorAll(".anchor-header");
 
         for (const elem of headerElements) {
             const { top } = elem.getBoundingClientRect();
@@ -63,22 +51,31 @@ const PostTemplate: React.FC<Props> = ({ data, pageContext, location }) => {
     }, []);
 
     return (
-        <Index location={location}>
-            <SEO title={title} description={excerpt} image={image} article={true} />
+        <Layout location={location}>
+            <SEO
+                title={data.markdownRemark?.frontmatter?.title || ""}
+                description={data.markdownRemark?.excerpt || ""}
+                imageSrc={thumbnailSrc || ""}
+                article={true}
+            />
 
             <section className="post-view">
-                <div className="featured-image" style={{ backgroundImage: image ? `url(${image.src})` : "" }}>
+                <div className="featured-image" style={{ backgroundImage: thumbnailSrc ? `url(${thumbnailSrc})` : "" }}>
                     <div className="post-info-wrap">
                         <div className="post-info container">
-                            {category && <span className="category">{category}</span>}
-                            {title && <h1 className="title">{title}</h1>}
+                            {data.markdownRemark?.frontmatter?.category && (
+                                <span className="category">{data.markdownRemark?.frontmatter?.category}</span>
+                            )}
+                            {data.markdownRemark?.frontmatter?.title && (
+                                <h1 className="title">{data.markdownRemark?.frontmatter?.title}</h1>
+                            )}
                             <span className="meta-data">
-                                by <span className="writer">{author}</span>
-                                {` ∙  ${date}`}
+                                by <span className="writer">{data.site?.siteMetadata?.author}</span>
+                                {` ∙  ${data.markdownRemark?.frontmatter?.date}`}
                             </span>
                             <div className="tags-wrap">
-                                {tags.map((tag, i) => (
-                                    <Link to={`/tags/${kebabCase(tag)}/`} className="tag" key={i}>
+                                {data.markdownRemark?.frontmatter?.tags?.map((tag, i) => (
+                                    <Link to={`/tags/${kebabCase(tag || "")}/`} className="tag" key={i}>
                                         {tag}
                                     </Link>
                                 ))}
@@ -88,10 +85,10 @@ const PostTemplate: React.FC<Props> = ({ data, pageContext, location }) => {
                 </div>
 
                 <div className="container">
-                    <TableOfContents items={tableOfContents} currentHeaderUrl={currentHeaderUrl} />
+                    <TableOfContents items={data.markdownRemark?.tableOfContents || ""} currentHeaderUrl={currentHeaderUrl} />
 
                     <article>
-                        <div className="content" dangerouslySetInnerHTML={{ __html: html }} />
+                        <div className="content" dangerouslySetInnerHTML={{ __html: data.markdownRemark?.html || "" }} />
 
                         <hr className="end-line" />
 
@@ -99,8 +96,8 @@ const PostTemplate: React.FC<Props> = ({ data, pageContext, location }) => {
                             {previous && (
                                 <div className="navigation previous">
                                     <p>Previous</p>
-                                    <Link to={previous.fields.slug} rel="prev">
-                                        ← {previous.frontmatter.title}
+                                    <Link to={previous?.fields?.slug || ""} rel="prev">
+                                        ← {previous?.frontmatter?.title}
                                     </Link>
                                 </div>
                             )}
@@ -108,8 +105,8 @@ const PostTemplate: React.FC<Props> = ({ data, pageContext, location }) => {
                             {next && (
                                 <div className="navigation next">
                                     <p>Next</p>
-                                    <Link to={next.fields.slug} rel="next">
-                                        {next.frontmatter.title} →
+                                    <Link to={next?.fields?.slug || ""} rel="next">
+                                        {next?.frontmatter?.title} →
                                     </Link>
                                 </div>
                             )}
@@ -119,14 +116,14 @@ const PostTemplate: React.FC<Props> = ({ data, pageContext, location }) => {
                     </article>
                 </div>
             </section>
-        </Index>
+        </Layout>
     );
 };
 
-export default PostTemplate;
+export default PostSingle;
 
 export const pageQuery = graphql`
-    query($slug: String!) {
+    query PostSinglePage($slug: String!) {
         site {
             siteMetadata {
                 author

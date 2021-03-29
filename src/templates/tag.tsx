@@ -1,28 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
-import Index from "../components/Layout";
-import SEO from "../components/seo";
-import PageTitle from "../components/Layout/pageTitle";
-import { Edge } from "../interfaces/PostList";
-import PostSingle from "../components/Post/postSingle";
-import InfinitiScroll from "../utils/infiniteScroll";
-
-interface Props {
-    pageContext: {
-        tag: string;
-    };
-    data: {
-        allMarkdownRemark: {
-            totalCount: number;
-            edges: Edge[];
-        };
-    };
-    location: Location;
-}
+import Layout from "components/Layout/Layout";
+import SEO from "components/SEO";
+import PageTitle from "components/PageTitle";
+import PostCard from "components/Post/PostCard";
+import InfinitiScroll from "utils/infiniteScroll";
+import { MarkdownRemark, TagPageQuery } from "graphql-types";
 
 const SHOW_COUNT = 6;
 
-const Tags: React.FC<Props> = ({ pageContext, data, location }) => {
+interface TagProps {
+    pageContext: {
+        tag: string;
+    };
+    data: TagPageQuery;
+    location: Location;
+}
+
+const Tag: React.FC<TagProps> = ({ pageContext, data, location }) => {
     const { tag } = pageContext;
     const [postsToShow, setPostsToShow] = useState(SHOW_COUNT);
     const {
@@ -39,7 +34,7 @@ const Tags: React.FC<Props> = ({ pageContext, data, location }) => {
     }, []);
 
     return (
-        <Index location={location}>
+        <Layout location={location}>
             <SEO title={tag} />
             <div className="tags-page-wrap">
                 <PageTitle
@@ -50,19 +45,19 @@ const Tags: React.FC<Props> = ({ pageContext, data, location }) => {
                 <section className="posts-wrap">
                     <div className="container">
                         {posts.slice(0, postsToShow).map((post, i) => (
-                            <PostSingle data={post} key={i} />
+                            <PostCard data={post.node as MarkdownRemark} key={i} />
                         ))}
                     </div>
                 </section>
             </div>
-        </Index>
+        </Layout>
     );
 };
 
-export default Tags;
+export default Tag;
 
 export const pageQuery = graphql`
-    query($tag: String) {
+    query TagPage($tag: String!) {
         allMarkdownRemark(
             sort: { fields: [frontmatter___date], order: DESC }
             filter: { frontmatter: { tags: { in: [$tag] } } }

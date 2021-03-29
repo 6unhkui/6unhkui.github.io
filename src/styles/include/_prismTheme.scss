@@ -439,13 +439,13 @@ pre.language-xml::before {
     }
 
     .token.inserted {
-        background-color: #eaffea;
-        color: #55a532;
+        background-color: #002100;
+        color: #74cc4d;
     }
 
     .token.deleted {
-        background-color: #ffecec;
-        color: #bd2c00;
+        background-color: #250900;
+        color: #ff4209;
     }
 
     .token.bold {
@@ -458,7 +458,7 @@ pre.language-xml::before {
 
     /* JSON */
     .language-json .token.property {
-        color: #183691;
+        color: #2556ea;
     }
 
     .language-markup .token.tag .token.punctuation {
@@ -506,10 +506,6 @@ pre.language-xml::before {
     /* Bash */
     .language-bash .token.keyword {
         color: #0086b3;
-    }
-
-    .token.inserted {
-        background-color: #002100;
     }
 
     code:not(.language-text) + .line-numbers-rows {

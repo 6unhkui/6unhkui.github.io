@@ -1,12 +1,12 @@
 import React from "react";
-import Index from "../components/Layout";
-import SEO from "../components/seo";
+import Layout from "components/Layout/Layout";
+import SEO from "components/SEO";
 
-interface Props {
+interface NotFoundPageProps {
     location: Location;
 }
-const NotFoundPage: React.FC<Props> = ({ location }) => (
-    <Index location={location}>
+const NotFoundPage: React.FC<NotFoundPageProps> = ({ location }) => (
+    <Layout location={location}>
         <SEO title="404: Not found" />
         <section className="page-title-wrap">
             <div className="container">
@@ -14,7 +14,7 @@ const NotFoundPage: React.FC<Props> = ({ location }) => (
                 <div>존재하지 않는 페이지입니다.</div>
             </div>
         </section>
-    </Index>
+    </Layout>
 );
 
 export default NotFoundPage;

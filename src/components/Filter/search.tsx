@@ -1,16 +1,16 @@
-import React, { useCallback, useMemo } from "react";
+import React, { useCallback } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-interface Props {
-    value: string;
-    onChange: (value: string) => void;
-}
 
 const SearchIco = React.memo(() => {
     return <FontAwesomeIcon icon={"search"} className="ico-search" />;
 });
 
-const Search: React.FC<Props> = React.memo(({ value, onChange }) => {
+interface SearchProps {
+    value: string;
+    onChange: (value: string) => void;
+}
+
+const Search: React.FC<SearchProps> = React.memo(({ value, onChange }) => {
     const handleChange = useCallback(event => {
         onChange(event.target.value);
     }, []);

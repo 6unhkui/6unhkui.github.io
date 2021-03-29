@@ -1,22 +1,23 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { graphql } from "gatsby";
-import Index from "../components/Layout";
-import SEO from "../components/seo";
+import Layout from "components/Layout/Layout";
+import SEO from "components/SEO";
 import Typed from "react-typed";
-import { AllMarkdownRemark, Query } from "../interfaces/PostList";
-import PostSingle from "../components/Post/postSingle";
+import PostCard from "components/Post/PostCard";
+import { IndexPageQuery, MarkdownRemark } from "graphql-types";
 
-interface Props {
-    data: Query;
+interface HomePageProps {
+    data: IndexPageQuery;
     location: Location;
 }
-const HomePage: React.FC<Props> = ({ data, location }) => {
+
+const HomePage: React.FC<HomePageProps> = ({ data, location }) => {
     const {
         allMarkdownRemark: { edges: posts }
     } = data;
 
     return (
-        <Index location={location}>
+        <Layout location={location}>
             <SEO />
             <section className="page-title-wrap">
                 <div className="container">
@@ -55,44 +56,24 @@ const HomePage: React.FC<Props> = ({ data, location }) => {
                         Recent Posts
                     </h1>
                     {posts.map((post, i) => (
-                        <PostSingle data={post} key={i} />
+                        <PostCard data={post.node as MarkdownRemark} key={i} />
                     ))}
                 </div>
             </section>
-        </Index>
+        </Layout>
     );
 };
 
 export default HomePage;
 
 export const pageQuery = graphql`
-    query {
+    query IndexPage {
         allMarkdownRemark(
             filter: { fields: { slug: { regex: "/^((?!/til/).)*$/" } } }
             sort: { fields: [frontmatter___date], order: DESC }
             limit: 4
         ) {
-            edges {
-                node {
-                    excerpt(format: PLAIN, truncate: true, pruneLength: 50)
-                    fields {
-                        slug
-                    }
-                    frontmatter {
-                        date(formatString: "MMMM DD, YYYY")
-                        title
-                        tags
-                        category
-                        featuredImage {
-                            childImageSharp {
-                                resize(width: 700) {
-                                    src
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            ...PostsInfo
         }
     }
 `;

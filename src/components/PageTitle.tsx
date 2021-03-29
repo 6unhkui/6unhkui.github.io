@@ -1,12 +1,12 @@
 import React from "react";
 
-interface Props {
+interface PageTitleProps {
     title: string;
     subTxt?: string[];
     emoji?: string;
 }
 
-const PageTitle: React.FC<Props> = ({ title, subTxt, emoji }) => {
+const PageTitle: React.FC<PageTitleProps> = ({ title, subTxt, emoji }) => {
     return (
         <section className="page-title-wrap">
             <div className="container">

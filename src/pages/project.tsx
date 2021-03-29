@@ -1,53 +1,30 @@
 import React from "react";
-import Index from "../components/Layout";
-import SEO from "../components/seo";
-import Posts from "../components/Post/posts";
-import { Query } from "../interfaces/PostList";
+import Layout from "components/Layout/Layout";
+import SEO from "components/SEO";
+import Posts from "components/Post/Posts";
 import { graphql } from "gatsby";
+import { ProjectPageQuery } from "graphql-types";
 
-interface Props {
-    data: Query;
+interface ProjectPageProps {
+    data: ProjectPageQuery;
     location: Location;
 }
-const ProjectPage: React.FC<Props> = ({ data, location }) => (
-    <Index location={location}>
+const ProjectPage: React.FC<ProjectPageProps> = ({ data, location }) => (
+    <Layout location={location}>
         <SEO title="Project" />
-        <Posts data={data} />
-    </Index>
+        <Posts data={data.allMarkdownRemark} />
+    </Layout>
 );
 
 export default ProjectPage;
 
 export const pageQuery = graphql`
-    query {
+    query ProjectPage {
         allMarkdownRemark(
             filter: { fields: { slug: { regex: "/^/project//" } } }
             sort: { fields: [frontmatter___date], order: DESC }
         ) {
-            edges {
-                node {
-                    excerpt(format: PLAIN, truncate: true, pruneLength: 50)
-                    fields {
-                        slug
-                    }
-                    frontmatter {
-                        date(formatString: "MMMM DD, YYYY")
-                        title
-                        tags
-                        category
-                        featuredImage {
-                            childImageSharp {
-                                resize(width: 700) {
-                                    src
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            categories: group(field: frontmatter___category) {
-                fieldValue
-            }
+            ...PostsInfo
         }
     }
 `;
