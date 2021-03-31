@@ -15,31 +15,33 @@ module.exports = {
         menuLinks: [
             {
                 name: "CS",
-                link: "/cs"
+                link: "/cs",
+                target: "_self"
             },
             {
                 name: "Algorithm",
-                link: "/algorithm"
+                link: "/algorithm",
+                target: "_self"
             },
             {
                 name: "Programming",
-                link: "/programming"
+                link: "/programming",
+                target: "_self"
             },
             {
                 name: "DevOps",
-                link: "/devops"
+                link: "/devops",
+                target: "_self"
             },
             {
                 name: "ETC",
-                link: "/etc"
-            },
-            {
-                name: "Project",
-                link: "/project"
+                link: "/etc",
+                target: "_self"
             },
             {
                 name: "TAGS",
-                link: "/tags"
+                link: "/tags",
+                target: "_self"
             }
         ]
     },
@@ -67,14 +69,14 @@ module.exports = {
                 components: path.join(__dirname, "src/components"),
                 hooks: path.join(__dirname, "src/hooks"),
                 utils: path.join(__dirname, "src/utils"),
-                graphqlTypes: path.join(__dirname, "src/graphqlTypes/index.ts")
+                "graphql-types": path.join(__dirname, "graphql-types.ts")
             }
         },
         {
             // GraphQL Code Generator
             resolve: `gatsby-plugin-graphql-codegen`,
             options: {
-                // codegen: false, // If you want it to work, change it to true.
+                codegen: false, // If you want it to work, change it to true.
                 // fileName: `./src/graphqlTypes/index.ts`, // it should not be placed into src, since this will create an infinite loop
                 documentPaths: ["./src/**/*.{ts,tsx,graphql}", "./node_modules/gatsby-*/**/*.js", "./gatsby-node.js"],
                 options: {

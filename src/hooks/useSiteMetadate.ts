@@ -18,6 +18,7 @@ export const useSiteMetadata = (): SiteSiteMetadata => {
                     menuLinks {
                         name
                         link
+                        target
                     }
                 }
             }

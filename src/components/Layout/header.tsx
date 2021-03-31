@@ -3,7 +3,8 @@ import { Link } from "gatsby";
 import LogoImg from "static/images/logo.svg";
 import HamburgerMenu from "react-hamburger-menu";
 import BodyClassName from "react-body-classname";
-import { SiteSiteMetadata } from "../../graphql-types";
+import { SiteSiteMetadata } from "graphql-types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Logo = React.memo(({ title }: { title: string }) => {
     return (
@@ -29,8 +30,11 @@ const Header: React.FC<HeaderProps> = React.memo(({ data, location }) => {
         <ul>
             {menuLinks?.map((link, i) => (
                 <li key={i} className={"menu " + (link?.name?.toUpperCase() === path ? "active" : "")}>
-                    <Link to={link?.link || ""} onClick={setOpenMenu.bind(null, false)}>
+                    <Link to={link?.link || ""} onClick={setOpenMenu.bind(null, false)} target={link?.target || " _self"}>
                         {link?.name}
+                        {link?.target === "_blank" ? (
+                            <FontAwesomeIcon icon={"external-link-alt"} style={{ marginLeft: "4px" }} />
+                        ) : null}
                     </Link>
                 </li>
             ))}

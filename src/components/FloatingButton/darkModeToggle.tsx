@@ -3,13 +3,8 @@ import { ThemeToggler } from "gatsby-plugin-dark-mode";
 import Sun from "static/images/sun.svg";
 import Moon from "static/images/moon.svg";
 
-enum Theme {
-    DARK = "dark",
-    LIGHT = "light"
-}
-
 interface ThemeTogglerProps {
-    theme: Theme;
+    theme: "dark" | "light";
     toggleTheme: (theme: string) => void;
 }
 
@@ -19,10 +14,10 @@ const DarkModeToggle: React.FC = () => (
             <div
                 className={"floating darkmode " + theme}
                 onClick={() => {
-                    toggleTheme(theme === Theme.DARK ? Theme.LIGHT : Theme.DARK);
+                    toggleTheme(theme === "dark" ? "light" : "dark");
                 }}
             >
-                <img src={theme === Theme.DARK ? Moon : Sun} alt="dark-mode" />
+                <img src={theme === "dark" ? Moon : Sun} alt="dark-mode" />
             </div>
         )}
     </ThemeToggler>

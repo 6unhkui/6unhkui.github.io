@@ -11,7 +11,6 @@ interface DevOpsPageProps {
 }
 const DevOpsPage: React.FC<DevOpsPageProps> = ({ data, location }) => (
     <Layout location={location}>
-        {console.log(data)}
         <SEO title="DevOps" />
         <Posts data={data.allMarkdownRemark} />
     </Layout>

@@ -10,7 +10,7 @@ import { PostSinglePageQuery, SitePageContext } from "graphql-types";
 const HEADER_OFFSET_Y = 100;
 
 interface PostSingleProps {
-    data: NonNullable<PostSinglePageQuery>;
+    data: PostSinglePageQuery;
     pageContext: SitePageContext;
     location: Location;
 }
@@ -18,7 +18,6 @@ interface PostSingleProps {
 const PostSingle: React.FC<PostSingleProps> = ({ data, pageContext, location }) => {
     const [currentHeaderUrl, setCurrentHeaderUrl] = useState<string | undefined>(undefined);
     const { previous, next } = pageContext;
-    data.markdownRemark?.excerpt;
 
     const thumbnailSrc = data.markdownRemark?.frontmatter?.featuredImage?.childImageSharp?.original?.src;
 

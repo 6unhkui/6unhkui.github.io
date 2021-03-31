@@ -4,15 +4,13 @@ import Layout from "components/Layout/Layout";
 import SEO from "components/SEO";
 import PageTitle from "components/PageTitle";
 import PostCard from "components/Post/PostCard";
-import InfinitiScroll from "utils/infiniteScroll";
-import { MarkdownRemark, TagPageQuery } from "graphql-types";
+import infinitiScroll from "utils/infiniteScroll";
+import { MarkdownRemark, SitePageContext, TagPageQuery } from "graphql-types";
 
 const SHOW_COUNT = 6;
 
 interface TagProps {
-    pageContext: {
-        tag: string;
-    };
+    pageContext: Pick<SitePageContext, "tag">;
     data: TagPageQuery;
     location: Location;
 }
@@ -25,7 +23,7 @@ const Tag: React.FC<TagProps> = ({ pageContext, data, location }) => {
     } = data;
 
     useEffect(() => {
-        const _infiniteScroll = InfinitiScroll.bind(null, () => setPostsToShow(state => state + SHOW_COUNT));
+        const _infiniteScroll = infinitiScroll.bind(null, () => setPostsToShow(state => state + SHOW_COUNT));
 
         document.addEventListener("scroll", _infiniteScroll, false);
         return () => {
@@ -35,10 +33,10 @@ const Tag: React.FC<TagProps> = ({ pageContext, data, location }) => {
 
     return (
         <Layout location={location}>
-            <SEO title={tag} />
+            <SEO title={tag || ""} />
             <div className="tags-page-wrap">
                 <PageTitle
-                    title={tag}
+                    title={tag || ""}
                     subTxt={[`${data.allMarkdownRemark.totalCount} post${data.allMarkdownRemark.totalCount === 1 ? "" : "s"}`]}
                 />
 
