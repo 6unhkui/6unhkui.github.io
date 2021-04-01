@@ -91,7 +91,7 @@ section.posts-wrap {
                 .tag {
                     flex-shrink: 0;
                     background-color: var(--color-bg-gray);
-                    color: darken($gray-font-color, 20);
+                    color: var(--color-text-gray);
                     // a {
                     //     color: darken($gray-font-color, 20);
                     // }

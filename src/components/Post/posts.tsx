@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-import Switcher from "components/Filter/Switcher";
+import Tab from "components/Filter/Tab";
 import Search from "components/Filter/Search";
 import PostCard from "./PostCard";
 import infinitiScroll from "utils/infiniteScroll";
@@ -75,7 +75,7 @@ const Posts: React.FC<PostsProps> = ({ data }) => {
             <div className="posts container">
                 {allPosts.length > 0 && (
                     <div className="filter-wrap">
-                        <Switcher items={categoryItems} selectedItem={selectedCategory} onChange={onChangeCategory} />
+                        <Tab items={categoryItems} selectedItem={selectedCategory} onChange={onChangeCategory} />
                         <Search onChange={onChangeSearchInput} value={searchValue} />
                     </div>
                 )}

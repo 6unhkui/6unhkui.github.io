@@ -18,6 +18,9 @@ const PostCard: React.FC<PostCardProps> = ({ data }) => {
                             ? data.frontmatter?.featuredImage?.childImageSharp?.resize?.src
                             : Thumbnail
                     }
+                    alt={data.frontmatter?.title || "post card"}
+                    width={700}
+                    height={188}
                 />
 
                 <div className="post-info">

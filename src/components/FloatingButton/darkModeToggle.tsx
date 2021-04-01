@@ -17,7 +17,7 @@ const DarkModeToggle: React.FC = () => (
                     toggleTheme(theme === "dark" ? "light" : "dark");
                 }}
             >
-                <img src={theme === "dark" ? Moon : Sun} alt="dark-mode" />
+                <img src={theme === "dark" ? Moon : Sun} alt="dark-mode" width={30} height={30} />
             </div>
         )}
     </ThemeToggler>

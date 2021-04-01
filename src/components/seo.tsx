@@ -2,7 +2,6 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { useLocation } from "@reach/router";
 import { useStaticQuery } from "gatsby";
-import { configs } from "../../config";
 import { graphql } from "gatsby";
 
 interface SEOProps {
@@ -27,7 +26,7 @@ const SEO = ({ title, description, imageSrc, article = false }: SEOProps) => {
     };
 
     return (
-        <Helmet title={seo.title}>
+        <Helmet title={seo.title || ""} htmlAttributes={{ lang: "ko" }}>
             <meta name="description" content={seo.description} />
             <meta name="image" content={seo.image} />
             {seo.url && <meta property="og:url" content={seo.url} />}
@@ -40,7 +39,7 @@ const SEO = ({ title, description, imageSrc, article = false }: SEOProps) => {
             {seo.title && <meta name="twitter:title" content={seo.title} />}
             {seo.description && <meta name="twitter:description" content={seo.description} />}
             {seo.image && <meta name="twitter:image" content={seo.image} />}
-            <meta name="google-site-verification" content={configs.google_site_verification} />
+            <meta name="google-site-verification" content={process.env.GATSBY_GOOGLE_SITE_VERIFICATION} />
         </Helmet>
     );
 };

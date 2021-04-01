@@ -10,7 +10,7 @@ const Logo = React.memo(({ title }: { title: string }) => {
     return (
         <div className="logo-wrap">
             <Link to="/">
-                <img src={LogoImg} alt={title} className="logo" />
+                <img src={LogoImg} alt={title} className="logo" width={58} height={48} />
             </Link>
         </div>
     );

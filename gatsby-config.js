@@ -1,4 +1,9 @@
 const path = require("path");
+require("dotenv").config({
+    path: `.env`
+});
+
+const SITE_URI = "https://blog.inkyung.me";
 
 module.exports = {
     siteMetadata: {
@@ -6,7 +11,7 @@ module.exports = {
         description: `기록하는 습관 📝`,
         author: `Inkyung`,
         email: `kyxxin@hanmail.net`,
-        siteUrl: `https://6unhkui.github.io`,
+        siteUrl: SITE_URI,
         social: {
             github: `https://github.com/6unhkui`,
             linkedin: `inkyung`
@@ -46,6 +51,15 @@ module.exports = {
         ]
     },
     plugins: [
+        {
+            resolve: "gatsby-plugin-web-font-loader",
+            options: {
+                google: {
+                    families: ["Roboto", "IBM Plex Mono", "Roboto Mono", "Noto Sans KR", "Blinker", "Inter", "Pacifico"]
+                }
+            }
+        },
+        `gatsby-plugin-config`,
         `gatsby-plugin-typescript`,
         {
             resolve: `gatsby-source-filesystem`,
@@ -91,22 +105,30 @@ module.exports = {
                 }
             }
         },
-        `gatsby-plugin-react-helmet`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
+        `gatsby-plugin-react-helmet`,
         `gatsby-plugin-sitemap`,
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `gatsby-starter-default`,
+                name: `i.log`,
                 short_name: `i.log`,
                 start_url: `/`,
                 background_color: `#7b22ec`,
                 theme_color: `#7b22ec`,
-                display: `minimal-ui`,
-                icon: `static/images/icon.png` // This path is relative to the root of the site.
+                display: `standalone`,
+                icon: `static/images/icon.png`, // This path is relative to the root of the site.
+                crossOrigin: `use-credentials`
             }
         },
+        {
+            resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+            options: {
+                siteUrl: SITE_URI
+            }
+        },
+        "gatsby-plugin-remove-serviceworker",
         `gatsby-remark-code-titles`,
         {
             resolve: `gatsby-transformer-remark`,
@@ -156,14 +178,6 @@ module.exports = {
                         }
                     }
                 ]
-            }
-        },
-        {
-            resolve: "gatsby-plugin-web-font-loader",
-            options: {
-                google: {
-                    families: ["Roboto", "IBM Plex Mono", "Roboto Mono", "Noto Sans KR", "Blinker", "Inter", "Pacifico"]
-                }
             }
         },
         `gatsby-plugin-slug`,

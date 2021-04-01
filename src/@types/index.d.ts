@@ -1,4 +1,5 @@
 declare module "gatsby-plugin-dark-mode";
+declare module "gatsby-plugin-config";
 declare module "react-body-classname";
 
 declare module "*.svg" {
