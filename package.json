@@ -78,8 +78,7 @@
         "build": "gatsby build",
         "start": "gatsby develop",
         "serve": "gatsby serve",
-        "clean": "gatsby clean",
-        "gen": "graphql-codegen --config codegen.yml"
+        "clean": "gatsby clean"
     },
     "repository": {
         "type": "git",

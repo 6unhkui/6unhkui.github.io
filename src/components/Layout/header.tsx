@@ -6,7 +6,7 @@ import BodyClassName from "react-body-classname";
 import { SiteSiteMetadata } from "graphql-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Logo = React.memo(({ title }: { title: string }) => {
+const Logo = React.memo<{ title: string }>(({ title }) => {
     return (
         <div className="logo-wrap">
             <Link to="/">
@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = React.memo(({ data, location }) => {
     const [openMenu, setOpenMenu] = useState(false);
     const path = location.pathname.substr(1).split("/")[0].toUpperCase();
 
-    const menuItems = () => (
+    const menuItems = (
         <ul>
             {menuLinks?.map((link, i) => (
                 <li key={i} className={"menu " + (link?.name?.toUpperCase() === path ? "active" : "")}>
@@ -60,10 +60,10 @@ const Header: React.FC<HeaderProps> = React.memo(({ data, location }) => {
                         />
                     </div>
 
-                    <nav className="menu-wrap">{menuItems()}</nav>
+                    <nav className="menu-wrap">{menuItems}</nav>
                 </div>
 
-                <div className="sidebar">{menuItems()}</div>
+                <div className="sidebar">{menuItems}</div>
             </header>
         </BodyClassName>
     );

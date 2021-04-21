@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import Layout from "components/Layout/Layout";
 import SEO from "components/SEO";
 import PageTitle from "components/PageTitle";
 import PostCard from "components/Post/PostCard";
-import infinitiScroll from "utils/infiniteScroll";
 import { MarkdownRemark, SitePageContext, TagPageQuery } from "graphql-types";
-
-const SHOW_COUNT = 6;
+import { useInfiniteScroll } from "hooks/useInfiniteScroll";
 
 interface TagProps {
     pageContext: Pick<SitePageContext, "tag">;
@@ -17,19 +15,10 @@ interface TagProps {
 
 const Tag: React.FC<TagProps> = ({ pageContext, data, location }) => {
     const { tag } = pageContext;
-    const [postsToShow, setPostsToShow] = useState(SHOW_COUNT);
     const {
-        allMarkdownRemark: { edges: posts }
+        allMarkdownRemark: { edges }
     } = data;
-
-    useEffect(() => {
-        const _infiniteScroll = infinitiScroll.bind(null, () => setPostsToShow(state => state + SHOW_COUNT));
-
-        document.addEventListener("scroll", _infiniteScroll, false);
-        return () => {
-            document.removeEventListener("scroll", _infiniteScroll, false);
-        };
-    }, []);
+    const { data: posts, count } = useInfiniteScroll({ limit: 6, items: edges });
 
     return (
         <Layout location={location}>
@@ -42,7 +31,7 @@ const Tag: React.FC<TagProps> = ({ pageContext, data, location }) => {
 
                 <section className="posts-wrap">
                     <div className="container">
-                        {posts.slice(0, postsToShow).map((post, i) => (
+                        {posts.slice(0, count).map((post, i) => (
                             <PostCard data={post.node as MarkdownRemark} key={i} />
                         ))}
                     </div>

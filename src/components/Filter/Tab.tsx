@@ -1,13 +1,13 @@
-import { MarkdownRemarkGroupConnection } from "graphql-types";
+import { Category } from "hooks/useInfiniteScroll";
 import React, { useCallback } from "react";
 
 interface TabProps {
-    items: Pick<MarkdownRemarkGroupConnection, "fieldValue">[];
+    items: string[];
     selectedItem: string;
     onChange: (category: string) => void;
 }
 
-const Tab: React.FC<TabProps> = React.memo(({ items, selectedItem = "ALL", onChange }) => {
+const Tab: React.FC<TabProps> = React.memo(({ items, selectedItem = Category.All, onChange }) => {
     const handleChange = useCallback(event => {
         onChange(event.target.dataset.category);
     }, []);
@@ -17,11 +17,11 @@ const Tab: React.FC<TabProps> = React.memo(({ items, selectedItem = "ALL", onCha
             {items.map((item, i) => (
                 <div
                     key={i}
-                    className={"tab-option " + (selectedItem.toUpperCase() === item?.fieldValue?.toUpperCase() ? "selected" : "")}
-                    data-category={item.fieldValue}
+                    className={"tab-option " + (selectedItem.toUpperCase() === item.toUpperCase() ? "selected" : "")}
+                    data-category={item}
                     onClick={handleChange}
                 >
-                    {item.fieldValue}
+                    {item}
                 </div>
             ))}
         </div>

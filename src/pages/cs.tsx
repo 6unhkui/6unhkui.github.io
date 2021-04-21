@@ -9,10 +9,11 @@ interface CsPageProps {
     data: CsPageQuery;
     location: Location;
 }
+
 const CsPage: React.FC<CsPageProps> = ({ data, location }) => (
     <Layout location={location}>
         <SEO title="Computer Science" />
-        <Posts data={data.allMarkdownRemark} />
+        <Posts data={data && data.allMarkdownRemark} />
     </Layout>
 );
 
