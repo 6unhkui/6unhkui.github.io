@@ -4,13 +4,11 @@
 React 기반의 정적 페이지 생성 프레임워크인 Gatsby.js를 사용하여 만들었습니다.
 <br/><br/>
 
-## 🔨 Tech Stack
+## 🔨  Tech Stack
 
--   React, Gatsby
--   Typescript
--   GraphQL
--   Sass
-    <br/><br/>
+Typescript, React, Gatsby, Sass, GraphQL
+
+<br/>
 
 ## 🔗 LINK
 
