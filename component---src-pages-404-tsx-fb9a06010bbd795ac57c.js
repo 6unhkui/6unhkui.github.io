@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{"i6+/":function(e,a,t){"use strict";t.r(a);var n=t("q1tI"),c=t.n(n),l=t("4XLq"),i=t("1Yd/");a.default=function(e){var a=e.location;return c.a.createElement(l.a,{location:a},c.a.createElement(i.a,{title:"404: Not found"}),c.a.createElement("section",{className:"page-title-wrap"},c.a.createElement("div",{className:"container"},c.a.createElement("h1",{className:"page-title"},"NOT FOUND"),c.a.createElement("div",null,"존재하지 않는 페이지입니다."))))}}}]);
-//# sourceMappingURL=component---src-pages-404-tsx-fb9a06010bbd795ac57c.js.map

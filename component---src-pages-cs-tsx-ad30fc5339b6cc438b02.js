@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{ccOY:function(a,e,t){"use strict";t.r(e),t.d(e,"pageQuery",(function(){return u}));var n=t("q1tI"),r=t.n(n),c=t("soUV"),o=t("1Yd/"),i=t("XjCY");e.default=function(a){var e=a.data,t=a.location;return r.a.createElement(c.a,{location:t},r.a.createElement(o.a,{title:"Computer Science"}),r.a.createElement(i.a,{data:e&&e.allMarkdownRemark}))};var u="2431388126"}}]);
+//# sourceMappingURL=component---src-pages-cs-tsx-ad30fc5339b6cc438b02.js.map

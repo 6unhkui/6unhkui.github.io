@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{UTVv:function(a,e,t){"use strict";t.r(e),t.d(e,"pageQuery",(function(){return l}));var n=t("q1tI"),r=t.n(n),o=t("soUV"),c=t("1Yd/"),i=t("XjCY");e.default=function(a){var e=a.data,t=a.location;return r.a.createElement(o.a,{location:t},r.a.createElement(c.a,{title:"Algorithm"}),r.a.createElement(i.a,{data:e.allMarkdownRemark}))};var l="3766047461"}}]);
+//# sourceMappingURL=component---src-pages-algorithm-tsx-47d2c269e0d707d07b85.js.map
