@@ -13,4 +13,4 @@ Typescript, React, Gatsby, Sass, GraphQL
 
 ## 🔗 LINK
 
-https://6unhkui.github.io
+https://blog.inkyung.me
